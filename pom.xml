@@ -6,7 +6,7 @@
 
     <groupId>com.infilos</groupId>
     <artifactId>mantou-box</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <java.release>17</java.release>
