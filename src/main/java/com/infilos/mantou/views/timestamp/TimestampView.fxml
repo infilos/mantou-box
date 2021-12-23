@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<fx:root xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         type="BorderPane"
+         stylesheets="/style/Timestamp.css"
+         fx:controller="com.infilos.mantou.views.timestamp.TimestampView">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <Label styleClass="title" text="时间戳转换"/>
+    </top>
+
+    <center>
+        <VBox>
+            <HBox>
+                <Label fx:id="currentEpochLabel" text="当前时间: "/>
+                <TextField fx:id="currentEpoch"/>
+                <Button fx:id="currentEpochRefreshButton" onAction="#handleRefreshEpoch"/>
+            </HBox>
+            <Separator/>
+            <HBox>
+                <TextField fx:id="tsToHumanField"/>
+                <Button fx:id="tsToHumanButton" onAction="#handleTsToHumanEpoch">时间戳 => 日期</Button>
+                <Button fx:id="millisToTimeButton" onAction="#handleMillisToTime">毫秒 => 时间</Button>
+            </HBox>
+            <TextArea fx:id="tsToHumanResult"/>
+            <GridPane>
+                <Label maxWidth="100" text="年" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label maxWidth="50" text="月" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label maxWidth="50" text="日" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Label maxWidth="50" text="时" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                <Label maxWidth="50" text="分" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                <Label maxWidth="50" text="秒" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                <Label maxWidth="100" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+                <Label maxWidth="100" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+
+                <TextField fx:id="epochYear" maxWidth="100" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="epochMonth" maxWidth="50" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <TextField fx:id="epochDay" maxWidth="50" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="epochHour" maxWidth="50" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <TextField fx:id="epochMinute" maxWidth="50" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                <TextField fx:id="epochSecond" maxWidth="50" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+                <Button fx:id="humanToTsButton" onAction="#handleHumanToTsEpoch" GridPane.columnIndex="6"
+                        GridPane.rowIndex="0">
+                    日期 => 时间戳
+                </Button>
+                <ComboBox fx:id="timeZoneComboBox" onKeyPressed="#handleTimeZoneSearch" GridPane.columnIndex="7"
+                          GridPane.rowIndex="0"/>
+            </GridPane>
+            <TextArea fx:id="humanToTsResult"/>
+        </VBox>
+    </center>
+</fx:root>
