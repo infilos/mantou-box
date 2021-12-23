@@ -1,14 +1,22 @@
 # Mantou Box - 馒头盒子
 
-## Workflow
+## Build Locally
 
-- sdk use java 16.0.1.j9-adpt
+- sdk use java 17.0.1.12.1-amzn
 - mvn javafx:run
-- mvn clean install
+- mvn install -Ppackage
+
+## Github Release
+
+1. Push commit.
+2. Push tag: `git tag v1.x` & `git push origin v1.x`
+3. Create release manually on Github or with Github cli.
+
+```sh
+gh release create 
+```
 
 ## Features
-
-
 
 ## Relate Projects
 
