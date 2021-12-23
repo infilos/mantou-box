@@ -1,5 +1,12 @@
 # Mantou Box - 馒头盒子
 
+## New Module
+
+- Add module package under `com.infilos.mantou.views`.
+- In module package, implement `NewModule`/`NewService`/`NewView`/`NewView.fxml`.
+- In `com.infilos.mantou.views.ViewFactory`, add provider of `NewModule` and `NewView`.
+- In `com.infilos.mantou.MantouBoxApplication::buildWorkbench`, register the new module.
+
 ## Build Locally
 
 - sdk use java 17.0.1.12.1-amzn

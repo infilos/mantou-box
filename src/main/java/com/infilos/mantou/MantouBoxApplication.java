@@ -67,14 +67,14 @@ public class MantouBoxApplication extends ReactiveApplication {
     
     private Workbench buildWorkbench() {
         return Workbench.builder(
+            timestampModule,
             new HelloWorldModule(),
             buttonsModule,
             checkBoxModule,
             datePickerModule,
             textFieldsModule,
             comboBoxModule,
-            labelsModule,
-            timestampModule
+            labelsModule
         ).build();
     }
 }
