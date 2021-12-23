@@ -13,7 +13,8 @@
 3. Create release manually on Github or with Github cli.
 
 ```sh
-gh release create 
+gh auth login
+gh release create v1.x
 ```
 
 ## Features

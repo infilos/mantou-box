@@ -435,7 +435,7 @@
                                 <configuration>
                                     <toolName>jpackage</toolName>
                                     <removeDirectories>${project.build.directory}/installer-work</removeDirectories>
-                                    <args>@${project.build.directory}/pkg-config/${platform}-jpackage.txt</args>
+                                    <args>@${project.build.directory}/config/${platform}-jpackage.txt</args>
                                 </configuration>
                             </execution>
                         </executions>
