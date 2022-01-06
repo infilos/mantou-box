@@ -1,60 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXIconWrapper?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import io.github.palexdev.materialfx.controls.MFXButton?>
-<fx:root xmlns="http://javafx.com/javafx"
-         xmlns:fx="http://javafx.com/fxml"
-         type="BorderPane"
-         stylesheets="/style/Timestamp.css"
-         fx:controller="com.infilos.mantou.views.timestamp.TimestampView">
-    <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
-    </padding>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-    <top>
-        <Label styleClass="title" text="时间戳转换"/>
-    </top>
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infilos.mantou.views.timestamp.TimestampView">
+    <SplitPane dividerPositions="0.7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane alignment="CENTER" hgap="8.0" vgap="6.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <Label fx:id="title" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="module-title" text="Timestamp Converter" GridPane.columnSpan="4">
+                <font>
+                    <Font size="25.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Current Time Zone:" textAlignment="RIGHT" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Current Time Pattern:" textAlignment="RIGHT" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="141.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Current Timestamp(11):" textAlignment="RIGHT" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="191.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Current Timestamp(13):" textAlignment="RIGHT" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="241.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Current Datetime:" textAlignment="RIGHT" GridPane.columnSpan="3" GridPane.rowIndex="5" />
 
-    <center>
-        <VBox>
-            <HBox>
-                <Label fx:id="currentEpochLabel" text="当前时间: "/>
-                <TextField fx:id="currentEpoch"/>
-                <Button fx:id="currentEpochRefreshButton" onAction="#handleRefreshEpoch"/>
-            </HBox>
-            <Separator/>
-            <HBox>
-                <TextField fx:id="tsToHumanField"/>
-                <Button fx:id="tsToHumanButton" onAction="#handleTsToHumanEpoch">时间戳 => 日期</Button>
-                <Button fx:id="millisToTimeButton" onAction="#handleMillisToTime">毫秒 => 时间</Button>
-            </HBox>
-            <TextArea fx:id="tsToHumanResult"/>
-            <GridPane>
-                <Label maxWidth="100" text="年" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <Label maxWidth="50" text="月" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <Label maxWidth="50" text="日" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                <Label maxWidth="50" text="时" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-                <Label maxWidth="50" text="分" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-                <Label maxWidth="50" text="秒" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
-                <Label maxWidth="100" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
-                <Label maxWidth="100" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
-
-                <TextField fx:id="epochYear" maxWidth="100" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                <TextField fx:id="epochMonth" maxWidth="50" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <TextField fx:id="epochDay" maxWidth="50" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                <TextField fx:id="epochHour" maxWidth="50" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-                <TextField fx:id="epochMinute" maxWidth="50" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
-                <TextField fx:id="epochSecond" maxWidth="50" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
-                <Button fx:id="humanToTsButton" onAction="#handleHumanToTsEpoch" GridPane.columnIndex="6"
-                        GridPane.rowIndex="0">
-                    日期 => 时间戳
+            <ComboBox fx:id="timeZone" onKeyPressed="#handleTimeZoneMatching" onAction="#handleTimeZoneSelection" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+            <ComboBox fx:id="timePattern" editable="true" layoutX="190.0" layoutY="91.0" onAction="#handleTimePatternSelection" prefHeight="39.0" prefWidth="215.0" styleClass="editable-combo-box" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+            <TextField fx:id="timeMills11" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+            <TextField fx:id="timeFormatted" layoutX="190.0" layoutY="191.0" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+            <TextField fx:id="timeMills13" layoutX="40.0" layoutY="41.0" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="60.0" spacing="2.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="resetTimeZone" mnemonicParsing="false" onAction="#handleResetTimeZone" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-arrow-undo-24" iconSize="24" />
+                    </graphic>
                 </Button>
-                <ComboBox fx:id="timeZoneComboBox" onKeyPressed="#handleTimeZoneSearch" GridPane.columnIndex="7"
-                          GridPane.rowIndex="0"/>
-            </GridPane>
-            <TextArea fx:id="humanToTsResult"/>
-        </VBox>
-    </center>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="415.0" layoutY="90.0" prefHeight="40.0" prefWidth="60.0" spacing="2.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="resetTimePattern" mnemonicParsing="false" onAction="#handleResetTimePattern" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-arrow-undo-24" iconSize="24" />
+                    </graphic>
+                </Button>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="415.0" layoutY="140.0" prefHeight="40.0" prefWidth="60.0" spacing="4.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="convertTimeMills11" mnemonicParsing="false" onAction="#handleConvertByTimeMills11" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltfal-arrow-repeat-all-24" iconSize="24" />
+                    </graphic>
+                </Button>
+                <Separator maxWidth="18.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="2.0" />
+                <Button fx:id="copyTimeMills11" mnemonicParsing="false" onAction="#handleCopyTimeMills11" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-copy-24" iconSize="24" />
+                    </graphic>
+                </Button>
+            <padding>
+               <Insets bottom="2.0" right="2.0" top="2.0" />
+            </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="415.0" layoutY="190.0" prefHeight="40.0" prefWidth="60.0" spacing="4.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="convertTimeMills13" mnemonicParsing="false" onAction="#handleConvertByTimeMills13" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltfal-arrow-repeat-all-24" iconSize="24" />
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="copyTimeMills13" mnemonicParsing="false" onAction="#handleCopyTimeMills13" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-copy-24" iconSize="24" />
+                    </graphic>
+                </Button>
+            <padding>
+               <Insets bottom="2.0" right="2.0" top="2.0" />
+            </padding>
+            </HBox>
+            <MFXIconWrapper maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="32.0" />
+            <HBox alignment="CENTER_LEFT" layoutX="415.0" layoutY="240.0" prefHeight="40.0" prefWidth="60.0" spacing="4.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="convertTimeFormatted" mnemonicParsing="false" onAction="#handleConvertByTimeFormatted" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltfal-arrow-repeat-all-24" iconSize="24" />
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="copyTimeFormatted" mnemonicParsing="false" onAction="#handleCopyTimeFormatted" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-copy-24" iconSize="24" />
+                    </graphic>
+                </Button>
+            <padding>
+               <Insets bottom="2.0" right="2.0" top="2.0" />
+            </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="415.0" layoutY="290.0" prefHeight="40.0" prefWidth="60.0" spacing="2.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <Button fx:id="refreshCurrentTime" mnemonicParsing="false" onAction="#handleRefreshCurrentTime" prefHeight="30.0" prefWidth="105.0" text="Refresh">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-clock-24" iconSize="24" />
+                    </graphic>
+                </Button>
+            </HBox>
+        </GridPane>
+        <ScrollPane fx:id="notePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" />
+        </ScrollPane>
+    </SplitPane>
 </fx:root>

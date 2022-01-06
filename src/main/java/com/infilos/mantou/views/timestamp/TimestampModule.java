@@ -1,12 +1,12 @@
 package com.infilos.mantou.views.timestamp;
 
-import com.dlsc.workbenchfx.model.WorkbenchModule;
+import com.infilos.mantou.api.WorkModule;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
 
 import javax.inject.Inject;
 
-public class TimestampModule extends WorkbenchModule {
+public class TimestampModule extends WorkModule {
     
     @Inject
     private TimestampView timestampView;

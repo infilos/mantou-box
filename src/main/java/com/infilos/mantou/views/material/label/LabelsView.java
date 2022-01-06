@@ -1,6 +1,6 @@
 package com.infilos.mantou.views.material.label;
 
-import com.infilos.mantou.api.View;
+import com.infilos.mantou.api.WorkView;
 import com.tangorabox.reactivedesk.FXMLView;
 import io.github.palexdev.materialfx.controls.MFXIconWrapper;
 import io.github.palexdev.materialfx.controls.MFXLabel;
@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @FXMLView
-public class LabelsView extends StackPane implements View<Void> {
+public class LabelsView extends StackPane implements WorkView<Void> {
     
     @FXML
     private MFXLabel custom;

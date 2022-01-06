@@ -1,36 +1,46 @@
 package com.infilos.mantou;
 
-import com.dlsc.workbenchfx.model.WorkbenchModule;
+import com.dlsc.workbenchfx.Workbench;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
-import com.infilos.mantou.api.View;
-import com.infilos.mantou.guice.AutoProvider;
+import com.infilos.mantou.api.WorkModule;
+import com.infilos.mantou.api.WorkView;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.stage.Stage;
 import org.reflections.Reflections;
 
 import javax.inject.Singleton;
+import java.util.Arrays;
 import java.util.Set;
 
+@SuppressWarnings("rawtypes")
 public class MantouBoxModule extends AbstractModule {
 
     private final Application application;
-    private final Stage primaryStage;
+    private final Stage mainStage;
+    private final Workbench workbench;
 
-    public MantouBoxModule(Application application, Stage primaryStage) {
+    public MantouBoxModule(Application application, Stage mainStage, Workbench workbench) {
         this.application = application;
-        this.primaryStage = primaryStage;
+        this.mainStage = mainStage;
+        this.workbench = workbench;
     }
 
     @Override
     protected void configure() {
-        Set<Class<?>> autoClasses = Set.of(WorkbenchModule.class, View.class);
+        // allow view inject workbench instance
+        bind(Workbench.class).toInstance(workbench);
+        
+        // scan view and module
+        Reflections reflections = new Reflections("com.infilos.mantou.views");
+        Set<Class<? extends WorkView>> views = reflections.getSubTypesOf(WorkView.class);
+        Set<Class<? extends WorkModule>> modules = reflections.getSubTypesOf(WorkModule.class);
 
-        new Reflections("com.infilos.mantou.views")
-            .getTypesAnnotatedWith(AutoProvider.class)
-            .stream()
-            .filter(autoClasses::contains)
+        // register view and module
+        views.forEach(this::bind);
+        modules.stream()
+            .filter(m -> Arrays.stream(m.getDeclaredConstructors()).anyMatch(c -> c.getParameterCount() == 0))
             .forEach(this::bind);
     }
 
@@ -48,7 +58,7 @@ public class MantouBoxModule extends AbstractModule {
 
     @Provides
     @Singleton
-    Stage providePrimaryStage() {
-        return primaryStage;
+    Stage provideMainStage() {
+        return mainStage;
     }
 }

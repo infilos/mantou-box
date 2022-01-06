@@ -1,13 +1,13 @@
 package com.infilos.mantou.views.workbench;
 
-import com.dlsc.workbenchfx.model.WorkbenchModule;
+import com.infilos.mantou.api.WorkModule;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
 
-public class HelloWorldModule extends WorkbenchModule {
+public class HelloWorldModule extends WorkModule {
 
     public HelloWorldModule() {
-        super("Hello World", MaterialDesignIcon.HUMAN_HANDSUP);
+        super("Hello World", MaterialDesignIcon.HUMAN_GREETING);
     }
 
     @Override

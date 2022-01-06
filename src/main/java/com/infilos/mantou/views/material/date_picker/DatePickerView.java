@@ -1,6 +1,6 @@
 package com.infilos.mantou.views.material.date_picker;
 
-import com.infilos.mantou.api.View;
+import com.infilos.mantou.api.WorkView;
 import com.tangorabox.reactivedesk.FXMLView;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 @FXMLView
-public class DatePickerView extends StackPane implements View<Void> {
+public class DatePickerView extends StackPane implements WorkView<Void> {
 
     @FXML
     private StackPane pane;

@@ -232,15 +232,79 @@
     src: url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
 }
 
-#customLabel {
-    -fx-background-color: linear-gradient(to bottom right, #C01ADD 0%, #6A6AF8 100%);
-    -fx-background-radius: 6;
-    -fx-border-color: transparent;
+@font-face {
+    font-family: 'Ubuntu Regular';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
 }
 
-#customLabel .text {
-    -fx-font-smoothing-type: gray;
-    -fx-font-family: "Open Sans Bold";
-    -fx-font-size: 12.5;
-    -fx-fill: white;
+@font-face {
+    font-family: 'Ubuntu Bold';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Ubuntu BoldItalic';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Italic';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu LightItalic';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Medium';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu MediumItalic';
+    font-weight: 100px;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Ubuntu/Ubuntu-MediumItalic.ttf') format('truetype');
+}
+
+/*#customLabel {*/
+/*    -fx-background-color: linear-gradient(to bottom right, #6865AD 0%, #845D92 100%);*/
+/*    -fx-background-radius: 6;*/
+/*    -fx-border-color: transparent;*/
+/*}*/
+
+/*#customLabel .text {*/
+/*    -fx-font-smoothing-type: gray;*/
+/*    -fx-font-family: "Ubuntu Regular";*/
+/*    -fx-font-size: 15;*/
+/*    -fx-fill: white;*/
+/*}*/

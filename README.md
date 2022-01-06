@@ -2,10 +2,9 @@
 
 ## New Module
 
-- Add module package under `com.infilos.mantou.views`.
-- In module package, implement `NewModule`/`NewService`/`NewView`/`NewView.fxml`.
-- In `com.infilos.mantou.views.ViewFactory`, add provider of `NewModule` and `NewView`.
-- In `com.infilos.mantou.MantouBoxApplication::buildWorkbench`, register the new module.
+1. Add module package under `com.infilos.mantou.views`.
+2. In module package, implement `NewModel`/`NewModule`/`NewService`/`NewView`/`NewView.fxml`.
+3. In `com.infilos.mantou.MantouBoxApplication::startReactiveApp`, register the new module.
 
 ## Build Locally
 
@@ -23,17 +22,3 @@
 gh auth login
 gh release create v1.x
 ```
-
-## Features
-
-## Relate Projects
-
-- ReactiveDeskFX：编程框架
-- WorkbenchFX：基础面板
-- MaterialFX：界面组件
-- PreferencesFX：配置功能组件
-- 数据可视化：
-  - tilesfx
-  - jfreechart
-  - tablesaw
-

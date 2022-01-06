@@ -3,6 +3,7 @@ package com.infilos.mantou.utils;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Objects;
 
@@ -14,6 +15,10 @@ public interface AwareResource {
 
     default String readAsUrlString(String resource) {
         return Objects.requireNonNull(getClass().getResource(resource)).toExternalForm();
+    }
+    
+    default InputStream readAsStream(String resource) {
+        return Objects.requireNonNull(getClass().getResourceAsStream(resource));
     }
     
     default String loadStyle(String resource) {

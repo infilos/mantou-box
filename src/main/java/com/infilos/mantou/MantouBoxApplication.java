@@ -2,60 +2,45 @@ package com.infilos.mantou;
 
 import com.dlsc.workbenchfx.Workbench;
 import com.google.inject.Module;
-import com.infilos.mantou.views.material.button.ButtonsModule;
-import com.infilos.mantou.views.material.check_box.CheckBoxModule;
-import com.infilos.mantou.views.material.combo_box.ComboBoxModule;
-import com.infilos.mantou.views.material.date_picker.DatePickerModule;
-import com.infilos.mantou.views.material.label.LabelsModule;
-import com.infilos.mantou.views.material.text_field.TextFieldsModule;
+import com.infilos.mantou.utils.AwareResource;
 import com.infilos.mantou.views.timestamp.TimestampModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
 import com.tangorabox.reactivedesk.ReactiveApplication;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jfxtras.styles.jmetro.JMetro;
+import jfxtras.styles.jmetro.Style;
 
 import javax.inject.Inject;
 import java.util.Collection;
 import java.util.List;
 
-public class MantouBoxApplication extends ReactiveApplication {
+public class MantouBoxApplication extends ReactiveApplication implements AwareResource {
 
-    private Workbench workbench;
+    private final Workbench workbench = Workbench.builder().build();
 
     @Inject
     private ApplicationContext context;
-    
-    @Inject
-    private ButtonsModule buttonsModule;
-    
-    @Inject
-    private CheckBoxModule checkBoxModule;
-    
-    @Inject
-    private DatePickerModule datePickerModule;
 
     @Inject
-    private TextFieldsModule textFieldsModule;
-
-    @Inject
-    private ComboBoxModule comboBoxModule;
-    
-    @Inject
-    private LabelsModule labelsModule;
-    
-    @Inject
-    private TimestampModule timestampModule;
+    private TimestampModule formsModule;
 
     @Override
-    protected Collection<Module> getApplicationModules(Stage primaryStage) {
-        return List.of(new MantouBoxModule(this, primaryStage));
+    protected Collection<Module> getApplicationModules(Stage mainStage) {
+        return List.of(new MantouBoxModule(this, mainStage, workbench));
     }
 
     @Override
     protected void startReactiveApp(Stage stage) {
-        //Parent mainComponent = initMainComponent();
-        workbench = buildWorkbench();
+        workbench.getStylesheets().add(loadStyle("Workbench.css"));
+        
+        // add more modules here
+        workbench.getModules().add(new HelloWorldModule());
+        workbench.getModules().add(formsModule);
+
         Scene mainScene = new Scene(workbench);
+        JMetro jMetro = new JMetro(Style.DARK);
+        jMetro.setScene(mainScene);
 
         stage.setTitle("馒头盒子");
         stage.setScene(mainScene);
@@ -63,18 +48,5 @@ public class MantouBoxApplication extends ReactiveApplication {
         stage.setHeight(700);
         stage.show();
         stage.centerOnScreen();
-    }
-    
-    private Workbench buildWorkbench() {
-        return Workbench.builder(
-            timestampModule,
-            new HelloWorldModule(),
-            buttonsModule,
-            checkBoxModule,
-            datePickerModule,
-            textFieldsModule,
-            comboBoxModule,
-            labelsModule
-        ).build();
     }
 }

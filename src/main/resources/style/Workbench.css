@@ -1,0 +1,126 @@
+@import "Common.css";
+
+.root > * {
+    -fx-font-size: 11pt;
+    -fx-font-family: Ubuntu Regular;
+    -fx-text-fill: white;
+
+    -fx-light-text-color: rgba(100%, 100%, 100%, 0.7);
+    -fx-base: #425069;
+
+    -primary-color: #2c3649;
+    -primary-variant-color: #293244;
+    -secondary-color: #F3F3F3;
+    -secondary-variant-color: #425069;
+    -background-color: #252525;
+    -surface-color: #2e3540;
+    -error-color: #585823;
+    -on-primary-color: -fx-light-text-color;
+    -on-secondary-color: -fx-light-text-color;
+    -on-background-color: #F3F3F3;
+    -on-surface-color: -fx-light-text-color;
+    -on-error-color: #FFFFFF;
+}
+
+.logo {
+    /* Reference to the applications logo */
+    -fx-graphic: url("logo/logo.png");
+}
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0; /* its make really one-pixel-border */
+}
+
+/* jmetro style override */
+.module-title {
+    -fx-text-fill: text_color;
+    -fx-font-family: "Ubuntu Bold";
+    -fx-font-size: 18pt;
+}
+
+/* javafx text color bug */
+.editable-combo-box {
+    -fx-text-fill: text_color;
+    -fx-font-family: "Ubuntu Bold";
+}
+
+.label {
+    -fx-font-family: "Ubuntu Bold";
+}
+
+.button {
+    -fx-font-family: "Ubuntu Bold";
+}
+
+/*Text {*/
+/*    -fx-font-family: "Ubuntu Regular";*/
+/*    -fx-font-size: 14pt;*/
+/*}*/
+
+/*Label {*/
+/*    -fx-font-family: "Ubuntu Bold";*/
+/*    -fx-font-size: 14pt;*/
+/*}*/
+
+.label.header, .label.header .text {
+    -fx-font-family: "Ubuntu Bold";
+}
+
+.label.item-title, .label.item-title .text {
+    -fx-font-family: "Ubuntu Bold";
+}
+
+.button, .toggle-button {
+    -fx-font-family: "Ubuntu Bold";
+}
+
+.combo-box-base {
+    text_focused_color: white;
+    text_disabled_color: white;
+    prompt_text_color: white;
+    combo_box_editable_focused_background_color: #333333;
+    -fx-unfocus-color: white;
+    -fx-font-family: "Ubuntu Regular";
+}
+
+.combo-box-base.combo-box:editable > .text-input {
+    -fx-text-fill: white;
+    -fx-text-inner-color: white;
+    -fx-prompt-text-fill: white;
+    -fx-unfocus-color: white;
+}
+
+.combo-box-base.combo-box:editable {
+    -fx-text-fill: white;
+    -fx-text-inner-color: white;
+    -fx-prompt-text-fill: white;
+    -fx-unfocus-color: white;
+}
+
+ComboBox {
+    -fx-text-fill: white;
+}
+
+.choice-box {
+    -fx-font-family: "Ubuntu Regular";
+}
+
+.text-input {
+    text_focused_color: white;
+    text_disabled_color: white;
+    prompt_text_color: white;
+    background_focused_color: #333333;
+}
+
+.text-field {
+    text_focused_color: white;
+    text_disabled_color: white;
+    prompt_text_color: white;
+    background_focused_color: #333333;
+}
+
+.text {
+    -fx-font-family: "Ubuntu Regular";
+    -fx-text-fill: white;
+}

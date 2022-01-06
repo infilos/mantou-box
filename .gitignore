@@ -113,3 +113,5 @@ fabric.properties
 *.iml
 /logs
 .DS_Store
+/scenicview
+TODO.md

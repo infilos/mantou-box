@@ -1,6 +1,6 @@
 package com.infilos.mantou.views.material.text_field;
 
-import com.infilos.mantou.api.View;
+import com.infilos.mantou.api.WorkView;
 import com.tangorabox.reactivedesk.FXMLView;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 @FXMLView
-public class TextFieldsView extends AnchorPane implements View<TextFieldsModel>,Initializable {
+public class TextFieldsView extends AnchorPane implements WorkView<TextFieldsModel>,Initializable {
     @FXML
     private MFXTextField validated;
 

@@ -1,62 +1,131 @@
 package com.infilos.mantou.views.timestamp;
 
-import com.infilos.mantou.api.View;
-import com.infilos.mantou.utils.AwareResource;
-import com.infilos.mantou.utils.Elements;
+import com.dlsc.gemsfx.richtextarea.*;
+import com.dlsc.workbenchfx.Workbench;
+import com.dlsc.workbenchfx.model.WorkbenchDialog;
+import com.dustinredmond.fxalert.AlertBuilder;
+import com.dustinredmond.fxalert.FXAlert;
+import com.infilos.mantou.api.WorkView;
+import com.infilos.utils.Datetimes;
+import com.infilos.utils.Loggable;
 import com.tangorabox.reactivedesk.FXMLView;
-import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.*;
-import org.apache.commons.lang3.time.DurationFormatUtils;
+import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
+import jfxtras.styles.jmetro.JMetroStyleClass;
+import org.apache.commons.lang3.StringUtils;
 
+import javax.inject.Inject;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.util.ResourceBundle;
-import java.util.TimeZone;
+import java.sql.Timestamp;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
+import java.util.*;
 
 @FXMLView
-public class TimestampView extends BorderPane implements View<Void>, Initializable, AwareResource {
+public class TimestampView extends AnchorPane implements WorkView<Void>, Loggable {
+    
+    @Inject
+    private Workbench workbench;
 
     @FXML
-    private Label currentEpochLabel;
-    @FXML
-    private TextField currentEpoch;
-    @FXML
-    private Button currentEpochRefreshButton;
-    @FXML
-    private TextField tsToHumanField;
-    @FXML
-    private Button tsToHumanButton;
-    @FXML
-    private Button millisToTimeButton;
-    @FXML
-    private TextArea tsToHumanResult;
-    @FXML
-    private Button humanToTsButton;
-    @FXML
-    private TextArea humanToTsResult;
-    @FXML
-    private TextField epochYear;
-    @FXML
-    private TextField epochMonth;
-    @FXML
-    private TextField epochDay;
-    @FXML
-    private TextField epochHour;
-    @FXML
-    private TextField epochMinute;
-    @FXML
-    private TextField epochSecond;
-    @FXML
-    private ComboBox<String> timeZoneComboBox;
+    private Label title;
 
-    private int timeZoneComboBoxIndex;
+    @FXML
+    private ComboBox<String> timeZone;
+
+    @FXML
+    private ComboBox<String> timePattern;
+
+    @FXML
+    private TextField timeMills11;
+
+    @FXML
+    private TextField timeMills13;
+
+    @FXML
+    private TextField timeFormatted;
+
+    @FXML
+    private Button resetTimeZone;
+
+    @FXML
+    private Button resetTimePattern;
+
+    @FXML
+    private Button convertTimeMills11;
+
+    @FXML
+    private Button copyTimeMills11;
+
+    @FXML
+    private Button convertTimeMills13;
+
+    @FXML
+    private Button copyTimeMills13;
+
+    @FXML
+    private Button convertTimeFormatted;
+
+    @FXML
+    private Button copyTimeFormatted;
+
+    @FXML
+    private Button refreshCurrentTime;
+
+    @FXML
+    private ScrollPane notePane;
+
+    private static final Map<String, DateTimeFormatter> TimePatternMappings = new HashMap<>() {{
+        put(Datetimes.Formats.AtSeconds, Datetimes.Patterns.AtSeconds);
+        put(Datetimes.Formats.AtMinutes, Datetimes.Patterns.AtMinutes);
+        put(Datetimes.Formats.AtHours, Datetimes.Patterns.AtHours);
+        put(Datetimes.Formats.AtDays, Datetimes.Patterns.AtDays);
+        put(Datetimes.Formats.AtMonths, Datetimes.Patterns.AtMonths);
+        put(Datetimes.Formats.AtYears, Datetimes.Patterns.AtYears);
+        put("yyyy-MM-dd[ HH:mm:ss]", new DateTimeFormatterBuilder()
+            .appendPattern("yyyy-MM-dd[ HH:mm:ss]")
+            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+            .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+            .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+            .toFormatter()
+        );
+        put("yyyy-MM[-dd HH:mm:ss]", new DateTimeFormatterBuilder()
+            .appendPattern("yyyy-MM[-dd HH:mm:ss]")
+            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
+            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+            .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+            .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+            .toFormatter());
+        put("yyyy[-MM-dd HH:mm:ss]", new DateTimeFormatterBuilder()
+            .appendPattern("yyyy[-MM-dd HH:mm:ss]")
+            .parseDefaulting(ChronoField.MONTH_OF_YEAR, 1)
+            .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
+            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+            .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+            .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+            .toFormatter()
+        );
+    }};
+
+    private static final List<String> TimePatterns = List.of(
+        Datetimes.Formats.AtSeconds,
+        Datetimes.Formats.AtMinutes,
+        Datetimes.Formats.AtHours,
+        Datetimes.Formats.AtDays,
+        Datetimes.Formats.AtMonths,
+        Datetimes.Formats.AtYears,
+        "yyyy-MM-dd[ HH:mm:ss]",
+        "yyyy-MM[-dd HH:mm:ss]",
+        "yyyy[-MM-dd HH:mm:ss]"
+    );
+
+    private int selectTimeZoneIndex;
+    private String selectTimePattern;
 
     @Override
     public void setModel(Void model) {
@@ -69,112 +138,237 @@ public class TimestampView extends BorderPane implements View<Void>, Initializab
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        currentEpochRefreshButton.setGraphic(loadImageView("icons8-refresh-16.png"));
-        
-        HBox.setMargin(currentEpochLabel, new Insets(15, 5, 10, 0));
-        HBox.setMargin(currentEpoch, new Insets(10, 5, 10, 0));
-        HBox.setMargin(currentEpochRefreshButton, new Insets(10, 5, 10, 0));
-        HBox.setMargin(tsToHumanField, new Insets(10, 5, 10, 0));
-        HBox.setMargin(tsToHumanButton, new Insets(10, 5, 10, 0));
-        HBox.setMargin(millisToTimeButton, new Insets(10, 5, 10, 0));
+        getStyleClass().add(JMetroStyleClass.BACKGROUND);
 
-        GridPane.setMargin(epochYear, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(epochMonth, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(epochDay, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(epochHour, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(epochMinute, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(epochSecond, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(humanToTsButton, new Insets(10, 5, 0, 0));
-        GridPane.setMargin(timeZoneComboBox, new Insets(10, 5, 0, 0));
+        // time-zone
+        timeZone.getItems().setAll(TimeZone.getAvailableIDs());
+        timeZone.setValue(TimeZone.getDefault().getID());
+        selectTimeZoneIndex = timeZone.getItems().indexOf(TimeZone.getDefault().getID());
 
-        long now = System.currentTimeMillis();
-        currentEpoch.setText(Long.toString(now));
-        tsToHumanField.setText(Long.toString(now));
+        // time-pattern
+        timePattern.getItems().setAll(TimePatterns);
+        timePattern.getEditor().setText(Datetimes.Formats.AtSeconds);
+        selectTimePattern = Datetimes.Formats.AtSeconds;
 
-        LocalDateTime date = LocalDateTime.now();
-        epochYear.setText(String.valueOf(date.getYear()));
-        epochMonth.setText(String.valueOf(date.getMonthValue()));
-        epochDay.setText(String.valueOf(date.getDayOfMonth()));
-        epochHour.setText(String.valueOf(date.getHour()));
-        epochMinute.setText(String.valueOf(date.getMinute()));
-        epochSecond.setText(String.valueOf(date.getSecond()));
+        // time-values
+        handleRefreshCurrentTime(null);
 
-        timeZoneComboBox.getItems().setAll(TimeZone.getAvailableIDs());
-        timeZoneComboBox.setValue("UTC");
-        timeZoneComboBoxIndex = 0;
+        // help-note
+        notePane.setContent(buildNoteArea());
     }
 
     @FXML
-    private void handleRefreshEpoch(final ActionEvent event) {
-        currentEpoch.setText(Long.toString(System.currentTimeMillis()));
-    }
-
-    @FXML
-    private void handleTsToHumanEpoch(final ActionEvent event) {
-        tsToHumanField.setBorder(Border.EMPTY);
-        try {
-            LocalDateTime dt = TimestampService.tsToLocalDateTime(tsToHumanField.getText());
-            String result = TimestampService.toHumanEpoch(dt);
-            tsToHumanResult.setText(result);
-        } catch (Exception e) {
-            tsToHumanField.setBorder(Elements.alertBorder);
-            tsToHumanResult.setText("");
+    private void handleTimeZoneMatching(KeyEvent event) {
+        String key = event.getText();
+        if (StringUtils.isBlank(key)) {
+            return;
         }
-    }
 
-    @FXML
-    private void handleMillisToTime(final ActionEvent actionEvent) {
-        tsToHumanField.setBorder(Border.EMPTY);
-        try {
-            long millis = Long.parseLong(tsToHumanField.getText());
-            String result = DurationFormatUtils.formatDurationWords(millis, true, true);
-            tsToHumanResult.setText(result);
-        } catch (Exception e) {
-            tsToHumanField.setBorder(Elements.alertBorder);
-            tsToHumanResult.setText("");
-        }
-    }
-
-    @FXML
-    private void handleHumanToTsEpoch(final ActionEvent event) {
-        resetBorders();
-        try {
-            int year = TimestampService.validate(epochYear, 1970, Integer.MAX_VALUE);
-            int month = TimestampService.validate(epochMonth, 1, 12);
-            int day = TimestampService.validate(epochDay, 1, 31);
-            int hour = TimestampService.validate(epochHour, 0, 24);
-            int minute = TimestampService.validate(epochMinute, 0, 59);
-            int second = TimestampService.validate(epochSecond, 0, 59);
-            String timeZone = timeZoneComboBox.getSelectionModel().getSelectedItem();
-            String result = TimestampService.toTsEpoch(year, month, day, hour, minute, second, timeZone);
-            humanToTsResult.setText(result);
-        } catch (Exception e) {
-            humanToTsResult.setText("");
-        }
-    }
-
-    @FXML
-    private void handleTimeZoneSearch(KeyEvent keyEvent) {
-        String key = keyEvent.getText();
-        if (key.length() == 0) return;
-        int i = 0;
-        for (String item : timeZoneComboBox.getItems()) {
-            if (item.toLowerCase().startsWith(key) && i > timeZoneComboBoxIndex) {
-                timeZoneComboBox.setValue(item);
-                timeZoneComboBoxIndex = i;
+        for (int idx = 0; idx < timeZone.getItems().size(); idx++) {
+            if (timeZone.getItems().get(idx).toLowerCase().startsWith(key.toLowerCase()) &&
+                idx > selectTimeZoneIndex) {
+                timeZone.setValue(timeZone.getItems().get(idx));
+                selectTimeZoneIndex = idx;
                 return;
             }
-            i++;
         }
-        timeZoneComboBoxIndex = 0;
+
+        selectTimeZoneIndex = 0;
     }
 
-    private void resetBorders() {
-        epochYear.setBorder(Border.EMPTY);
-        epochMonth.setBorder(Border.EMPTY);
-        epochDay.setBorder(Border.EMPTY);
-        epochHour.setBorder(Border.EMPTY);
-        epochMinute.setBorder(Border.EMPTY);
-        epochSecond.setBorder(Border.EMPTY);
+    @FXML
+    private void handleTimeZoneSelection(ActionEvent event) {
+        String selected = timeZone.getSelectionModel().getSelectedItem();
+        
+        for (int idx = 0; idx < timeZone.getItems().size(); idx++) {
+            if (timeZone.getItems().get(idx).equals(selected) &&
+                idx > selectTimeZoneIndex) {
+                timeZone.setValue(timeZone.getItems().get(idx));
+                selectTimeZoneIndex = idx;
+                return;
+            }
+        }
+
+        selectTimeZoneIndex = 0;
+    }
+
+    @FXML
+    private void handleResetTimeZone(ActionEvent event) {
+        timeZone.setValue(TimeZone.getDefault().getID());
+        selectTimeZoneIndex = indexOfTimeZoneId(TimeZone.getDefault().getID());
+    }
+    
+    private int indexOfTimeZoneId(String zoneId) {
+        for (int idx = 0; idx < timeZone.getItems().size(); idx++) {
+            if (timeZone.getItems().get(idx).equals(zoneId)) {
+                return idx;
+            }
+        }
+        
+        return -1;
+    }
+
+    private ZoneId currentTimeZone() {
+        return ZoneId.of(timeZone.getItems().get(selectTimeZoneIndex));
+    }
+
+    @FXML
+    private void handleTimePatternSelection(ActionEvent event) {
+        log().info("select time pattern: item={}, text={}", timePattern.getSelectionModel().getSelectedItem(), timePattern.getEditor().getText());
+        String edited = timePattern.getEditor().getText();
+        String selected = timePattern.getSelectionModel().getSelectedItem();
+        selectTimePattern = StringUtils.isNotBlank(edited) ? edited : selected;
+    }
+
+    @FXML
+    private void handleResetTimePattern(ActionEvent event) {
+        timePattern.getEditor().setText(Datetimes.Formats.AtSeconds);
+        selectTimePattern = Datetimes.Formats.AtSeconds;
+    }
+
+    private DateTimeFormatter currentTimePattern() {
+        TimePatternMappings.computeIfAbsent(selectTimePattern.trim(), k -> DateTimeFormatter.ofPattern(selectTimePattern));
+
+        return TimePatternMappings.get(selectTimePattern.trim());
+    }
+
+    @FXML
+    private void handleConvertByTimeMills11(ActionEvent event) {
+        try {
+            long interimTimeMills11 = Long.parseLong(timeMills11.getText());
+            long interimTimeMills13 = interimTimeMills11 * 1000;
+            Instant interimInstant = Instant.ofEpochMilli(interimTimeMills13);
+            ZonedDateTime interimDateTime = ZonedDateTime.ofInstant(interimInstant, currentTimeZone());
+
+            timeMills13.setText(String.valueOf(interimTimeMills13));
+            timeFormatted.setText(interimDateTime.format(currentTimePattern()));
+        } catch (Exception e) {
+            showErrorDialog(selectTimePattern, timeMills11.getText(), e);
+        }
+    }
+
+    @FXML
+    private void handleConvertByTimeMills13(ActionEvent event) {
+        try {
+            long interimTimeMills13 = Long.parseLong(timeMills13.getText());
+            long interimTimeMills11 = interimTimeMills13 / 1000;
+            Instant interimInstant = Instant.ofEpochMilli(interimTimeMills13);
+            ZonedDateTime interimDateTime = ZonedDateTime.ofInstant(interimInstant, currentTimeZone());
+
+            timeMills11.setText(String.valueOf(interimTimeMills11));
+            timeFormatted.setText(interimDateTime.format(currentTimePattern()));
+        } catch (Exception e) {
+            showErrorDialog(selectTimePattern, timeMills13.getText(), e);
+        }
+    }
+
+    @FXML
+    private void handleConvertByTimeFormatted(ActionEvent event) {
+        try {
+            ZonedDateTime interimDateTime = ZonedDateTime.of(
+                LocalDateTime.parse(timeFormatted.getText().trim(), currentTimePattern()),
+                currentTimeZone()
+            );
+            Timestamp timestamp = Timestamp.from(interimDateTime.toInstant());
+            long interimTimeMills13 = timestamp.getTime();
+            long interimTimeMills11 = interimTimeMills13 / 1000;
+
+            timeMills11.setText(String.valueOf(interimTimeMills11));
+            timeMills13.setText(String.valueOf(interimTimeMills13));
+        } catch (Exception e) {
+            log().error("Convert failed",e);
+            showErrorDialog(selectTimePattern, timeFormatted.getText(), e);
+        }
+    }
+
+    private void showErrorDialog(String pattern, Object value, Exception error) {
+        workbench.showDialog(WorkbenchDialog
+            .builder(
+                "Convert failed!",
+                String.format("Check the time pattern and value: \"%s\", \"%s\". \n%s", pattern, value, error.getMessage()),
+                ButtonType.CLOSE)
+            .exception(error)
+            .build()
+        );
+
+        //AlertBuilder builder = FXAlert.exception(error).withTextFormat(
+        //    "Convert failed! \nCheck the time pattern and value: \"%s\", \"%s\"", pattern, value
+        //);
+        //builder.getAlert();
+    }
+
+    @FXML
+    private void handleCopyTimeMills11(ActionEvent event) {
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(timeMills11.getText());
+        Clipboard.getSystemClipboard().setContent(content);
+    }
+
+    @FXML
+    private void handleCopyTimeMills13(ActionEvent event) {
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(timeMills13.getText());
+        Clipboard.getSystemClipboard().setContent(content);
+    }
+
+    @FXML
+    private void handleCopyTimeFormatted(ActionEvent event) {
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(timeFormatted.getText());
+        Clipboard.getSystemClipboard().setContent(content);
+    }
+
+    @FXML
+    private void handleRefreshCurrentTime(ActionEvent event) {
+        log().info("Current timezone: " + currentTimeZone().getId());
+        ZonedDateTime dateTime = ZonedDateTime.now(currentTimeZone());
+        Timestamp timestamp = Timestamp.from(dateTime.toInstant());
+        long currentTimeMills13 = timestamp.getTime();
+        long currentTimeMills11 = currentTimeMills13 / 1000;
+        String currentTimeFormatted = dateTime.format(TimePatternMappings.get(selectTimePattern));
+
+        timeMills11.setText(String.valueOf(currentTimeMills11));
+        timeMills13.setText(String.valueOf(currentTimeMills13));
+        timeFormatted.setText(currentTimeFormatted);
+    }
+
+    private RichTextArea buildNoteArea() {
+        RichTextArea area = new RichTextArea();
+        area.getStyleClass().add(loadStyle("Workbench.css"));
+        
+        area.setDocument(
+            RTDocument.create(
+                RTHeading.create("Time Zone"),
+                RTParagraph.create(
+                    RTText.create("Make sure choose the right time zone. ")
+                ),
+                RTParagraph.create(),
+                
+                RTHeading.create("Time Pattern"),
+                RTParagraph.create(
+                    RTText.create("Supported datetime format pattern:"),
+                    RTList.create(
+                        TimePatterns.stream().map(RTListItem::create).toArray(RTListItem[]::new)
+                    )
+                ),
+
+                RTHeading.create("Time Mills 11"),
+                RTParagraph.create(
+                    RTText.create("Datetime in millisecond of 11.")
+                ),
+
+                RTHeading.create("Time Mills 13"),
+                RTParagraph.create(
+                    RTText.create("Datetime in millisecond of 13.")
+                ),
+
+                RTHeading.create("Time Formatted"),
+                RTParagraph.create(
+                    RTText.create("Datetime formatted with selected pattern.")
+                )
+            )
+        );
+
+        return area;
     }
 }
