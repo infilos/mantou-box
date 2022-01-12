@@ -1,14 +1,15 @@
 package com.infilos.mantou.controls;
 
+import com.infilos.utils.Loggable;
 import javafx.scene.control.ComboBox;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.Supplier;
 
-public interface ComboBoxSupport {
-    
+public interface ComboBoxSupport extends Loggable {
+
     default <T> void buildComboItems(ComboBox<T> comboBox, int initIdx, List<T> items) {
         comboBox.getItems().setAll(items);
         comboBox.setValue(items.get(initIdx));
@@ -32,31 +33,56 @@ public interface ComboBoxSupport {
         comboBox.setValue(items[0]);
         comboBox.getSelectionModel().select(0);
     }
-    
+
     /**
      * Refresh value after combo-box selected or edited.
      */
-    default <T> void enableRefreshComboValue(ComboBox<T> comboBox, Function<String,T> valueParser, Predicate<T> valueFilter) {
+    default <T> void enableRefreshComboValue(ComboBox<T> comboBox, Function<String, T> valueParser, T fallback) {
         comboBox.getEditor().textProperty().addListener((obs, oldText, newText) -> {
-            if (Objects.nonNull(newText)) {
-                T value = valueParser.apply(newText);
-                if (valueFilter.test(value)) {
-                    comboBox.setValue(value);    
-                }
+            if(StringUtils.isNotBlank(newText)) {
+                comboBox.setValue(tryIgnore(() -> valueParser.apply(newText), fallback));
             }
         });
     }
-    
+
     /**
      * Get refreshed combo-box's value by type.
      */
     default <T> T comboValueOf(ComboBox<T> comboBox, Class<T> valueType, Function<String, T> valueParser) {
         Object value = comboBox.getValue();
-        
+
         if (value.getClass() == value) {
             return valueType.cast(value);
         } else {
-            return valueParser.apply(value.toString());
+            return tryIgnore(
+                () -> valueParser.apply(value.toString()),
+                valueType,
+                valueParser
+            );
         }
+    }
+
+    private <T> T tryIgnore(Supplier<T> supplier, T fallback) {
+        try {
+            return supplier.get();
+        } catch (Throwable e) {
+            return fallback;
+        }
+    }
+
+    private <T> T tryIgnore(Supplier<T> supplier, Class<T> valueType, Function<String, T> valueParser) {
+        try {
+            return supplier.get();
+        } catch (Throwable e) {
+            return defaultValueOf(valueType, valueParser);
+        }
+    }
+
+    private <T> T defaultValueOf(Class<T> type, Function<String, T> valueParser) {
+        if (Number.class.isAssignableFrom(type)) {
+            return valueParser.apply("0");
+        }
+
+        return valueParser.apply("");
     }
 }

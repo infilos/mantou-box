@@ -3,6 +3,7 @@ package com.infilos.mantou;
 import com.dlsc.workbenchfx.Workbench;
 import com.google.inject.Module;
 import com.infilos.mantou.utils.AwareResource;
+import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.timestamp.TimestampModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
 import com.tangorabox.reactivedesk.ReactiveApplication;
@@ -24,6 +25,9 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
 
     @Inject
     private TimestampModule formsModule;
+    
+    @Inject
+    private TextGenModule textGenModule;
 
     @Override
     protected Collection<Module> getApplicationModules(Stage mainStage) {
@@ -37,6 +41,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         // add more modules here
         workbench.getModules().add(new HelloWorldModule());
         workbench.getModules().add(formsModule);
+        workbench.getModules().add(textGenModule);
 
         Scene mainScene = new Scene(workbench);
         JMetro jMetro = new JMetro(Style.DARK);

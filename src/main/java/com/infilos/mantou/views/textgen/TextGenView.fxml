@@ -6,10 +6,10 @@
          xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infilos.mantou.views.textgen.TextGenView">
     <TabPane fx:id="tabPane" prefHeight="${rootPane.height}" prefWidth="${rootPane.width}">
         <Tab fx:id="uuidTab" closable="false" text="UUID">
-            <fx:include source="uuid/UUIDGenerateView.fxml"/>
+            <fx:include source="uuid/UUIDGeneratorView.fxml"/>
         </Tab>
         <Tab fx:id="passTab" closable="false" text="Password">
-            <fx:include source="password/generator.fxml"/>
+            <fx:include source="password/PasswordGeneratorView.fxml"/>
         </Tab>
     </TabPane>
 </fx:root>

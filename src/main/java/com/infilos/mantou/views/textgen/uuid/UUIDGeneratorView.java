@@ -36,7 +36,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @FXMLView
-public class UUIDGenerateView implements Initializable, AwareResource, ComboBoxSupport, NotifySupport, TooltipSupport, Loggable {
+public class UUIDGeneratorView implements Initializable, AwareResource, ComboBoxSupport, NotifySupport, TooltipSupport, Loggable {
 
     @Inject
     private Stage mainStage;
@@ -152,46 +152,46 @@ public class UUIDGenerateView implements Initializable, AwareResource, ComboBoxS
     public void initialize(URL location, ResourceBundle resources) {
         //
         buildComboItems(generateCount, List.of(1, 2, 3, 5, 10, 20, 50, 100));
-        enableRefreshComboValue(generateCount, Integer::parseInt, v -> v >= 0);
+        enableRefreshComboValue(generateCount, Integer::parseInt, 1);
 
         //
         buildComboItems(generateMode, "Random", "Time", "Name", "Dce Security", "COMB");
-        enableRefreshComboValue(generateMode, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(generateMode, String::toString, "Random");
 
         //
         buildComboItems(modeTimeAttri, "None", "Mac", "Hash", "Random");
-        enableRefreshComboValue(modeTimeAttri, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeTimeAttri, String::toString, "None");
 
         //
         buildComboItems(modeNameNamespace, "None", "DNS", "URL", "ISO_OID", "X500_DN");
-        enableRefreshComboValue(modeNameNamespace, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeNameNamespace, String::toString, "None");
         buildComboItems(modeNameType, "MD5", "SHA-1");
-        enableRefreshComboValue(modeNameType, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeNameType, String::toString, "None");
 
         //
         buildComboItems(modeDceDomain, "PERSON", "GROUP", "ORG");
-        enableRefreshComboValue(modeDceDomain, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeDceDomain, String::toString, "PERSON");
         buildComboItems(modeDceAttri, "None", "Mac", "Hash", "Random");
-        enableRefreshComboValue(modeDceAttri, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeDceAttri, String::toString, "None");
 
         //
         buildComboItems(modeCombPosition, "Prefix", "Suffix");
-        enableRefreshComboValue(modeCombPosition, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(modeCombPosition, String::toString, "Prefix");
 
         //
         hideAllModeBasedForms();
 
         //
         buildComboItems(verifyMode, "Valid", "Random", "Rfc4122", "ReservedNcs", "ReservedMicrosoft", "ReservedFuture", "NameBasedMd5", "NameBasedSha1", "TimeBased", "TimeOrdered", "DceSecurity");
-        enableRefreshComboValue(verifyMode, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(verifyMode, String::toString, "Valid");
 
         // 
         buildComboItems(extractMode, "UUID", "COMB GUID");
-        enableRefreshComboValue(extractMode, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(extractMode, String::toString, "UUID");
 
         // 
         buildComboItems(convertMode, "Canonical", "URI", "Base16", "Base32", "Base58", "Base62", "Base64", "Slug", "NcName", ".NET GUID V1", ".NET GUID V4");
-        enableRefreshComboValue(convertMode, String::toString, StringUtils::isNotBlank);
+        enableRefreshComboValue(convertMode, String::toString, "Canonical");
 
         //
         notePane.setContent(buildNoteArea());
