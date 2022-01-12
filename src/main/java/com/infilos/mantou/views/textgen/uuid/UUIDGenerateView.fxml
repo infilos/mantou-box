@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infilos.mantou.views.textgen.uuid.UUIDGenerateView">
+    <SplitPane dividerPositions="0.7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane alignment="CENTER" hgap="8.0" vgap="6.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="module-title" text="UUID Generator" GridPane.columnSpan="4">
+                <font>
+                    <Font size="25.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Generate Count:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Use Uppercase:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="141.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Use Hyphens:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+            <ComboBox fx:id="generateCount" editable="true" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                <CheckBox fx:id="useUppercase" mnemonicParsing="false" />
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                <CheckBox fx:id="useHyphens" mnemonicParsing="false" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="415.0" layoutY="240.0" prefHeight="40.0" prefWidth="155.0" spacing="4.0" GridPane.columnIndex="5" GridPane.columnSpan="4" GridPane.rowIndex="5">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+            <Button fx:id="backGenerate" layoutX="73.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleBackGenerate" prefHeight="30.0" prefWidth="30.0" visible="false">
+               <graphic>
+                  <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-arrow-reply-24" iconSize="24" />
+               </graphic>
+                <tooltip>
+                    <Tooltip text="Back Generate!"/>
+                </tooltip>
+            </Button>
+            <Separator layoutX="118.0" layoutY="12.0" orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="generate" mnemonicParsing="false" onAction="#handleGenerate" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltrmz-play-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Generate!"/>
+                    </tooltip>
+                </Button>
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="copy" mnemonicParsing="false" onAction="#handleCopy" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-copy-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Copy!"/>
+                    </tooltip>
+                </Button>
+                <Separator layoutX="55.0" layoutY="12.0" orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="clear" layoutX="65.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-broom-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Clear!"/>
+                    </tooltip>
+                </Button>
+                <padding>
+                    <Insets bottom="2.0" right="2.0" top="2.0" />
+                </padding>
+            </HBox>
+            <TextArea fx:id="generated" prefHeight="200.0" prefWidth="200.0" visible="false" GridPane.columnSpan="9" GridPane.rowIndex="6" GridPane.rowSpan="3" />
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Generate Mode:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="generateMode" layoutX="207.0" layoutY="118.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Label fx:id="modeLabel1" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="79.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Mode Based:" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Label fx:id="modeLabel2" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="79.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Mode Based:" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <Label fx:id="modeLabel3" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="118.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Mode Based:" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <ComboBox fx:id="modeTimeAttri" layoutX="151.0" layoutY="79.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <HBox fx:id="modeTimeOrdered" alignment="CENTER" layoutX="151.0" layoutY="156.0" prefHeight="100.0" prefWidth="200.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                <CheckBox fx:id="modeTimeOrderedCheck" mnemonicParsing="false" />
+            </HBox>
+            <TextField fx:id="modeNameName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="modeDceDomain" layoutX="151.0" layoutY="79.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <TextField fx:id="modeDceIdentifier" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <ComboBox fx:id="modeCombPosition" layoutX="151.0" layoutY="79.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <HBox fx:id="modeCombShort" alignment="CENTER" layoutX="151.0" layoutY="156.0" prefHeight="100.0" prefWidth="200.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                <CheckBox fx:id="modeCombShortCheck" mnemonicParsing="false" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="375.0" layoutY="217.0" prefHeight="40.0" prefWidth="60.0" spacing="4.0" GridPane.columnSpan="9" GridPane.rowIndex="9">
+                <opaqueInsets>
+                    <Insets left="2.0" />
+                </opaqueInsets>
+                <padding>
+                    <Insets bottom="2.0" right="2.0" top="2.0" />
+                </padding>
+                <Button fx:id="verify" mnemonicParsing="false" onAction="#handleVerify" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltfal-checkmark-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Verify!" />
+                    </tooltip>
+                </Button>
+                <ComboBox fx:id="verifyMode" prefHeight="39.0" prefWidth="100.0" />
+                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="extract" mnemonicParsing="false" onAction="#handleExtract" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-export-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Extract!" />
+                    </tooltip>
+                </Button>
+                <ComboBox fx:id="extractMode" layoutX="323.0" layoutY="12.0" prefHeight="39.0" prefWidth="100.0" />
+                <Separator layoutX="55.0" layoutY="12.0" orientation="VERTICAL" prefHeight="200.0" />
+                <Button fx:id="convert" layoutX="65.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleConvert" prefHeight="30.0" prefWidth="30.0">
+                    <graphic>
+                        <FontIcon iconColor="#F3F3F3" iconLiteral="fltral-arrow-repeat-all-24" iconSize="24" />
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Convert!" />
+                    </tooltip>
+                </Button>
+                <ComboBox fx:id="convertMode" layoutX="433.0" layoutY="12.0" prefHeight="39.0" prefWidth="100.0" />
+            </HBox>
+            <ComboBox fx:id="modeNameType" layoutX="151.0" layoutY="76.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <ComboBox fx:id="modeNameNamespace" layoutX="375.0" layoutY="148.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <ComboBox fx:id="modeDceAttri" layoutX="151.0" layoutY="76.0" onAction="#handleModeChanged" prefHeight="39.0" prefWidth="215.0" visible="false" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <ScrollPane fx:id="transformedScroll" hbarPolicy="NEVER" visible="false" GridPane.columnSpan="9" GridPane.rowIndex="6" GridPane.rowSpan="3" GridPane.vgrow="NEVER">
+                <TextFlow fx:id="transformed" prefHeight="${transformedScroll.height}" prefWidth="${transformedScroll.width}" visible="false">
+                    <padding>
+                        <Insets bottom="2.0" left="6.0" right="2.0" top="2.0" />
+                    </padding>
+                </TextFlow>
+            </ScrollPane>
+        </GridPane>
+        <ScrollPane fx:id="notePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" />
+        </ScrollPane>
+    </SplitPane>
+</AnchorPane>
