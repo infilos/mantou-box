@@ -7,6 +7,6 @@ public class HelloWorldView extends BorderPane {
 
     public HelloWorldView() {
         getStyleClass().add("module-background");
-        setCenter(new Label("My first workbench module."));
+        setCenter(new Label("Wellcome to Manto Box!"));
     }
 }

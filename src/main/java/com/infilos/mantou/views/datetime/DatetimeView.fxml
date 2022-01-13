@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<fx:root fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" type="AnchorPane" xmlns="http://javafx.com/javafx/17"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infilos.mantou.views.datetime.DatetimeView">
+    <TabPane fx:id="tabPane" prefHeight="${rootPane.height}" prefWidth="${rootPane.width}">
+        <Tab fx:id="timestamp" closable="false" text="Timestamp">
+            <fx:include source="converter/TimestampConverterView.fxml"/>
+        </Tab>
+    </TabPane>
+</fx:root>

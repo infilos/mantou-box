@@ -39,7 +39,7 @@ public interface ComboBoxSupport extends Loggable {
      */
     default <T> void enableRefreshComboValue(ComboBox<T> comboBox, Function<String, T> valueParser, T fallback) {
         comboBox.getEditor().textProperty().addListener((obs, oldText, newText) -> {
-            if(StringUtils.isNotBlank(newText)) {
+            if (StringUtils.isNotBlank(newText)) {
                 comboBox.setValue(tryIgnore(() -> valueParser.apply(newText), fallback));
             }
         });
