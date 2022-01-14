@@ -11,8 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.*;
 import javafx.stage.Stage;
 import org.apache.commons.lang3.StringUtils;
 
@@ -62,6 +61,8 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
 
     @Inject
     private Workbench workbench;
+    
+    private int timeZoneSelectedIndex = 0;
 
     @Override
     public Stage mainStage() {
@@ -115,6 +116,36 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
         TimePatternMappings.computeIfAbsent(pattern, k -> DateTimeFormatter.ofPattern(pattern));
 
         return TimePatternMappings.get(pattern);
+    }
+
+    @FXML
+    private void handleTimeZoneSearch(final KeyEvent keyEvent) {
+        String key = keyEvent.getText();
+        if (StringUtils.isBlank(key)) {
+            return;
+        }
+        
+        int i = 0;
+        for (String item : AllTimeZones) {
+            if (item.toLowerCase().startsWith(key) && i > timeZoneSelectedIndex) {
+                timeZone.setValue(item);
+                timeZoneSelectedIndex = i;
+                return;
+            }
+            i++;
+        }
+        
+        timeZoneSelectedIndex = 0;
+    }
+    
+    @FXML
+    private void handleResetTimeZone(final ActionEvent event) {
+        timeZone.setValue(LocalTimeZone);
+    }
+
+    @FXML
+    private void handleResetTimePattern(final ActionEvent event) {
+        timePattern.setValue(DefaultTimePattern);
     }
 
     @FXML
