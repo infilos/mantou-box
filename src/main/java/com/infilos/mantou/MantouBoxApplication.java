@@ -5,6 +5,7 @@ import com.google.inject.Module;
 import com.infilos.mantou.utils.AwareResource;
 import com.infilos.mantou.views.convert.ConvertModule;
 import com.infilos.mantou.views.datetime.DatetimeModule;
+import com.infilos.mantou.views.setting.SettingModule;
 import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
 import com.tangorabox.reactivedesk.ReactiveApplication;
@@ -23,6 +24,9 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
 
     @Inject
     private ApplicationContext context;
+    
+    @Inject
+    private SettingModule settingModule;
     
     @Inject
     private TextGenModule textGenModule;
@@ -44,6 +48,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         
         // start add modules
         workbench.getModules().add(new HelloWorldModule());
+        workbench.getModules().add(settingModule);
         workbench.getModules().add(datetimeModule);
         workbench.getModules().add(textGenModule);
         workbench.getModules().add(convertModule);

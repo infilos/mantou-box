@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.infilos.mantou.views.setting.h2.H2View">
+    <SplitPane dividerPositions="0.7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane alignment="CENTER" hgap="8.0" vgap="6.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="module-title" text="H2 Store" GridPane.columnSpan="4">
+                <font>
+                    <Font size="25.0"/>
+                </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Create Table:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Table List:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="3"/>
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="141.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Insert Record:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="4"/>
+            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="191.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Record List:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+            <TextField fx:id="recordField" layoutX="190.0" layoutY="191.0" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="4"/>
+            <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="108.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Store Status:" textAlignment="RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="1"/>
+            <Label fx:id="connStat" layoutX="30.0" layoutY="69.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Store Path" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.columnSpan="4"
+                   GridPane.rowIndex="1"/>
+            <TextField fx:id="tableNameField" layoutX="262.0" layoutY="225.0" prefHeight="39.0" prefWidth="215.0" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="tableList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="3"/>
+            <ComboBox fx:id="recordList" layoutX="146.0" layoutY="147.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="5"/>
+            <Button fx:id="tableCreate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onTableCreate" prefHeight="34.0" prefWidth="100.0" text="Create"
+                    GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+            <Button fx:id="connect" layoutX="378.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onConnect" prefHeight="34.0" prefWidth="100.0"
+                    text="Connect" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+            <Button fx:id="tableDelete" layoutX="378.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onTableDelete" prefHeight="34.0"
+                    prefWidth="100.0" text="Delete" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+            <Button fx:id="recordInsert" layoutX="378.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRecordCreate" prefHeight="34.0"
+                    prefWidth="100.0" text="Insert" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
+            <Button fx:id="recordDelete" layoutX="378.0" layoutY="186.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRecordDelete" prefHeight="34.0"
+                    prefWidth="100.0" text="Delete" GridPane.columnIndex="6" GridPane.rowIndex="5"/>
+            <Button fx:id="disconnect" layoutX="378.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="34.0"
+                    prefWidth="100.0" text="Disconnect" GridPane.columnIndex="6" GridPane.rowIndex="6"/>
+        </GridPane>
+        <ScrollPane fx:id="notePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0"/>
+        </ScrollPane>
+    </SplitPane>
+</AnchorPane>
