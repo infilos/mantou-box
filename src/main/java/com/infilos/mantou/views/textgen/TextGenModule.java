@@ -1,8 +1,8 @@
 package com.infilos.mantou.views.textgen;
 
 import com.infilos.mantou.api.WorkModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ public class TextGenModule extends WorkModule {
     private TextGenView textGenView;
     
     public TextGenModule() {
-        super("Text Generate", MaterialDesignIcon.FORMAT_TEXT);
+        super("Text Generate", MaterialDesign.MDI_FORMAT_TEXT);
     }
 
     @Override

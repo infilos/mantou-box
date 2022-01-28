@@ -1,8 +1,8 @@
 package com.infilos.mantou.views.datetime;
 
 import com.infilos.mantou.api.WorkModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ public class DatetimeModule extends WorkModule {
     private DatetimeView datetimeView;
     
     public DatetimeModule() {
-        super("Datetime", MaterialDesignIcon.CALENDAR_CLOCK);
+        super("Datetime", MaterialDesign.MDI_CALENDAR_CLOCK);
     }
 
     @Override

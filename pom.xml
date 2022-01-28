@@ -85,7 +85,7 @@
         <dependency>
             <groupId>com.dlsc.workbenchfx</groupId>
             <artifactId>workbenchfx-core</artifactId>
-            <version>11.1.0</version>
+            <version>11.3.1</version>
         </dependency>
         <dependency>
             <groupId>com.dlsc.preferencesfx</groupId>
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>fr.brouillard.oss</groupId>
             <artifactId>cssfx</artifactId>
-            <version>11.4.0</version>
+            <version>11.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -122,16 +122,11 @@
             <artifactId>ikonli-themify-pack</artifactId>
             <version>12.2.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.kordamp.ikonli</groupId>-->
-<!--            <artifactId>ikonli-fontawesome-pack</artifactId>-->
-<!--            <version>12.2.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.kordamp.ikonli</groupId>-->
-<!--            <artifactId>ikonli-fontawesome5-pack</artifactId>-->
-<!--            <version>12.2.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-materialdesign-pack</artifactId>
+            <version>12.2.0</version>
+        </dependency>
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-fluentui-pack</artifactId>
@@ -150,7 +145,7 @@
         <dependency>
             <groupId>com.dlsc.gemsfx</groupId>
             <artifactId>gemsfx</artifactId>
-            <version>1.30.0</version>
+            <version>1.33.0</version>
         </dependency>
         <dependency>
             <groupId>com.dustinredmond.fxalert</groupId>
@@ -176,6 +171,21 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>31.0.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sisyphsu</groupId>
+            <artifactId>dateparser</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.multiformats</groupId>
+            <artifactId>java-multibase</artifactId>
+            <version>v1.1.0</version>
         </dependency>
 
         <dependency>
@@ -208,13 +218,13 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.21.0</version>
+            <version>3.22.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.tangorabox</groupId>
             <artifactId>component-inspector-fx</artifactId>
-            <version>1.0</version>
+            <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -509,6 +519,10 @@
         <repository>
             <id>jpro - sandec repository</id>
             <url>https://sandec.jfrog.io/artifactory/repo/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 

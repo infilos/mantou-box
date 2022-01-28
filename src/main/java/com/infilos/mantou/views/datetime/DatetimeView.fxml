@@ -8,5 +8,8 @@
         <Tab fx:id="timestamp" closable="false" text="Timestamp">
             <fx:include source="converter/TimestampConverterView.fxml"/>
         </Tab>
+        <Tab fx:id="parser" closable="false" text="Parser">
+            <fx:include source="parser/DatetimeParserView.fxml"/>
+        </Tab>
     </TabPane>
 </fx:root>

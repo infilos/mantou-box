@@ -1,8 +1,8 @@
 package com.infilos.mantou.views.material.check_box;
 
 import com.dlsc.workbenchfx.model.WorkbenchModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ public class CheckBoxModule extends WorkbenchModule {
     private CheckBoxView checkBoxView;
     
     public CheckBoxModule() {
-        super("Check Boxes", MaterialDesignIcon.HUMAN_HANDSUP);
+        super("Check Boxes", MaterialDesign.MDI_HUMAN_HANDSUP);
     }
 
     @Override

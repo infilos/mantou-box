@@ -3,6 +3,7 @@ package com.infilos.mantou;
 import com.dlsc.workbenchfx.Workbench;
 import com.google.inject.Module;
 import com.infilos.mantou.utils.AwareResource;
+import com.infilos.mantou.views.convert.ConvertModule;
 import com.infilos.mantou.views.datetime.DatetimeModule;
 import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
@@ -28,6 +29,9 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
     
     @Inject
     private DatetimeModule datetimeModule;
+    
+    @Inject
+    private ConvertModule convertModule;
 
     @Override
     protected Collection<Module> getApplicationModules(Stage mainStage) {
@@ -42,6 +46,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         workbench.getModules().add(new HelloWorldModule());
         workbench.getModules().add(datetimeModule);
         workbench.getModules().add(textGenModule);
+        workbench.getModules().add(convertModule);
         // end add modules
 
         Scene mainScene = new Scene(workbench);

@@ -1,11 +1,11 @@
 package com.infilos.mantou.api;
 
 import com.dlsc.workbenchfx.model.WorkbenchModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
+import org.kordamp.ikonli.Ikon;
 
 public abstract class WorkModule extends WorkbenchModule {
     
-    public WorkModule(String name, MaterialDesignIcon icon) {
+    public WorkModule(String name, Ikon icon) {
         super(name, icon);
     }
 }

@@ -1,8 +1,8 @@
 package com.infilos.mantou.views.material.button;
 
 import com.dlsc.workbenchfx.model.WorkbenchModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ public class ButtonsModule extends WorkbenchModule {
     private ButtonsView buttonsView;
     
     public ButtonsModule() {
-        super("Buttons", MaterialDesignIcon.HAND_POINTING_RIGHT);
+        super("Buttons", MaterialDesign.MDI_HAND_POINTING_RIGHT);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.infilos.mantou.views.material.text_field;
 
 import com.dlsc.workbenchfx.model.WorkbenchModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ public class TextFieldsModule extends WorkbenchModule {
     private TextFieldsView textFieldsView;
     
     public TextFieldsModule() {
-        super("Text Fields", MaterialDesignIcon.HUMAN_HANDSUP);
+        super("Text Fields", MaterialDesign.MDI_HUMAN_HANDSUP);
     }
 
     @Override

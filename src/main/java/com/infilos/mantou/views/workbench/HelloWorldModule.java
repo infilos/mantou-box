@@ -1,13 +1,13 @@
 package com.infilos.mantou.views.workbench;
 
 import com.infilos.mantou.api.WorkModule;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import javafx.scene.Node;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 
 public class HelloWorldModule extends WorkModule {
 
     public HelloWorldModule() {
-        super("Hello World", MaterialDesignIcon.HUMAN_GREETING);
+        super("Wellcome", MaterialDesign.MDI_HUMAN_GREETING);
     }
 
     @Override

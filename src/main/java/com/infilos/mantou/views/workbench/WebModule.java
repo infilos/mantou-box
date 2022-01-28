@@ -3,8 +3,6 @@ package com.infilos.mantou.views.workbench;
 import com.dlsc.workbenchfx.model.WorkbenchModule;
 import com.dlsc.workbenchfx.view.controls.ToolbarItem;
 import com.google.common.base.Strings;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 
 import java.util.Objects;
 
@@ -17,6 +15,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import org.kordamp.ikonli.Ikon;
+import org.kordamp.ikonli.javafx.FontIcon;
+import org.kordamp.ikonli.materialdesign.MaterialDesign;
 import org.w3c.dom.Document;
 
 public class WebModule extends WorkbenchModule {
@@ -38,7 +39,7 @@ public class WebModule extends WorkbenchModule {
     private final TextField browserUrl;
     private final WebEngine webEngine;
 
-    public WebModule(String name, MaterialDesignIcon icon, String url) {
+    public WebModule(String name, Ikon icon, String url) {
         super(name, icon);
         this.url = url;
 
@@ -56,13 +57,17 @@ public class WebModule extends WorkbenchModule {
         browserUrl.setEditable(false);
 
         // setup toolbar
-        ToolbarItem back = new ToolbarItem(new MaterialDesignIconView(MaterialDesignIcon.CHEVRON_LEFT),
+        ToolbarItem back = new ToolbarItem(
+            new FontIcon(MaterialDesign.MDI_CHEVRON_LEFT),
             event -> webEngine.executeScript("history.back()"));
-        ToolbarItem forward = new ToolbarItem(new MaterialDesignIconView(MaterialDesignIcon.CHEVRON_RIGHT),
+        ToolbarItem forward = new ToolbarItem(
+            new FontIcon(MaterialDesign.MDI_CHEVRON_RIGHT),
             event -> webEngine.executeScript("history.forward()"));
-        ToolbarItem home = new ToolbarItem(new MaterialDesignIconView(MaterialDesignIcon.HOME),
+        ToolbarItem home = new ToolbarItem(
+            new FontIcon(MaterialDesign.MDI_HOME),
             event -> webEngine.load(url));
-        ToolbarItem reload = new ToolbarItem(new MaterialDesignIconView(MaterialDesignIcon.REFRESH),
+        ToolbarItem reload = new ToolbarItem(
+            new FontIcon(MaterialDesign.MDI_REFRESH),
             event -> webEngine.reload());
         getToolbarControlsLeft().addAll(back, forward, home, reload, new ToolbarItem(browserUrl));
 

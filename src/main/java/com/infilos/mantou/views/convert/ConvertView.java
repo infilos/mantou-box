@@ -1,4 +1,4 @@
-package com.infilos.mantou.views.datetime;
+package com.infilos.mantou.views.convert;
 
 import com.infilos.mantou.api.WorkView;
 import com.infilos.mantou.controls.TabPaneSupport;
@@ -14,19 +14,22 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @FXMLView
-public class DatetimeView extends AnchorPane implements WorkView<Void>, TabPaneSupport, Loggable {
+public class ConvertView extends AnchorPane implements WorkView<Void>, TabPaneSupport, Loggable {
 
     @FXML
     public AnchorPane rootPane;
     
     @FXML
     private TabPane tabPane;
-    
-    @FXML
-    private Tab timestamp;
 
     @FXML
-    private Tab parser;
+    private Tab basex;
+    
+    @FXML
+    private Tab md5text;
+
+    @FXML
+    private Tab md5file;
     
     @Override
     public void setModel(Void model) {

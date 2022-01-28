@@ -1,5 +1,9 @@
 # Mantou Box - 馒头盒子
 
+Develop tools build for developer, support multiple platforms.
+
+Visit [mantoubox.fun](https://mantoubox.fun) to explore all the features. Feature request issues are wellcome!
+
 ## New Module
 
 1. Add module package under `com.infilos.mantou.views`.
@@ -8,7 +12,7 @@
 
 ## Build Locally
 
-- sdk use java 17.0.1.12.1-amzn
+- sdk use java 17.0.2.8.1-amzn
 - mvn javafx:run
 - mvn install -Ppackage
 
