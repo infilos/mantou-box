@@ -4,6 +4,10 @@ Develop tools build for developer, support multiple platforms.
 
 Visit [mantoubox.fun](https://mantoubox.fun) to explore all the features. Feature request issues are wellcome!
 
+<div>
+<img src="mantou.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;" alt="mantou-main" />
+</div>
+
 ## New Module
 
 1. Add module package under `com.infilos.mantou.views`.
