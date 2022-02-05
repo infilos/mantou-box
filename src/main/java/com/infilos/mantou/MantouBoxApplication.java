@@ -8,6 +8,7 @@ import com.infilos.mantou.views.datetime.DatetimeModule;
 import com.infilos.mantou.views.setting.SettingModule;
 import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
+import com.infilos.utils.Loggable;
 import com.tangorabox.reactivedesk.ReactiveApplication;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,7 +19,7 @@ import javax.inject.Inject;
 import java.util.Collection;
 import java.util.List;
 
-public class MantouBoxApplication extends ReactiveApplication implements AwareResource {
+public class MantouBoxApplication extends ReactiveApplication implements AwareResource, Loggable {
 
     private final Workbench workbench = Workbench.builder().build();
 

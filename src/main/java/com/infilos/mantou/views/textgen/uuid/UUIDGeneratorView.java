@@ -623,7 +623,7 @@ public class UUIDGeneratorView implements Initializable, AwareResource, ComboBox
             } else if ("Base32".equals(mode)) {
                 converted = converted + tryToString(() -> Base32Codec.INSTANCE.encode(uuid));
             } else if ("Base58".equals(mode)) {
-                converted = converted + tryToString(() -> Base58BitcoinCodec.INSTANCE.encode(uuid));
+                converted = converted + tryToString(() -> Base58BtcCodec.INSTANCE.encode(uuid));
             } else if ("Base62".equals(mode)) {
                 converted = converted + tryToString(() -> Base62Codec.INSTANCE.encode(uuid));
             } else if ("Base64".equals(mode)) {

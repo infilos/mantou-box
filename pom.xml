@@ -6,7 +6,7 @@
 
     <groupId>com.infilos</groupId>
     <artifactId>mantou-box</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
         <java.release>17</java.release>
@@ -15,13 +15,13 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javafx.version>18-ea+7</javafx.version>
+        <javafx.version>18-ea+9</javafx.version>
         <jvm.modules>
             java.base,jdk.management,java.naming,java.sql,java.transaction.xa,java.xml,jdk.unsupported,java.management,java.datatransfer,java.desktop,java.security.jgss,java.xml.crypto,jdk.javadoc,javafx.media,javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.swing,javafx.web,java.logging,jdk.charsets,java.net.http,java.prefs,jdk.crypto.ec,jdk.crypto.cryptoki,jdk.localedata,java.compiler,jdk.net,java.instrument,java.scripting,java.rmi
         </jvm.modules>
         <app.name>MantouBox</app.name>
         <app.version>${project.version}</app.version>
-        <main.class>com.infilos.mantou.MantouBoxApplication</main.class>
+        <main.class>com.infilos.mantou.MantouBoxBootstrap</main.class>
         <maven.build.timestamp.format>yy.ww.WWkkmm</maven.build.timestamp.format>
         <windows.vendor>infilos.com</windows.vendor>
         <windows.upgrade.uuid>628e757d-586a-4d77-90bb-5c0f806746cc</windows.upgrade.uuid>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>com.tangorabox</groupId>
             <artifactId>reactive-desk-fx</artifactId>
-            <version>1.0</version>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>
@@ -145,13 +145,13 @@
         <dependency>
             <groupId>com.dlsc.gemsfx</groupId>
             <artifactId>gemsfx</artifactId>
-            <version>1.33.0</version>
+            <version>1.35.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.dustinredmond.fxalert</groupId>
-            <artifactId>FXAlert</artifactId>
-            <version>2.4.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.dustinredmond.fxalert</groupId>-->
+<!--            <artifactId>FXAlert</artifactId>-->
+<!--            <version>2.4.1</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.dustinredmond.fxtrayicon</groupId>
             <artifactId>FXTrayIcon</artifactId>
@@ -160,18 +160,18 @@
         <dependency>
             <groupId>com.github.f4b6a3</groupId>
             <artifactId>uuid-creator</artifactId>
-            <version>4.3.1</version>
+            <version>4.4.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.fxmisc.richtext</groupId>
-            <artifactId>richtextfx</artifactId>
-            <version>0.10.7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>31.0.1-jre</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.fxmisc.richtext</groupId>-->
+<!--            <artifactId>richtextfx</artifactId>-->
+<!--            <version>0.10.7</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--            <version>31.0.1-jre</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.github.sisyphsu</groupId>
             <artifactId>dateparser</artifactId>
@@ -181,11 +181,6 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.15</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.multiformats</groupId>
-            <artifactId>java-multibase</artifactId>
-            <version>v1.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -516,6 +511,17 @@
     </profiles>
 
     <repositories>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <name>Sonatype Snapshot Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>jcenter</id>
             <name>jcenter</name>
