@@ -283,9 +283,9 @@
 <!--                        <list>com.infilos.mantou.views.setting.SettingView</list>-->
 <!--                        <list>com.infilos.mantou.views.setting.h2.H2View</list>-->
                     </reflectionList>
-                    <graalvmHome>
-                        /Users/luoning/.sdkman/candidates/java/22.0.0.2.r17-grl
-                    </graalvmHome>
+<!--                    <graalvmHome>-->
+<!--                        /Users/luoning/.sdkman/candidates/java/22.0.0.2.r17-grl-->
+<!--                    </graalvmHome>-->
                     <nativeImageArgs>
                         <arg>--allow-incomplete-classpath</arg>
                     </nativeImageArgs>
