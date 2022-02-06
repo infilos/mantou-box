@@ -6,7 +6,7 @@
 
     <groupId>com.infilos</groupId>
     <artifactId>mantou-box</artifactId>
-    <version>1.1</version>
+    <version>1.0</version>
 
     <properties>
         <java.release>17</java.release>
@@ -15,14 +15,14 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javafx.version>18-ea+9</javafx.version>
+        <javafx.version>17.0.2</javafx.version>
         <jvm.modules>
             java.base,jdk.management,java.naming,java.sql,java.transaction.xa,java.xml,jdk.unsupported,java.management,java.datatransfer,java.desktop,java.security.jgss,java.xml.crypto,jdk.javadoc,javafx.media,javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.swing,javafx.web,java.logging,jdk.charsets,java.net.http,java.prefs,jdk.crypto.ec,jdk.crypto.cryptoki,jdk.localedata,java.compiler,jdk.net,java.instrument,java.scripting,java.rmi
         </jvm.modules>
         <app.name>MantouBox</app.name>
         <app.version>${project.version}</app.version>
-        <main.class>com.infilos.mantou.MantouBoxBootstrap</main.class>
-        <maven.build.timestamp.format>yy.ww.WWkkmm</maven.build.timestamp.format>
+        <main.class>com.infilos.mantou.MantouBoxApplication</main.class>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <windows.vendor>infilos.com</windows.vendor>
         <windows.upgrade.uuid>628e757d-586a-4d77-90bb-5c0f806746cc</windows.upgrade.uuid>
         <exec.plugin.version>1.6.0</exec.plugin.version>
@@ -33,31 +33,26 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -68,7 +63,6 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>${javafx.version}</version>
-            <classifier>${platform}</classifier>
         </dependency>
         
         <dependency>
@@ -246,103 +240,66 @@
                 <targetPath>${project.build.directory}/config</targetPath>
             </resource>
         </resources>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-            </testResource>
-            <testResource>
-                <directory>${project.build.testSourceDirectory}</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
 
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>properties-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>write-project-properties</goal>
-                        </goals>
-                        <configuration>
-                            <outputFile>${project.build.outputDirectory}/properties-from-pom.properties</outputFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <excludeGroupIds>org.openjfx</excludeGroupIds>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
-                    <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
-                <executions>
-                    <execution>
-                        <!-- Usage: mvn clean javafx:run -->
-                        <id>default-cli</id>
-                        <configuration>
-                            <mainClass>${main.class}</mainClass>
-                            <options>
-                                <option>-XX:+UseZGC</option>
-                                <option>--add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED</option>
-                                <option>--add-modules jdk.incubator.foreign --enable-native-access=ALL-UNNAMED</option>
-                                <option>--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED</option>
-                                <option>--add-opens=javafx.controls/javafx.scene.control.skin=ALL-UNNAMED</option>
-                                <option>--add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.base/com.sun.javafx.event=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED</option>
-                                <option>--add-opens=java.base/java.net=ALL-UNNAMED</option>
-                            </options>
-                        </configuration>
-                    </execution>
-                </executions>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>com.gluonhq</groupId>
+                <artifactId>gluonfx-maven-plugin</artifactId>
+                <version>1.0.12</version>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <target>${gluonfx.target}</target>
+                    <reflectionList>
+                        <list>com.infilos.mantou.views.convert.ConvertModule</list>
+                        <list>com.infilos.mantou.views.convert.ConvertView</list>
+                        <list>com.infilos.mantou.views.convert.basex.BaseXView</list>
+                        <list>com.infilos.mantou.views.convert.md5text.MD5TextView</list>
+                        <list>com.infilos.mantou.views.convert.md5file.MD5FileView</list>
+                        <list>com.infilos.mantou.views.datetime.DatetimeModule</list>
+                        <list>com.infilos.mantou.views.datetime.DatetimeView</list>
+                        <list>com.infilos.mantou.views.datetime.parser.DatetimeParserView</list>
+                        <list>com.infilos.mantou.views.datetime.converter.TimestampConverterView</list>
+                        <list>com.infilos.mantou.views.textgen.TextGenModule</list>
+                        <list>com.infilos.mantou.views.textgen.TextGenView</list>
+                        <list>com.infilos.mantou.views.textgen.uuid.UUIDGeneratorView</list>
+                        <list>com.infilos.mantou.views.textgen.password.PasswordGeneratorView</list>
+<!--                        <list>com.infilos.mantou.views.setting.SettingModule</list>-->
+<!--                        <list>com.infilos.mantou.views.setting.SettingView</list>-->
+<!--                        <list>com.infilos.mantou.views.setting.h2.H2View</list>-->
+                    </reflectionList>
+                    <graalvmHome>
+                        /Users/luoning/.sdkman/candidates/java/22.0.0.2.r17-grl
+                    </graalvmHome>
+                    <nativeImageArgs>
+                        <arg>--allow-incomplete-classpath</arg>
+                    </nativeImageArgs>
+                    <releaseConfiguration>
+                        <vendor>infilos</vendor>
+                        <bundleName>MantouBox</bundleName>
+                        <description>MantouBox</description>
+                        <bundleVersion>1.0</bundleVersion>
+                        <bundleShortVersion>1.0</bundleShortVersion>
+                        <skipSigning>true</skipSigning>
+                        <packageType>${package.type}</packageType>
+                    </releaseConfiguration>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -350,20 +307,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <release>${maven.compiler.target}</release>
-                        <fork>true</fork>
-                        <compilerArgs>
-                            <arg>-J--illegal-access=permit</arg>
-                            <arg>--add-exports=javafx.graphics/com.sun.javafx.iio=org.librawfx</arg>
-                            <arg>--add-exports=javafx.graphics/com.sun.javafx.iio.common=org.librawfx</arg>
-                        </compilerArgs>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -404,109 +347,25 @@
         </pluginManagement>
     </build>
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.8.1</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                            <report>property-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-                <configuration>
-                    <processDependencyManagementTransitive>false</processDependencyManagementTransitive>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
-
     <profiles>
         <profile>
-            <id>unix-active</id>
+            <id>desktop</id>
             <activation>
-                <os>
-                    <family>unix</family>
-                </os>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <platform>linux</platform>
+                <package.type>app</package.type>
+                <gluonfx.target>host</gluonfx.target>
             </properties>
         </profile>
         <profile>
-            <id>windows-active</id>
-            <activation>
-                <os>
-                    <family>windows</family>
-                </os>
-            </activation>
+            <id>mac</id>
             <properties>
-                <platform>win</platform>
+                <package.type>pkg</package.type>
+                <mac.app.store>false</mac.app.store>
+                <bundle.version>${project.version}</bundle.version>
+                <bundle.short.version>${project.version}</bundle.short.version>
             </properties>
-        </profile>
-        <profile>
-            <id>mac-active</id>
-            <activation>
-                <os>
-                    <family>mac</family>
-                </os>
-            </activation>
-            <properties>
-                <platform>mac</platform>
-            </properties>
-        </profile>
-        <profile>
-            <id>package</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>io.github.wiverson</groupId>
-                        <artifactId>jtoolprovider-plugin</artifactId>
-                        <version>1.0.34</version>
-                        <executions>
-                            <execution>
-                                <id>jlink</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>java-tool</goal>
-                                </goals>
-                                <configuration>
-                                    <toolName>jlink</toolName>
-                                    <removeDirectories>${project.build.directory}/jvm-image/</removeDirectories>
-                                    <modulePath>${project.basedir}/jmods/${platform}-javafx/javafx-jmods-${javafx.version}/
-                                    </modulePath>
-                                    <addModules>${jvm.modules}</addModules>
-                                    <output>${project.build.directory}/jvm-image</output>
-                                    <args>
-                                        <arg>--strip-native-commands</arg>
-                                        <arg>--no-header-files</arg>
-                                        <arg>--strip-debug</arg>
-                                        <arg>--no-man-pages</arg>
-                                        <arg>--compress=2</arg>
-                                    </args>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>jpackage</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>java-tool</goal>
-                                </goals>
-                                <configuration>
-                                    <toolName>jpackage</toolName>
-                                    <removeDirectories>${project.build.directory}/installer-work</removeDirectories>
-                                    <args>@${project.build.directory}/config/${platform}-jpackage.txt</args>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 
@@ -534,6 +393,10 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>Gluon</id>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
         </repository>
     </repositories>
 

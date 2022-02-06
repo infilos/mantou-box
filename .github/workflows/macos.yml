@@ -1,0 +1,43 @@
+name: MacOS
+
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Gluon's GraalVM
+        uses: gluonhq/setup-graalvm@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Gluon Build and Package
+        id: outputfile
+        run: mvn -Pmac gluonfx:build gluonfx:package
+
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.2.3
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Upload Release Asset OSX
+        id: upload-release-asset
+        uses: csexton/release-asset-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          pattern: ./target/gluonfx/x86_64-darwin/*.pkg
+          release-url: ${{ steps.get_release.outputs.upload_url }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

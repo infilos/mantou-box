@@ -9,10 +9,14 @@ import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.stage.Stage;
 import org.reflections.Reflections;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
 
 import javax.inject.Singleton;
 import java.util.Arrays;
 import java.util.Set;
+
+import static org.reflections.scanners.Scanners.SubTypes;
 
 @SuppressWarnings("rawtypes")
 public class MantouBoxModule extends AbstractModule {
@@ -31,9 +35,12 @@ public class MantouBoxModule extends AbstractModule {
     protected void configure() {
         // allow view inject workbench instance
         bind(Workbench.class).toInstance(workbench);
-        
+
         // scan view and module
-        Reflections reflections = new Reflections("com.infilos.mantou.views");
+        Reflections reflections = new Reflections(new ConfigurationBuilder()
+            .setUrls(ClasspathHelper.forJavaClassPath())
+            .addScanners(SubTypes)
+        );
         Set<Class<? extends WorkView>> views = reflections.getSubTypesOf(WorkView.class);
         Set<Class<? extends WorkModule>> modules = reflections.getSubTypesOf(WorkModule.class);
 

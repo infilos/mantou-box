@@ -26,17 +26,21 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
     @Inject
     private ApplicationContext context;
     
-    @Inject
-    private SettingModule settingModule;
-    
+    //@Inject
+    //private SettingModule settingModule;
+
     @Inject
     private TextGenModule textGenModule;
-    
+
     @Inject
     private DatetimeModule datetimeModule;
-    
+
     @Inject
     private ConvertModule convertModule;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     protected Collection<Module> getApplicationModules(Stage mainStage) {
@@ -49,7 +53,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         
         // start add modules
         workbench.getModules().add(new HelloWorldModule());
-        workbench.getModules().add(settingModule);
+        //workbench.getModules().add(settingModule);
         workbench.getModules().add(datetimeModule);
         workbench.getModules().add(textGenModule);
         workbench.getModules().add(convertModule);
