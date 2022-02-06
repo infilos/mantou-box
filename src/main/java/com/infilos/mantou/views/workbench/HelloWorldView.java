@@ -14,7 +14,7 @@ public class HelloWorldView extends BorderPane implements AwareResource {
     public HelloWorldView() {
         getStyleClass().add("module-background");
         
-        Text title = new Text("Wellcome to Manto Box!");
+        Text title = new Text("Wellcome to Mantou Box!");
         Text descr = new Text("More features are working in progress!");
         title.setStyle("-fx-font: 24 Ubuntu;");
         descr.setStyle("-fx-font: 18 Ubuntu;");

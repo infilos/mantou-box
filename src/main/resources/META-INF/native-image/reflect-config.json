@@ -1,0 +1,4379 @@
+[
+{
+  "name":"[D"
+},
+{
+  "name":"ch.qos.logback.classic.PatternLayout",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.db.names.DBNameResolver"
+},
+{
+  "name":"ch.qos.logback.classic.encoder.PatternLayoutEncoder",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.filter.ThresholdFilter",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setLevel","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.classic.jmx.JMXConfiguratorMBean"
+},
+{
+  "name":"ch.qos.logback.classic.pattern.Abbreviator"
+},
+{
+  "name":"ch.qos.logback.classic.pattern.DateConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LevelConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LineOfCallerConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LineSeparatorConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.LoggerConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.MessageConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.pattern.ThreadConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.classic.selector.ContextSelector"
+},
+{
+  "name":"ch.qos.logback.classic.spi.IThrowableProxy"
+},
+{
+  "name":"ch.qos.logback.classic.spi.LoggerContextListener"
+},
+{
+  "name":"ch.qos.logback.core.ConsoleAppender",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.core.OutputStreamAppender",
+  "methods":[
+    {"name":"setEncoder","parameterTypes":["ch.qos.logback.core.encoder.Encoder"] }, 
+    {"name":"setLayout","parameterTypes":["ch.qos.logback.core.Layout"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.core.UnsynchronizedAppenderBase",
+  "methods":[{"name":"addFilter","parameterTypes":["ch.qos.logback.core.filter.Filter"] }]
+},
+{
+  "name":"ch.qos.logback.core.encoder.LayoutWrappingEncoder",
+  "methods":[{"name":"setParent","parameterTypes":["ch.qos.logback.core.spi.ContextAware"] }]
+},
+{
+  "name":"ch.qos.logback.core.html.CssBuilder"
+},
+{
+  "name":"ch.qos.logback.core.html.IThrowableRenderer"
+},
+{
+  "name":"ch.qos.logback.core.joran.event.InPlayListener"
+},
+{
+  "name":"ch.qos.logback.core.joran.event.SaxEvent"
+},
+{
+  "name":"ch.qos.logback.core.joran.event.stax.StaxEvent"
+},
+{
+  "name":"ch.qos.logback.core.joran.spi.ElementPath"
+},
+{
+  "name":"ch.qos.logback.core.joran.spi.RuleStore"
+},
+{
+  "name":"ch.qos.logback.core.net.ObjectWriter"
+},
+{
+  "name":"ch.qos.logback.core.net.SocketConnector$ExceptionHandler"
+},
+{
+  "name":"ch.qos.logback.core.net.server.ClientVisitor"
+},
+{
+  "name":"ch.qos.logback.core.net.ssl.SSLComponent"
+},
+{
+  "name":"ch.qos.logback.core.net.ssl.SSLConfigurable"
+},
+{
+  "name":"ch.qos.logback.core.net.ssl.SSLContextFactoryBean"
+},
+{
+  "name":"ch.qos.logback.core.pattern.Converter"
+},
+{
+  "name":"ch.qos.logback.core.pattern.PatternLayoutBase",
+  "methods":[{"name":"setPattern","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"ch.qos.logback.core.pattern.PatternLayoutEncoderBase",
+  "methods":[{"name":"setPattern","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"ch.qos.logback.core.pattern.PostCompileProcessor"
+},
+{
+  "name":"ch.qos.logback.core.pattern.parser.Node"
+},
+{
+  "name":"ch.qos.logback.core.pattern.util.IEscapeUtil"
+},
+{
+  "name":"ch.qos.logback.core.rolling.RollingFileAppender",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setFile","parameterTypes":["java.lang.String"] }, 
+    {"name":"setRollingPolicy","parameterTypes":["ch.qos.logback.core.rolling.RollingPolicy"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.core.rolling.RollingPolicyBase",
+  "methods":[
+    {"name":"setFileNamePattern","parameterTypes":["java.lang.String"] }, 
+    {"name":"setParent","parameterTypes":["ch.qos.logback.core.FileAppender"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setMaxFileSize","parameterTypes":["ch.qos.logback.core.util.FileSize"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.core.rolling.TimeBasedRollingPolicy",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setMaxHistory","parameterTypes":["int"] }, 
+    {"name":"setTimeBasedFileNamingAndTriggeringPolicy","parameterTypes":["ch.qos.logback.core.rolling.TimeBasedFileNamingAndTriggeringPolicy"] }
+  ]
+},
+{
+  "name":"ch.qos.logback.core.rolling.helper.DateTokenConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.core.rolling.helper.IntegerTokenConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"ch.qos.logback.core.rolling.helper.MonoTypedConverter"
+},
+{
+  "name":"ch.qos.logback.core.sift.AppenderFactory"
+},
+{
+  "name":"ch.qos.logback.core.spi.AbstractComponentTracker$RemovalPredicator"
+},
+{
+  "name":"ch.qos.logback.core.spi.AppenderAttachable"
+},
+{
+  "name":"ch.qos.logback.core.spi.ComponentTracker"
+},
+{
+  "name":"ch.qos.logback.core.spi.ContextAware"
+},
+{
+  "name":"ch.qos.logback.core.spi.DeferredProcessingAware"
+},
+{
+  "name":"ch.qos.logback.core.spi.FilterAttachable"
+},
+{
+  "name":"ch.qos.logback.core.spi.LifeCycle"
+},
+{
+  "name":"ch.qos.logback.core.spi.PreSerializationTransformer"
+},
+{
+  "name":"ch.qos.logback.core.spi.PropertyContainer"
+},
+{
+  "name":"ch.qos.logback.core.status.Status"
+},
+{
+  "name":"ch.qos.logback.core.status.StatusListener"
+},
+{
+  "name":"ch.qos.logback.core.status.StatusManager"
+},
+{
+  "name":"ch.qos.logback.core.util.DelayStrategy"
+},
+{
+  "name":"ch.qos.logback.core.util.FileSize",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"ch.qos.logback.core.util.InvocationGate"
+},
+{
+  "name":"com.dlsc.formsfx.model.structure.Element"
+},
+{
+  "name":"com.dlsc.formsfx.model.structure.FormElement"
+},
+{
+  "name":"com.dlsc.formsfx.model.structure.Group"
+},
+{
+  "name":"com.dlsc.formsfx.model.util.TranslationService"
+},
+{
+  "name":"com.dlsc.formsfx.model.validators.Validator"
+},
+{
+  "name":"com.dlsc.formsfx.view.util.ViewMixin"
+},
+{
+  "name":"com.dlsc.gemsfx.SearchField$SearchFieldSuggestionRequest"
+},
+{
+  "name":"com.dlsc.gemsfx.incubator.templatepane.VisibilityPolicy"
+},
+{
+  "name":"com.dlsc.gemsfx.richtextarea.RTElement"
+},
+{
+  "name":"com.dlsc.preferencesfx.util.StorageHandler"
+},
+{
+  "name":"com.dlsc.preferencesfx.view.Presenter"
+},
+{
+  "name":"com.dlsc.preferencesfx.view.View"
+},
+{
+  "name":"com.dlsc.workbenchfx.Workbench",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.dlsc.workbenchfx.model.WorkbenchModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.dlsc.workbenchfx.view.Presenter"
+},
+{
+  "name":"com.dlsc.workbenchfx.view.View"
+},
+{
+  "name":"com.fasterxml.jackson.annotation.JacksonAnnotationValue"
+},
+{
+  "name":"com.fasterxml.jackson.annotation.ObjectIdResolver"
+},
+{
+  "name":"com.fasterxml.jackson.core.FormatFeature"
+},
+{
+  "name":"com.fasterxml.jackson.core.JsonStreamContext"
+},
+{
+  "name":"com.fasterxml.jackson.core.PrettyPrinter"
+},
+{
+  "name":"com.fasterxml.jackson.core.SerializableString"
+},
+{
+  "name":"com.fasterxml.jackson.core.TSFBuilder"
+},
+{
+  "name":"com.fasterxml.jackson.core.TreeCodec"
+},
+{
+  "name":"com.fasterxml.jackson.core.TreeNode"
+},
+{
+  "name":"com.fasterxml.jackson.core.Versioned"
+},
+{
+  "name":"com.fasterxml.jackson.core.async.NonBlockingInputFeeder"
+},
+{
+  "name":"com.fasterxml.jackson.core.filter.TokenFilter"
+},
+{
+  "name":"com.fasterxml.jackson.core.format.InputAccessor"
+},
+{
+  "name":"com.fasterxml.jackson.core.sym.Name"
+},
+{
+  "name":"com.fasterxml.jackson.core.type.ResolvedType"
+},
+{
+  "name":"com.fasterxml.jackson.core.util.DefaultPrettyPrinter$Indenter"
+},
+{
+  "name":"com.fasterxml.jackson.core.util.Instantiatable"
+},
+{
+  "name":"com.fasterxml.jackson.databind.AbstractTypeResolver"
+},
+{
+  "name":"com.fasterxml.jackson.databind.BeanDescription"
+},
+{
+  "name":"com.fasterxml.jackson.databind.DatabindContext"
+},
+{
+  "name":"com.fasterxml.jackson.databind.InjectableValues"
+},
+{
+  "name":"com.fasterxml.jackson.databind.JsonSerializable"
+},
+{
+  "name":"com.fasterxml.jackson.databind.KeyDeserializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.Module$SetupContext"
+},
+{
+  "name":"com.fasterxml.jackson.databind.cfg.ConfigFeature"
+},
+{
+  "name":"com.fasterxml.jackson.databind.cfg.ConfigOverride"
+},
+{
+  "name":"com.fasterxml.jackson.databind.cfg.ContextAttributes"
+},
+{
+  "name":"com.fasterxml.jackson.databind.cfg.MapperBuilder"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.ContextualDeserializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.DeserializerFactory"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.Deserializers"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.KeyDeserializers"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.NullValueProvider"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.ResolvableDeserializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.ValueInstantiator"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.ValueInstantiator$Gettable"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.ValueInstantiators"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.impl.PropertyValue"
+},
+{
+  "name":"com.fasterxml.jackson.databind.deser.impl.ReadableObjectId$Referring"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7Handlers"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7Support"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.Annotated"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.AnnotationCollector"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.ClassIntrospector"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.ClassIntrospector$MixInResolver"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.CollectorBase"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.POJOPropertyBuilder$WithMember"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.TypeResolutionContext"
+},
+{
+  "name":"com.fasterxml.jackson.databind.introspect.VisibilityChecker"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonFormatVisitors.JsonAnyFormatVisitor"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatVisitable"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatVisitorWithSerializerProvider"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonFormatVisitors.JsonNullFormatVisitor"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormatVisitor"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsonschema.SchemaAware"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator$NameMatcher"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator$TypeMatcher"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.SubtypeResolver"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.TypeDeserializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.TypeIdResolver"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.TypeResolverBuilder"
+},
+{
+  "name":"com.fasterxml.jackson.databind.jsontype.TypeSerializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.node.JsonNodeCreator"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.BeanPropertyFilter"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.BeanSerializerModifier"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.ContextualSerializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.FilterProvider"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.PropertyFilter"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.ResolvableSerializer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.SerializerFactory"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.Serializers"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ser.impl.PropertySerializerMap"
+},
+{
+  "name":"com.fasterxml.jackson.databind.type.TypeModifier"
+},
+{
+  "name":"com.fasterxml.jackson.databind.util.Annotations"
+},
+{
+  "name":"com.fasterxml.jackson.databind.util.Converter"
+},
+{
+  "name":"com.fasterxml.jackson.databind.util.NameTransformer"
+},
+{
+  "name":"com.fasterxml.jackson.databind.util.Named"
+},
+{
+  "name":"com.fasterxml.jackson.databind.util.PrimitiveArrayBuilder"
+},
+{
+  "name":"com.github.f4b6a3.uuid.codec.UuidCodec"
+},
+{
+  "name":"com.github.f4b6a3.uuid.factory.AbstTimeBasedFactory$Builder"
+},
+{
+  "name":"com.github.f4b6a3.uuid.factory.NoArgsFactory"
+},
+{
+  "name":"com.github.f4b6a3.uuid.factory.UuidFactory"
+},
+{
+  "name":"com.github.sisyphsu.retree.Node"
+},
+{
+  "name":"com.google.common.base.CommonMatcher"
+},
+{
+  "name":"com.google.common.base.CommonPattern"
+},
+{
+  "name":"com.google.common.base.ExtraObjectsMethodsForWeb"
+},
+{
+  "name":"com.google.common.base.FinalizableReference"
+},
+{
+  "name":"com.google.common.base.FinalizableReferenceQueue$FinalizerLoader"
+},
+{
+  "name":"com.google.common.base.Joiner"
+},
+{
+  "name":"com.google.common.base.MoreObjects$ToStringHelper$ValueHolder"
+},
+{
+  "name":"com.google.common.base.PatternCompiler"
+},
+{
+  "name":"com.google.common.base.Splitter$Strategy"
+},
+{
+  "name":"com.google.common.base.Ticker"
+},
+{
+  "name":"com.google.common.cache.AbstractCache$StatsCounter"
+},
+{
+  "name":"com.google.common.cache.Cache"
+},
+{
+  "name":"com.google.common.cache.CacheBuilderSpec$ValueParser"
+},
+{
+  "name":"com.google.common.cache.CacheLoader"
+},
+{
+  "name":"com.google.common.cache.LocalCache$ValueReference"
+},
+{
+  "name":"com.google.common.cache.LongAddable"
+},
+{
+  "name":"com.google.common.cache.ReferenceEntry"
+},
+{
+  "name":"com.google.common.cache.RemovalListener"
+},
+{
+  "name":"com.google.common.cache.Weigher"
+},
+{
+  "name":"com.google.common.collect.ComparisonChain"
+},
+{
+  "name":"com.google.common.collect.DiscreteDomain"
+},
+{
+  "name":"com.google.common.collect.ForwardingObject"
+},
+{
+  "name":"com.google.common.collect.ImmutableCollection$Builder"
+},
+{
+  "name":"com.google.common.collect.ImmutableMap$Builder"
+},
+{
+  "name":"com.google.common.collect.ImmutableMultimap$Builder"
+},
+{
+  "name":"com.google.common.collect.ImmutableSet$SetBuilderImpl"
+},
+{
+  "name":"com.google.common.collect.Interner"
+},
+{
+  "name":"com.google.common.collect.LinkedHashMultimap$ValueSetLink"
+},
+{
+  "name":"com.google.common.collect.MapDifference"
+},
+{
+  "name":"com.google.common.collect.MapDifference$ValueDifference"
+},
+{
+  "name":"com.google.common.collect.MapMakerInternalMap$InternalEntry"
+},
+{
+  "name":"com.google.common.collect.MapMakerInternalMap$InternalEntryHelper"
+},
+{
+  "name":"com.google.common.collect.MapMakerInternalMap$WeakValueReference"
+},
+{
+  "name":"com.google.common.collect.Maps$EntryTransformer"
+},
+{
+  "name":"com.google.common.collect.Multimap"
+},
+{
+  "name":"com.google.common.collect.MultimapBuilder"
+},
+{
+  "name":"com.google.common.collect.MultimapBuilder$MultimapBuilderWithKeys"
+},
+{
+  "name":"com.google.common.collect.Multiset$Entry"
+},
+{
+  "name":"com.google.common.collect.RangeMap"
+},
+{
+  "name":"com.google.common.collect.RangeSet"
+},
+{
+  "name":"com.google.common.collect.Table"
+},
+{
+  "name":"com.google.common.collect.Table$Cell"
+},
+{
+  "name":"com.google.common.collect.TreeTraverser"
+},
+{
+  "name":"com.google.common.escape.Escaper"
+},
+{
+  "name":"com.google.common.eventbus.Dispatcher"
+},
+{
+  "name":"com.google.common.eventbus.EventBus"
+},
+{
+  "name":"com.google.common.eventbus.Subscriber"
+},
+{
+  "name":"com.google.common.eventbus.SubscriberExceptionHandler"
+},
+{
+  "name":"com.google.common.graph.AbstractGraphBuilder"
+},
+{
+  "name":"com.google.common.graph.DirectedGraphConnections$NodeConnection"
+},
+{
+  "name":"com.google.common.graph.GraphConnections"
+},
+{
+  "name":"com.google.common.graph.MapIteratorCache"
+},
+{
+  "name":"com.google.common.graph.NetworkConnections"
+},
+{
+  "name":"com.google.common.graph.PredecessorsFunction"
+},
+{
+  "name":"com.google.common.graph.SuccessorsFunction"
+},
+{
+  "name":"com.google.common.graph.Traverser"
+},
+{
+  "name":"com.google.common.graph.Traverser$Traversal"
+},
+{
+  "name":"com.google.common.hash.HashCode"
+},
+{
+  "name":"com.google.common.hash.HashFunction"
+},
+{
+  "name":"com.google.common.hash.LittleEndianByteArray$LittleEndianBytes"
+},
+{
+  "name":"com.google.common.hash.LongAddable"
+},
+{
+  "name":"com.google.common.hash.PrimitiveSink"
+},
+{
+  "name":"com.google.common.io.BaseEncoding"
+},
+{
+  "name":"com.google.common.io.ByteSink"
+},
+{
+  "name":"com.google.common.io.ByteSource"
+},
+{
+  "name":"com.google.common.io.CharSink"
+},
+{
+  "name":"com.google.common.io.CharSource"
+},
+{
+  "name":"com.google.common.io.Closer$Suppressor"
+},
+{
+  "name":"com.google.common.io.LineBuffer"
+},
+{
+  "name":"com.google.common.io.LineProcessor"
+},
+{
+  "name":"com.google.common.math.LinearTransformation"
+},
+{
+  "name":"com.google.common.math.ToDoubleRounder"
+},
+{
+  "name":"com.google.common.primitives.DoublesMethodsForWeb"
+},
+{
+  "name":"com.google.common.primitives.FloatsMethodsForWeb"
+},
+{
+  "name":"com.google.common.primitives.IntsMethodsForWeb"
+},
+{
+  "name":"com.google.common.primitives.ShortsMethodsForWeb"
+},
+{
+  "name":"com.google.common.reflect.ClassPath$ResourceInfo"
+},
+{
+  "name":"com.google.common.reflect.TypeCapture"
+},
+{
+  "name":"com.google.common.reflect.TypeResolver$TypeTable"
+},
+{
+  "name":"com.google.common.reflect.TypeResolver$WildcardCapturer"
+},
+{
+  "name":"com.google.common.reflect.TypeToken$TypeCollector"
+},
+{
+  "name":"com.google.common.reflect.TypeVisitor"
+},
+{
+  "name":"com.google.common.reflect.Types$ClassOwnership$1LocalClass"
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractFuture",
+  "fields":[
+    {"name":"listeners"}, 
+    {"name":"value"}, 
+    {"name":"waiters"}
+  ]
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractFuture$AtomicHelper"
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractFuture$Waiter",
+  "fields":[
+    {"name":"next"}, 
+    {"name":"thread"}
+  ]
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractScheduledService$Cancellable"
+},
+{
+  "name":"com.google.common.util.concurrent.AbstractScheduledService$Scheduler"
+},
+{
+  "name":"com.google.common.util.concurrent.AggregateFutureState$AtomicHelper"
+},
+{
+  "name":"com.google.common.util.concurrent.AsyncCallable"
+},
+{
+  "name":"com.google.common.util.concurrent.AsyncFunction"
+},
+{
+  "name":"com.google.common.util.concurrent.ClosingFuture$AsyncClosingFunction"
+},
+{
+  "name":"com.google.common.util.concurrent.ClosingFuture$Combiner"
+},
+{
+  "name":"com.google.common.util.concurrent.ClosingFuture$Combiner$AsyncCombiningCallable"
+},
+{
+  "name":"com.google.common.util.concurrent.ClosingFuture$Combiner$CombiningCallable"
+},
+{
+  "name":"com.google.common.util.concurrent.CycleDetectingLockFactory"
+},
+{
+  "name":"com.google.common.util.concurrent.CycleDetectingLockFactory$CycleDetectingLock"
+},
+{
+  "name":"com.google.common.util.concurrent.CycleDetectingLockFactory$Policy"
+},
+{
+  "name":"com.google.common.util.concurrent.FutureCallback"
+},
+{
+  "name":"com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator"
+},
+{
+  "name":"com.google.common.util.concurrent.GwtFuturesCatchingSpecialization"
+},
+{
+  "name":"com.google.common.util.concurrent.ListenerCallQueue$Event"
+},
+{
+  "name":"com.google.common.util.concurrent.Monitor$Guard"
+},
+{
+  "name":"com.google.common.util.concurrent.RateLimiter"
+},
+{
+  "name":"com.google.common.util.concurrent.RateLimiter$SleepingStopwatch"
+},
+{
+  "name":"com.google.common.util.concurrent.Service"
+},
+{
+  "name":"com.google.common.util.concurrent.Service$Listener"
+},
+{
+  "name":"com.google.common.util.concurrent.ServiceManagerBridge"
+},
+{
+  "name":"com.google.common.util.concurrent.Striped"
+},
+{
+  "name":"com.google.common.util.concurrent.TimeLimiter"
+},
+{
+  "name":"com.google.common.util.concurrent.internal.InternalFutureFailureAccess"
+},
+{
+  "name":"com.google.gson.FieldNamingStrategy"
+},
+{
+  "name":"com.google.gson.JsonDeserializationContext"
+},
+{
+  "name":"com.google.gson.JsonElement"
+},
+{
+  "name":"com.google.gson.JsonSerializationContext"
+},
+{
+  "name":"com.google.gson.TypeAdapter"
+},
+{
+  "name":"com.google.gson.TypeAdapterFactory"
+},
+{
+  "name":"com.google.gson.internal.JsonReaderInternalAccess"
+},
+{
+  "name":"com.google.gson.internal.ObjectConstructor"
+},
+{
+  "name":"com.google.gson.internal.UnsafeAllocator"
+},
+{
+  "name":"com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField"
+},
+{
+  "name":"com.google.gson.internal.reflect.ReflectionAccessor"
+},
+{
+  "name":"com.google.gson.reflect.TypeToken"
+},
+{
+  "name":"com.google.inject.AbstractModule",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.Binder"
+},
+{
+  "name":"com.google.inject.Injector"
+},
+{
+  "name":"com.google.inject.Key$AnnotationStrategy"
+},
+{
+  "name":"com.google.inject.MembersInjector"
+},
+{
+  "name":"com.google.inject.Module"
+},
+{
+  "name":"com.google.inject.Scope"
+},
+{
+  "name":"com.google.inject.binder.AnnotatedConstantBindingBuilder"
+},
+{
+  "name":"com.google.inject.binder.AnnotatedElementBuilder"
+},
+{
+  "name":"com.google.inject.binder.ConstantBindingBuilder"
+},
+{
+  "name":"com.google.inject.binder.ScopedBindingBuilder"
+},
+{
+  "name":"com.google.inject.internal.AbstractBindingBuilder"
+},
+{
+  "name":"com.google.inject.internal.Annotations",
+  "queriedMethods":[{"name":"determineAnnotationToStringConfig","parameterTypes":[] }]
+},
+{
+  "name":"com.google.inject.internal.BytecodeGen$EnhancerBuilder"
+},
+{
+  "name":"com.google.inject.internal.ConstructionProxy"
+},
+{
+  "name":"com.google.inject.internal.ConstructionProxyFactory"
+},
+{
+  "name":"com.google.inject.internal.CreationListener"
+},
+{
+  "name":"com.google.inject.internal.CycleDetectingLock"
+},
+{
+  "name":"com.google.inject.internal.DelayedInitialize"
+},
+{
+  "name":"com.google.inject.internal.FailableCache"
+},
+{
+  "name":"com.google.inject.internal.Initializable"
+},
+{
+  "name":"com.google.inject.internal.InjectorImpl$MethodInvoker"
+},
+{
+  "name":"com.google.inject.internal.InjectorShell$RootModule",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.internal.InternalFactory"
+},
+{
+  "name":"com.google.inject.internal.InternalProviderInstanceBindingImpl$CyclicFactory",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.internal.InternalProviderInstanceBindingImpl$Factory",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.internal.KotlinSupportInterface"
+},
+{
+  "name":"com.google.inject.internal.Lookups"
+},
+{
+  "name":"com.google.inject.internal.Messages$Converter"
+},
+{
+  "name":"com.google.inject.internal.MoreTypes$CompositeType"
+},
+{
+  "name":"com.google.inject.internal.ProviderMethod",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.internal.ProviderMethod$ReflectionProviderMethod",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.internal.ProvisionListenerStackCallback$ProvisionCallback"
+},
+{
+  "name":"com.google.inject.internal.Scoping"
+},
+{
+  "name":"com.google.inject.internal.SingleMemberInjector"
+},
+{
+  "name":"com.google.inject.internal.aop.AbstractGlueGenerator"
+},
+{
+  "name":"com.google.inject.internal.aop.ClassDefiner"
+},
+{
+  "name":"com.google.inject.internal.asm.$AnnotationVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$ClassVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$FieldVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$Frame"
+},
+{
+  "name":"com.google.inject.internal.asm.$MethodVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$ModuleVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$RecordComponentVisitor"
+},
+{
+  "name":"com.google.inject.internal.asm.$Symbol"
+},
+{
+  "name":"com.google.inject.matcher.Matcher"
+},
+{
+  "name":"com.google.inject.multibindings.MapBinderBinding"
+},
+{
+  "name":"com.google.inject.multibindings.MultibinderBinding"
+},
+{
+  "name":"com.google.inject.multibindings.OptionalBinderBinding"
+},
+{
+  "name":"com.google.inject.spi.BindingScopingVisitor"
+},
+{
+  "name":"com.google.inject.spi.BindingSourceRestriction$PermitMap"
+},
+{
+  "name":"com.google.inject.spi.BindingTargetVisitor"
+},
+{
+  "name":"com.google.inject.spi.Element"
+},
+{
+  "name":"com.google.inject.spi.ElementVisitor"
+},
+{
+  "name":"com.google.inject.spi.HasDependencies"
+},
+{
+  "name":"com.google.inject.spi.InjectionPoint$InjectableMember"
+},
+{
+  "name":"com.google.inject.spi.ModuleAnnotatedMethodScanner"
+},
+{
+  "name":"com.google.inject.spi.ProvisionListener$ProvisionInvocation"
+},
+{
+  "name":"com.google.inject.spi.TypeConverter"
+},
+{
+  "name":"com.google.inject.spi.TypeEncounter"
+},
+{
+  "name":"com.google.inject.spi.TypeListener"
+},
+{
+  "name":"com.google.inject.util.Modules$EmptyModule",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.google.inject.util.Modules$OverriddenModuleBuilder"
+},
+{
+  "name":"com.infilos.api.Result"
+},
+{
+  "name":"com.infilos.mantou.ApplicationContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":["javafx.stage.Stage","javafx.application.HostServices"] }]
+},
+{
+  "name":"com.infilos.mantou.MantouBoxApplication",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"main","parameterTypes":["java.lang.String[]"] }
+  ]
+},
+{
+  "name":"com.infilos.mantou.MantouBoxModule",
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"provideHostService","parameterTypes":[] }, 
+    {"name":"provideMainStage","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.infilos.mantou.api.WorkModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.infilos.mantou.controls.NotifySupport"
+},
+{
+  "name":"com.infilos.mantou.controls.TabPaneSupport"
+},
+{
+  "name":"com.infilos.mantou.controls.TooltipSupport"
+},
+{
+  "name":"com.infilos.mantou.utils.AwareResource"
+},
+{
+  "name":"com.infilos.mantou.views.convert.ConvertModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.convert.ConvertModule$$FastClassByGuice$$11755452",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.convert.ConvertView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.convert.ConvertView$$FastClassByGuice$$2435691",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.convert.basex.BaseXView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.convert.basex.BaseXView$$FastClassByGuice$$15386699",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.convert.md5file.MD5FileView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.convert.md5file.MD5FileView$$FastClassByGuice$$17706968",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.convert.md5text.MD5TextView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.convert.md5text.MD5TextView$$FastClassByGuice$$16546150",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.datetime.DatetimeModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.datetime.DatetimeModule$$FastClassByGuice$$10292645",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.datetime.DatetimeView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.datetime.DatetimeView$$FastClassByGuice$$8020568",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.datetime.converter.TimestampConverterView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.datetime.converter.TimestampConverterView$$FastClassByGuice$$18617927",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.datetime.parser.DatetimeParserView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.datetime.parser.DatetimeParserView$$FastClassByGuice$$19334723",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.material.button.ButtonsView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.material.button.ButtonsView$$FastClassByGuice$$5394558",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.material.check_box.CheckBoxView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.material.check_box.CheckBoxView$$FastClassByGuice$$1920876",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.material.date_picker.DatePickerView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.material.date_picker.DatePickerView$$FastClassByGuice$$6810261",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.material.label.LabelsView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.material.label.LabelsView$$FastClassByGuice$$4139961",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.material.text_field.TextFieldsView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.material.text_field.TextFieldsView$$FastClassByGuice$$4516762",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.setting.SettingModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.setting.SettingModule$$FastClassByGuice$$10676217",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.setting.SettingView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.setting.SettingView$$FastClassByGuice$$9115286",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.textgen.TextGenModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.textgen.TextGenModule$$FastClassByGuice$$14002399",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.textgen.TextGenView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.textgen.TextGenView$$FastClassByGuice$$1143",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.textgen.password.PasswordGeneratorView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.textgen.password.PasswordGeneratorView$$FastClassByGuice$$21157251",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.textgen.uuid.UUIDGeneratorView",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.textgen.uuid.UUIDGeneratorView$$FastClassByGuice$$20764980",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.mantou.views.workbench.HelloWorldModule",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "queryAllPublicConstructors":true
+},
+{
+  "name":"com.infilos.mantou.views.workbench.HelloWorldModule$$FastClassByGuice$$12700844",
+  "fields":[{"name":"GUICE$INVOKERS"}]
+},
+{
+  "name":"com.infilos.relax.json.JsonMappers"
+},
+{
+  "name":"com.infilos.utils.Differ"
+},
+{
+  "name":"com.infilos.utils.Loggable"
+},
+{
+  "name":"com.infilos.utils.Pool"
+},
+{
+  "name":"com.infilos.utils.PoolLease"
+},
+{
+  "name":"com.infilos.utils.pool.AbstractPool$PoolItem"
+},
+{
+  "name":"com.infilos.utils.pool.PoolRef"
+},
+{
+  "name":"com.infilos.utils.sizes.MemoryLayoutSpec"
+},
+{
+  "name":"com.squareup.moshi.AdapterMethodsFactory$AdapterMethod"
+},
+{
+  "name":"com.squareup.moshi.ClassFactory"
+},
+{
+  "name":"com.squareup.moshi.JsonAdapter"
+},
+{
+  "name":"com.squareup.moshi.JsonAdapter$Factory"
+},
+{
+  "name":"com.sun.glass.ui.Application"
+},
+{
+  "name":"com.sun.glass.ui.Menu"
+},
+{
+  "name":"com.sun.glass.ui.MenuItem$Callback"
+},
+{
+  "name":"com.sun.glass.ui.Size"
+},
+{
+  "name":"com.sun.glass.ui.View"
+},
+{
+  "name":"com.sun.javafx.font.coretext.CTFactory",
+  "methods":[{"name":"getFactory","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.logging.PrintLogger",
+  "methods":[{"name":"createInstance","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.logging.jfr.JFRPulseLogger",
+  "methods":[{"name":"createInstance","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.reflect.Trampoline",
+  "methods":[{"name":"invoke","parameterTypes":["java.lang.reflect.Method","java.lang.Object","java.lang.Object[]"] }]
+},
+{
+  "name":"com.sun.javafx.scene.control.ReadOnlyUnbackedObservableList"
+},
+{
+  "name":"com.sun.javafx.scene.control.behavior.TableViewBehavior"
+},
+{
+  "name":"com.sun.javafx.scene.control.skin.Utils",
+  "methods":[{"name":"getResource","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.sun.javafx.tk.quantum.QuantumToolkit",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.prism.GraphicsPipeline",
+  "methods":[
+    {"name":"getFontFactory","parameterTypes":[] }, 
+    {"name":"getPipeline","parameterTypes":[] }
+  ]
+},
+{
+  "name":"com.sun.prism.shader.DrawPgram_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.FillPgram_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.FillPgram_LinearGradient_PAD_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.FillRoundRect_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Solid_TextureFirstPassLCD_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Solid_TextureRGB_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Solid_TextureSecondPassLCD_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.prism.shader.Texture_Color_Loader",
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
+},
+{
+  "name":"com.sun.scenario.effect.impl.prism.PrRenderer",
+  "methods":[{"name":"createRenderer","parameterTypes":["com.sun.scenario.effect.FilterContext"] }]
+},
+{
+  "name":"com.sun.scenario.effect.impl.prism.ps.PPSLinearConvolveShadowPeer",
+  "methods":[{"name":"<init>","parameterTypes":["com.sun.scenario.effect.FilterContext","com.sun.scenario.effect.impl.Renderer","java.lang.String"] }]
+},
+{
+  "name":"com.sun.scenario.effect.impl.prism.ps.PPSRenderer",
+  "methods":[{"name":"createRenderer","parameterTypes":["com.sun.scenario.effect.FilterContext"] }]
+},
+{
+  "name":"com.sun.xml.internal.stream.XMLInputFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.tangorabox.reactivedesk.ReactiveApplication",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.tangorabox.reactivedesk.internal.ReactiveDeskModule",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"com.vanniktech.maven.publish.Configurer"
+},
+{
+  "name":"fr.brouillard.oss.cssfx.api.URIToPathConverter"
+},
+{
+  "name":"fr.brouillard.oss.cssfx.impl.log.CSSFXLogger$Logger"
+},
+{
+  "name":"fr.brouillard.oss.cssfx.impl.log.CSSFXLogger$LoggerFactory"
+},
+{
+  "name":"impl.jfxtras.styles.jmetro.FluentButtonSkin",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":["javafx.scene.control.Button"] }]
+},
+{
+  "name":"impl.jfxtras.styles.jmetro.FluentToggleButtonSkin",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":["javafx.scene.control.ToggleButton"] }]
+},
+{
+  "name":"impl.jfxtras.styles.jmetro.TextFieldSkin",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":["javafx.scene.control.TextField"] }]
+},
+{
+  "name":"impl.org.controlsfx.collections.MappingChange$Map"
+},
+{
+  "name":"impl.org.controlsfx.skin.SnapshotViewSkin$SelectionChange"
+},
+{
+  "name":"impl.org.controlsfx.spreadsheet.SpreadsheetHandle"
+},
+{
+  "name":"impl.org.controlsfx.tableview2.filter.parser.Operation"
+},
+{
+  "name":"impl.org.controlsfx.tableview2.filter.parser.aggregate.Aggregator"
+},
+{
+  "name":"impl.org.controlsfx.tools.rectangle.change.Rectangle2DChangeStrategy"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.base.IListView"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.Cell"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.OrientationHelper"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.TargetPosition"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.TargetPositionVisitor"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.VirtualFlowHit"
+},
+{
+  "name":"io.github.palexdev.materialfx.controls.flowless.Virtualized"
+},
+{
+  "name":"io.github.palexdev.materialfx.effects.ripple.base.IRipple"
+},
+{
+  "name":"io.github.palexdev.materialfx.effects.ripple.base.IRippleGenerator"
+},
+{
+  "name":"io.github.palexdev.materialfx.filter.IFilterable"
+},
+{
+  "name":"io.github.palexdev.materialfx.selection.base.IListSelectionModel"
+},
+{
+  "name":"io.github.palexdev.materialfx.selection.base.ITableSelectionModel"
+},
+{
+  "name":"io.github.palexdev.materialfx.selection.base.ITreeSelectionModel"
+},
+{
+  "name":"io.github.palexdev.materialfx.utils.AnimationUtils$AbstractBuilder"
+},
+{
+  "name":"io.github.palexdev.materialfx.validation.base.IMFXValidator"
+},
+{
+  "name":"io.github.palexdev.materialfx.validation.base.Validated"
+},
+{
+  "name":"java.awt.event.ActionListener"
+},
+{
+  "name":"java.awt.event.MouseListener"
+},
+{
+  "name":"java.awt.event.WindowListener"
+},
+{
+  "name":"java.beans.PropertyDescriptor"
+},
+{
+  "name":"java.io.ByteArrayOutputStream"
+},
+{
+  "name":"java.io.Closeable"
+},
+{
+  "name":"java.io.DataInput"
+},
+{
+  "name":"java.io.DataOutput"
+},
+{
+  "name":"java.io.EOFException"
+},
+{
+  "name":"java.io.Externalizable"
+},
+{
+  "name":"java.io.FilePermission"
+},
+{
+  "name":"java.io.FilenameFilter"
+},
+{
+  "name":"java.io.FilterInputStream"
+},
+{
+  "name":"java.io.FilterOutputStream"
+},
+{
+  "name":"java.io.Flushable"
+},
+{
+  "name":"java.io.IOException"
+},
+{
+  "name":"java.io.InputStream"
+},
+{
+  "name":"java.io.LineNumberReader"
+},
+{
+  "name":"java.io.ObjectInputStream"
+},
+{
+  "name":"java.io.ObjectOutputStream"
+},
+{
+  "name":"java.io.OutputStream"
+},
+{
+  "name":"java.io.PipedOutputStream"
+},
+{
+  "name":"java.io.Reader"
+},
+{
+  "name":"java.io.Serializable"
+},
+{
+  "name":"java.io.Writer"
+},
+{
+  "name":"java.lang.Appendable"
+},
+{
+  "name":"java.lang.AutoCloseable"
+},
+{
+  "name":"java.lang.Boolean",
+  "queriedMethods":[{"name":"parseBoolean","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Byte",
+  "queriedMethods":[{"name":"parseByte","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.CharSequence"
+},
+{
+  "name":"java.lang.Character",
+  "methods":[{"name":"isIdeographic","parameterTypes":["int"] }]
+},
+{
+  "name":"java.lang.Class",
+  "methods":[{"name":"getModule","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.ClassCastException"
+},
+{
+  "name":"java.lang.ClassLoader"
+},
+{
+  "name":"java.lang.ClassValue"
+},
+{
+  "name":"java.lang.Cloneable"
+},
+{
+  "name":"java.lang.Comparable"
+},
+{
+  "name":"java.lang.Double",
+  "queriedMethods":[{"name":"parseDouble","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Enum"
+},
+{
+  "name":"java.lang.Error"
+},
+{
+  "name":"java.lang.Exception"
+},
+{
+  "name":"java.lang.Float",
+  "queriedMethods":[{"name":"parseFloat","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.IllegalArgumentException"
+},
+{
+  "name":"java.lang.IllegalStateException"
+},
+{
+  "name":"java.lang.IndexOutOfBoundsException"
+},
+{
+  "name":"java.lang.InheritableThreadLocal"
+},
+{
+  "name":"java.lang.Integer",
+  "queriedMethods":[{"name":"parseInt","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Iterable"
+},
+{
+  "name":"java.lang.Long",
+  "queriedMethods":[{"name":"parseLong","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Module",
+  "queriedMethods":[{"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.NullPointerException"
+},
+{
+  "name":"java.lang.Number"
+},
+{
+  "name":"java.lang.Object",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.Runnable"
+},
+{
+  "name":"java.lang.RuntimeException"
+},
+{
+  "name":"java.lang.RuntimePermission"
+},
+{
+  "name":"java.lang.SecurityManager"
+},
+{
+  "name":"java.lang.Short",
+  "queriedMethods":[{"name":"parseShort","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.String"
+},
+{
+  "name":"java.lang.StringBuilder"
+},
+{
+  "name":"java.lang.Thread"
+},
+{
+  "name":"java.lang.Thread$UncaughtExceptionHandler"
+},
+{
+  "name":"java.lang.ThreadLocal"
+},
+{
+  "name":"java.lang.Throwable"
+},
+{
+  "name":"java.lang.UnsupportedOperationException"
+},
+{
+  "name":"java.lang.annotation.Annotation"
+},
+{
+  "name":"java.lang.invoke.CallSite"
+},
+{
+  "name":"java.lang.ref.PhantomReference"
+},
+{
+  "name":"java.lang.ref.SoftReference"
+},
+{
+  "name":"java.lang.ref.WeakReference"
+},
+{
+  "name":"java.lang.reflect.AnnotatedElement"
+},
+{
+  "name":"java.lang.reflect.GenericArrayType"
+},
+{
+  "name":"java.lang.reflect.InvocationHandler"
+},
+{
+  "name":"java.lang.reflect.Member"
+},
+{
+  "name":"java.lang.reflect.ParameterizedType"
+},
+{
+  "name":"java.lang.reflect.Type"
+},
+{
+  "name":"java.lang.reflect.WildcardType"
+},
+{
+  "name":"java.net.NetPermission"
+},
+{
+  "name":"java.net.ProxySelector"
+},
+{
+  "name":"java.net.SocketPermission"
+},
+{
+  "name":"java.net.URLConnection"
+},
+{
+  "name":"java.net.URLPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "name":"java.net.URLStreamHandler"
+},
+{
+  "name":"java.nio.ByteBuffer",
+  "methods":[{"name":"order","parameterTypes":["java.nio.ByteOrder"] }]
+},
+{
+  "name":"java.nio.ByteOrder",
+  "methods":[{"name":"nativeOrder","parameterTypes":[] }]
+},
+{
+  "name":"java.nio.channels.ByteChannel"
+},
+{
+  "name":"java.nio.channels.FileChannel"
+},
+{
+  "name":"java.nio.channels.FileLock"
+},
+{
+  "name":"java.nio.channels.ReadableByteChannel"
+},
+{
+  "name":"java.nio.channels.WritableByteChannel"
+},
+{
+  "name":"java.nio.file.FileSystemException"
+},
+{
+  "name":"java.security.AllPermission"
+},
+{
+  "name":"java.security.MessageDigest"
+},
+{
+  "name":"java.security.PrivilegedAction"
+},
+{
+  "name":"java.security.PrivilegedExceptionAction"
+},
+{
+  "name":"java.security.SecureClassLoader"
+},
+{
+  "name":"java.security.SecureRandomParameters"
+},
+{
+  "name":"java.security.SecurityPermission"
+},
+{
+  "name":"java.sql.Array"
+},
+{
+  "name":"java.sql.BatchUpdateException"
+},
+{
+  "name":"java.sql.Blob"
+},
+{
+  "name":"java.sql.CallableStatement"
+},
+{
+  "name":"java.sql.Connection"
+},
+{
+  "name":"java.sql.DatabaseMetaData"
+},
+{
+  "name":"java.sql.Driver"
+},
+{
+  "name":"java.sql.NClob"
+},
+{
+  "name":"java.sql.ParameterMetaData"
+},
+{
+  "name":"java.sql.PreparedStatement"
+},
+{
+  "name":"java.sql.ResultSet"
+},
+{
+  "name":"java.sql.ResultSetMetaData"
+},
+{
+  "name":"java.sql.SQLDataException"
+},
+{
+  "name":"java.sql.SQLException"
+},
+{
+  "name":"java.sql.SQLFeatureNotSupportedException"
+},
+{
+  "name":"java.sql.SQLIntegrityConstraintViolationException"
+},
+{
+  "name":"java.sql.SQLInvalidAuthorizationSpecException"
+},
+{
+  "name":"java.sql.SQLNonTransientConnectionException"
+},
+{
+  "name":"java.sql.SQLNonTransientException"
+},
+{
+  "name":"java.sql.SQLSyntaxErrorException"
+},
+{
+  "name":"java.sql.SQLTimeoutException"
+},
+{
+  "name":"java.sql.SQLTransactionRollbackException"
+},
+{
+  "name":"java.sql.SQLTransientException"
+},
+{
+  "name":"java.sql.SQLType"
+},
+{
+  "name":"java.sql.SQLXML"
+},
+{
+  "name":"java.sql.Savepoint"
+},
+{
+  "name":"java.sql.Statement"
+},
+{
+  "name":"java.text.CollationKey"
+},
+{
+  "name":"java.text.Collator"
+},
+{
+  "name":"java.text.DateFormat"
+},
+{
+  "name":"java.text.Format"
+},
+{
+  "name":"java.text.MessageFormat"
+},
+{
+  "name":"java.text.NumberFormat"
+},
+{
+  "name":"java.util.AbstractCollection"
+},
+{
+  "name":"java.util.AbstractList"
+},
+{
+  "name":"java.util.AbstractMap"
+},
+{
+  "name":"java.util.AbstractMap$SimpleImmutableEntry"
+},
+{
+  "name":"java.util.AbstractQueue"
+},
+{
+  "name":"java.util.AbstractSequentialList"
+},
+{
+  "name":"java.util.AbstractSet"
+},
+{
+  "name":"java.util.ArrayList"
+},
+{
+  "name":"java.util.BitSet"
+},
+{
+  "name":"java.util.Collection"
+},
+{
+  "name":"java.util.Comparator"
+},
+{
+  "name":"java.util.Deque"
+},
+{
+  "name":"java.util.Enumeration"
+},
+{
+  "name":"java.util.EventListener"
+},
+{
+  "name":"java.util.GregorianCalendar"
+},
+{
+  "name":"java.util.HashMap"
+},
+{
+  "name":"java.util.HashSet"
+},
+{
+  "name":"java.util.Hashtable"
+},
+{
+  "name":"java.util.IdentityHashMap"
+},
+{
+  "name":"java.util.Iterator"
+},
+{
+  "name":"java.util.LinkedHashMap"
+},
+{
+  "name":"java.util.LinkedList"
+},
+{
+  "name":"java.util.List",
+  "queriedMethods":[{"name":"copyOf","parameterTypes":["java.util.Collection"] }]
+},
+{
+  "name":"java.util.ListIterator"
+},
+{
+  "name":"java.util.Map"
+},
+{
+  "name":"java.util.Map$Entry"
+},
+{
+  "name":"java.util.NavigableMap"
+},
+{
+  "name":"java.util.NavigableSet"
+},
+{
+  "name":"java.util.NoSuchElementException"
+},
+{
+  "name":"java.util.Optional",
+  "queriedMethods":[{"name":"isEmpty","parameterTypes":[] }]
+},
+{
+  "name":"java.util.Properties"
+},
+{
+  "name":"java.util.PropertyPermission"
+},
+{
+  "name":"java.util.Queue"
+},
+{
+  "name":"java.util.Random"
+},
+{
+  "name":"java.util.RandomAccess"
+},
+{
+  "name":"java.util.ResourceBundle"
+},
+{
+  "name":"java.util.Set"
+},
+{
+  "name":"java.util.SortedMap"
+},
+{
+  "name":"java.util.SortedSet"
+},
+{
+  "name":"java.util.Spliterator"
+},
+{
+  "name":"java.util.Spliterator$OfDouble"
+},
+{
+  "name":"java.util.Spliterator$OfInt"
+},
+{
+  "name":"java.util.Spliterator$OfLong"
+},
+{
+  "name":"java.util.Spliterator$OfPrimitive"
+},
+{
+  "name":"java.util.Spliterators$AbstractSpliterator"
+},
+{
+  "name":"java.util.Stack"
+},
+{
+  "name":"java.util.StringTokenizer"
+},
+{
+  "name":"java.util.TimeZone"
+},
+{
+  "name":"java.util.TimerTask"
+},
+{
+  "name":"java.util.TreeMap"
+},
+{
+  "name":"java.util.concurrent.AbstractExecutorService"
+},
+{
+  "name":"java.util.concurrent.BlockingDeque"
+},
+{
+  "name":"java.util.concurrent.BlockingQueue"
+},
+{
+  "name":"java.util.concurrent.Callable"
+},
+{
+  "name":"java.util.concurrent.CompletableFuture"
+},
+{
+  "name":"java.util.concurrent.ConcurrentHashMap"
+},
+{
+  "name":"java.util.concurrent.ConcurrentMap"
+},
+{
+  "name":"java.util.concurrent.CopyOnWriteArrayList"
+},
+{
+  "name":"java.util.concurrent.Executor"
+},
+{
+  "name":"java.util.concurrent.ExecutorService"
+},
+{
+  "name":"java.util.concurrent.Future"
+},
+{
+  "name":"java.util.concurrent.FutureTask"
+},
+{
+  "name":"java.util.concurrent.RunnableFuture"
+},
+{
+  "name":"java.util.concurrent.ScheduledExecutorService"
+},
+{
+  "name":"java.util.concurrent.ScheduledFuture"
+},
+{
+  "name":"java.util.concurrent.Semaphore"
+},
+{
+  "name":"java.util.concurrent.ThreadFactory"
+},
+{
+  "name":"java.util.concurrent.TimeoutException"
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicLong"
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicReference"
+},
+{
+  "name":"java.util.concurrent.atomic.LongAdder"
+},
+{
+  "name":"java.util.concurrent.locks.AbstractOwnableSynchronizer"
+},
+{
+  "name":"java.util.concurrent.locks.Condition"
+},
+{
+  "name":"java.util.concurrent.locks.Lock"
+},
+{
+  "name":"java.util.concurrent.locks.ReadWriteLock"
+},
+{
+  "name":"java.util.concurrent.locks.ReentrantLock"
+},
+{
+  "name":"java.util.concurrent.locks.ReentrantReadWriteLock"
+},
+{
+  "name":"java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock"
+},
+{
+  "name":"java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock"
+},
+{
+  "name":"java.util.function.BiFunction"
+},
+{
+  "name":"java.util.function.BiPredicate"
+},
+{
+  "name":"java.util.function.Consumer"
+},
+{
+  "name":"java.util.function.DoubleConsumer"
+},
+{
+  "name":"java.util.function.DoubleSupplier"
+},
+{
+  "name":"java.util.function.Function"
+},
+{
+  "name":"java.util.function.IntConsumer"
+},
+{
+  "name":"java.util.function.IntFunction"
+},
+{
+  "name":"java.util.function.LongConsumer"
+},
+{
+  "name":"java.util.function.LongSupplier"
+},
+{
+  "name":"java.util.function.LongUnaryOperator"
+},
+{
+  "name":"java.util.function.Predicate"
+},
+{
+  "name":"java.util.function.Supplier"
+},
+{
+  "name":"java.util.function.ToIntFunction"
+},
+{
+  "name":"java.util.function.UnaryOperator"
+},
+{
+  "name":"java.util.regex.MatchResult"
+},
+{
+  "name":"java.util.spi.LocaleServiceProvider"
+},
+{
+  "name":"java.util.stream.BaseStream"
+},
+{
+  "name":"java.util.stream.Collector"
+},
+{
+  "name":"java.util.stream.DoubleStream"
+},
+{
+  "name":"java.util.stream.IntStream"
+},
+{
+  "name":"java.util.stream.LongStream"
+},
+{
+  "name":"java.util.stream.Stream"
+},
+{
+  "name":"java.util.zip.Checksum"
+},
+{
+  "name":"java.util.zip.DeflaterInputStream"
+},
+{
+  "name":"javafx.animation.AnimationTimer"
+},
+{
+  "name":"javafx.animation.Transition"
+},
+{
+  "name":"javafx.application.Application",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.beans.InvalidationListener"
+},
+{
+  "name":"javafx.beans.Observable"
+},
+{
+  "name":"javafx.beans.binding.Binding"
+},
+{
+  "name":"javafx.beans.binding.BooleanBinding"
+},
+{
+  "name":"javafx.beans.binding.DoubleBinding"
+},
+{
+  "name":"javafx.beans.binding.FloatBinding"
+},
+{
+  "name":"javafx.beans.binding.IntegerBinding"
+},
+{
+  "name":"javafx.beans.binding.LongBinding"
+},
+{
+  "name":"javafx.beans.binding.NumberExpression"
+},
+{
+  "name":"javafx.beans.binding.ObjectBinding"
+},
+{
+  "name":"javafx.beans.binding.StringBinding"
+},
+{
+  "name":"javafx.beans.property.BooleanPropertyBase"
+},
+{
+  "name":"javafx.beans.property.DoublePropertyBase"
+},
+{
+  "name":"javafx.beans.property.FloatPropertyBase"
+},
+{
+  "name":"javafx.beans.property.IntegerPropertyBase"
+},
+{
+  "name":"javafx.beans.property.LongPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ObjectPropertyBase"
+},
+{
+  "name":"javafx.beans.property.Property"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyBooleanPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyBooleanWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyDoublePropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyDoubleWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyFloatPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyFloatWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyIntegerPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyIntegerWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyLongPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyLongWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyObjectPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyObjectWrapper"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyStringPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyStringWrapper"
+},
+{
+  "name":"javafx.beans.property.SimpleBooleanProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleDoubleProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleFloatProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleIntegerProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleListProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleLongProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleObjectProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleStringProperty"
+},
+{
+  "name":"javafx.beans.property.StringPropertyBase"
+},
+{
+  "name":"javafx.beans.value.ChangeListener"
+},
+{
+  "name":"javafx.beans.value.ObservableBooleanValue"
+},
+{
+  "name":"javafx.beans.value.ObservableValue"
+},
+{
+  "name":"javafx.beans.value.ObservableValueBase"
+},
+{
+  "name":"javafx.collections.ListChangeListener"
+},
+{
+  "name":"javafx.collections.ListChangeListener$Change"
+},
+{
+  "name":"javafx.collections.MapChangeListener"
+},
+{
+  "name":"javafx.collections.ObservableList"
+},
+{
+  "name":"javafx.collections.ObservableListBase"
+},
+{
+  "name":"javafx.collections.SetChangeListener"
+},
+{
+  "name":"javafx.concurrent.Service"
+},
+{
+  "name":"javafx.concurrent.Task"
+},
+{
+  "name":"javafx.concurrent.Worker"
+},
+{
+  "name":"javafx.css.CssMetaData"
+},
+{
+  "name":"javafx.css.SimpleStyleableObjectProperty"
+},
+{
+  "name":"javafx.css.StyleConverter"
+},
+{
+  "name":"javafx.css.Styleable"
+},
+{
+  "name":"javafx.css.StyleableBooleanProperty"
+},
+{
+  "name":"javafx.css.StyleableDoubleProperty"
+},
+{
+  "name":"javafx.css.StyleableIntegerProperty"
+},
+{
+  "name":"javafx.css.StyleableObjectProperty"
+},
+{
+  "name":"javafx.event.Event"
+},
+{
+  "name":"javafx.event.EventHandler"
+},
+{
+  "name":"javafx.event.EventTarget"
+},
+{
+  "name":"javafx.fxml.FXMLLoader"
+},
+{
+  "name":"javafx.fxml.Initializable"
+},
+{
+  "name":"javafx.geometry.Insets",
+  "queryAllPublicMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":["double"] }, 
+    {"name":"<init>","parameterTypes":["double","double","double","double"] }
+  ]
+},
+{
+  "name":"javafx.geometry.Orientation",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.geometry.Pos",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.Camera"
+},
+{
+  "name":"javafx.scene.Group"
+},
+{
+  "name":"javafx.scene.Node",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"getId","parameterTypes":[] }, 
+    {"name":"getStyleClass","parameterTypes":[] }, 
+    {"name":"setId","parameterTypes":["java.lang.String"] }, 
+    {"name":"setLayoutX","parameterTypes":["double"] }, 
+    {"name":"setLayoutY","parameterTypes":["double"] }, 
+    {"name":"setOnKeyPressed","parameterTypes":["javafx.event.EventHandler"] }, 
+    {"name":"setVisible","parameterTypes":["boolean"] }
+  ]
+},
+{
+  "name":"javafx.scene.ParallelCamera"
+},
+{
+  "name":"javafx.scene.Parent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.Scene"
+},
+{
+  "name":"javafx.scene.control.Alert"
+},
+{
+  "name":"javafx.scene.control.Button",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ButtonBase",
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"setOnAction","parameterTypes":["javafx.event.EventHandler"] }]
+},
+{
+  "name":"javafx.scene.control.CheckBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setSelected","parameterTypes":["boolean"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.CheckBoxTreeItem"
+},
+{
+  "name":"javafx.scene.control.ChoiceBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ChoiceDialog"
+},
+{
+  "name":"javafx.scene.control.ComboBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ComboBoxBase",
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"setEditable","parameterTypes":["boolean"] }, 
+    {"name":"setOnAction","parameterTypes":["javafx.event.EventHandler"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.ContentDisplay",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.control.Control",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"setTooltip","parameterTypes":["javafx.scene.control.Tooltip"] }]
+},
+{
+  "name":"javafx.scene.control.DateCell"
+},
+{
+  "name":"javafx.scene.control.Dialog"
+},
+{
+  "name":"javafx.scene.control.DialogPane"
+},
+{
+  "name":"javafx.scene.control.IndexedCell"
+},
+{
+  "name":"javafx.scene.control.Label",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.Labeled",
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"setAlignment","parameterTypes":["javafx.geometry.Pos"] }, 
+    {"name":"setContentDisplay","parameterTypes":["javafx.scene.control.ContentDisplay"] }, 
+    {"name":"setFont","parameterTypes":["javafx.scene.text.Font"] }, 
+    {"name":"setGraphic","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"setMnemonicParsing","parameterTypes":["boolean"] }, 
+    {"name":"setText","parameterTypes":["java.lang.String"] }, 
+    {"name":"setTextAlignment","parameterTypes":["javafx.scene.text.TextAlignment"] }, 
+    {"name":"setTextFill","parameterTypes":["javafx.scene.paint.Paint"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.ListCell"
+},
+{
+  "name":"javafx.scene.control.ListView"
+},
+{
+  "name":"javafx.scene.control.MenuButton"
+},
+{
+  "name":"javafx.scene.control.Pagination"
+},
+{
+  "name":"javafx.scene.control.PasswordField"
+},
+{
+  "name":"javafx.scene.control.PopupControl",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.control.ProgressBar"
+},
+{
+  "name":"javafx.scene.control.ProgressIndicator"
+},
+{
+  "name":"javafx.scene.control.RadioButton"
+},
+{
+  "name":"javafx.scene.control.ScrollPane",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getContent","parameterTypes":[] }, 
+    {"name":"setContent","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"setHbarPolicy","parameterTypes":["javafx.scene.control.ScrollPane$ScrollBarPolicy"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.ScrollPane$ScrollBarPolicy",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.control.Separator",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setOrientation","parameterTypes":["javafx.geometry.Orientation"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.Skin"
+},
+{
+  "name":"javafx.scene.control.SkinBase"
+},
+{
+  "name":"javafx.scene.control.SortEvent"
+},
+{
+  "name":"javafx.scene.control.SplitPane",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getItems","parameterTypes":[] }, 
+    {"name":"setDividerPositions","parameterTypes":["double[]"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.Tab",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getContent","parameterTypes":[] }, 
+    {"name":"getId","parameterTypes":[] }, 
+    {"name":"setClosable","parameterTypes":["boolean"] }, 
+    {"name":"setContent","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"setId","parameterTypes":["java.lang.String"] }, 
+    {"name":"setText","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.TabPane",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getTabs","parameterTypes":[] }
+  ]
+},
+{
+  "name":"javafx.scene.control.TableCell"
+},
+{
+  "name":"javafx.scene.control.TableColumn"
+},
+{
+  "name":"javafx.scene.control.TableRow"
+},
+{
+  "name":"javafx.scene.control.TableView"
+},
+{
+  "name":"javafx.scene.control.TableView$TableViewSelectionModel"
+},
+{
+  "name":"javafx.scene.control.TextArea",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.TextField",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.TextInputControl",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.control.TextInputDialog"
+},
+{
+  "name":"javafx.scene.control.ToggleButton"
+},
+{
+  "name":"javafx.scene.control.Tooltip",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setText","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"javafx.scene.control.TreeCell"
+},
+{
+  "name":"javafx.scene.control.TreeView"
+},
+{
+  "name":"javafx.scene.control.cell.ComboBoxTableCell"
+},
+{
+  "name":"javafx.scene.control.cell.TextFieldTableCell"
+},
+{
+  "name":"javafx.scene.control.skin.ButtonSkin"
+},
+{
+  "name":"javafx.scene.control.skin.CellSkinBase"
+},
+{
+  "name":"javafx.scene.control.skin.ComboBoxListViewSkin"
+},
+{
+  "name":"javafx.scene.control.skin.DateCellSkin"
+},
+{
+  "name":"javafx.scene.control.skin.ListViewSkin"
+},
+{
+  "name":"javafx.scene.control.skin.NestedTableColumnHeader"
+},
+{
+  "name":"javafx.scene.control.skin.RadioButtonSkin"
+},
+{
+  "name":"javafx.scene.control.skin.ScrollPaneSkin"
+},
+{
+  "name":"javafx.scene.control.skin.SliderSkin"
+},
+{
+  "name":"javafx.scene.control.skin.TableCellSkin"
+},
+{
+  "name":"javafx.scene.control.skin.TableHeaderRow"
+},
+{
+  "name":"javafx.scene.control.skin.TableRowSkin"
+},
+{
+  "name":"javafx.scene.control.skin.TableViewSkin"
+},
+{
+  "name":"javafx.scene.control.skin.TableViewSkinBase"
+},
+{
+  "name":"javafx.scene.control.skin.TextFieldSkin",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":["javafx.scene.control.TextField"] }]
+},
+{
+  "name":"javafx.scene.control.skin.ToggleButtonSkin"
+},
+{
+  "name":"javafx.scene.control.skin.VirtualContainerBase"
+},
+{
+  "name":"javafx.scene.control.skin.VirtualFlow"
+},
+{
+  "name":"javafx.scene.effect.Effect"
+},
+{
+  "name":"javafx.scene.image.Image"
+},
+{
+  "name":"javafx.scene.image.ImageView"
+},
+{
+  "name":"javafx.scene.input.InputEvent"
+},
+{
+  "name":"javafx.scene.layout.AnchorPane",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setBottomAnchor","parameterTypes":["javafx.scene.Node","java.lang.Double"] }, 
+    {"name":"setLeftAnchor","parameterTypes":["javafx.scene.Node","java.lang.Double"] }, 
+    {"name":"setRightAnchor","parameterTypes":["javafx.scene.Node","java.lang.Double"] }, 
+    {"name":"setTopAnchor","parameterTypes":["javafx.scene.Node","java.lang.Double"] }
+  ],
+  "queriedMethods":[
+    {"name":"getBottomAnchor","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getLeftAnchor","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getRightAnchor","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getTopAnchor","parameterTypes":["javafx.scene.Node"] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.BorderPane"
+},
+{
+  "name":"javafx.scene.layout.ColumnConstraints",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setHgrow","parameterTypes":["javafx.scene.layout.Priority"] }, 
+    {"name":"setMinWidth","parameterTypes":["double"] }, 
+    {"name":"setPrefWidth","parameterTypes":["double"] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.ConstraintsBase",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.layout.GridPane",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"getColumnConstraints","parameterTypes":[] }, 
+    {"name":"getRowConstraints","parameterTypes":[] }, 
+    {"name":"setAlignment","parameterTypes":["javafx.geometry.Pos"] }, 
+    {"name":"setColumnIndex","parameterTypes":["javafx.scene.Node","java.lang.Integer"] }, 
+    {"name":"setColumnSpan","parameterTypes":["javafx.scene.Node","java.lang.Integer"] }, 
+    {"name":"setHgap","parameterTypes":["double"] }, 
+    {"name":"setMargin","parameterTypes":["javafx.scene.Node","javafx.geometry.Insets"] }, 
+    {"name":"setRowIndex","parameterTypes":["javafx.scene.Node","java.lang.Integer"] }, 
+    {"name":"setRowSpan","parameterTypes":["javafx.scene.Node","java.lang.Integer"] }, 
+    {"name":"setVgap","parameterTypes":["double"] }, 
+    {"name":"setVgrow","parameterTypes":["javafx.scene.Node","javafx.scene.layout.Priority"] }
+  ],
+  "queriedMethods":[
+    {"name":"getColumnIndex","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getColumnSpan","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getRowIndex","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getRowSpan","parameterTypes":["javafx.scene.Node"] }, 
+    {"name":"getVgrow","parameterTypes":["javafx.scene.Node"] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.HBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setAlignment","parameterTypes":["javafx.geometry.Pos"] }, 
+    {"name":"setSpacing","parameterTypes":["double"] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.Pane",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"getChildren","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.layout.Priority",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.layout.Region",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[
+    {"name":"getHeight","parameterTypes":[] }, 
+    {"name":"getWidth","parameterTypes":[] }, 
+    {"name":"heightProperty","parameterTypes":[] }, 
+    {"name":"prefHeightProperty","parameterTypes":[] }, 
+    {"name":"prefWidthProperty","parameterTypes":[] }, 
+    {"name":"setMaxHeight","parameterTypes":["double"] }, 
+    {"name":"setMaxWidth","parameterTypes":["double"] }, 
+    {"name":"setMinHeight","parameterTypes":["double"] }, 
+    {"name":"setMinWidth","parameterTypes":["double"] }, 
+    {"name":"setOpaqueInsets","parameterTypes":["javafx.geometry.Insets"] }, 
+    {"name":"setPadding","parameterTypes":["javafx.geometry.Insets"] }, 
+    {"name":"setPrefHeight","parameterTypes":["double"] }, 
+    {"name":"setPrefWidth","parameterTypes":["double"] }, 
+    {"name":"widthProperty","parameterTypes":[] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.RowConstraints",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setMaxHeight","parameterTypes":["double"] }, 
+    {"name":"setMinHeight","parameterTypes":["double"] }, 
+    {"name":"setPrefHeight","parameterTypes":["double"] }, 
+    {"name":"setVgrow","parameterTypes":["javafx.scene.layout.Priority"] }
+  ]
+},
+{
+  "name":"javafx.scene.layout.StackPane",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.layout.VBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setAlignment","parameterTypes":["javafx.geometry.Pos"] }, 
+    {"name":"setMargin","parameterTypes":["javafx.scene.Node","javafx.geometry.Insets"] }, 
+    {"name":"setSpacing","parameterTypes":["double"] }
+  ]
+},
+{
+  "name":"javafx.scene.paint.Paint",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.shape.Circle"
+},
+{
+  "name":"javafx.scene.shape.LineTo"
+},
+{
+  "name":"javafx.scene.shape.MoveTo"
+},
+{
+  "name":"javafx.scene.shape.Path"
+},
+{
+  "name":"javafx.scene.shape.PathElement"
+},
+{
+  "name":"javafx.scene.shape.Rectangle"
+},
+{
+  "name":"javafx.scene.shape.SVGPath"
+},
+{
+  "name":"javafx.scene.shape.Shape",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.text.Font"
+},
+{
+  "name":"javafx.scene.text.Text",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.scene.text.TextAlignment",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.text.TextFlow",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.transform.Transform"
+},
+{
+  "name":"javafx.scene.web.WebView"
+},
+{
+  "name":"javafx.stage.Popup"
+},
+{
+  "name":"javafx.stage.PopupWindow",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.stage.Stage"
+},
+{
+  "name":"javafx.stage.Window",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"javafx.util.Callback"
+},
+{
+  "name":"javafx.util.StringConverter"
+},
+{
+  "name":"javafx.util.converter.DefaultStringConverter"
+},
+{
+  "name":"javafx.util.converter.IntegerStringConverter"
+},
+{
+  "name":"javafx.util.converter.NumberStringConverter"
+},
+{
+  "name":"javassist.ClassPath"
+},
+{
+  "name":"javassist.ClassPool"
+},
+{
+  "name":"javassist.CodeConverter$ArrayAccessReplacementMethodNames"
+},
+{
+  "name":"javassist.CtClass"
+},
+{
+  "name":"javassist.CtField$Initializer"
+},
+{
+  "name":"javassist.CtMember"
+},
+{
+  "name":"javassist.CtMethod$ConstParameter"
+},
+{
+  "name":"javassist.CtNewWrappedMethod"
+},
+{
+  "name":"javassist.Translator"
+},
+{
+  "name":"javassist.bytecode.AnnotationsAttribute$Walker"
+},
+{
+  "name":"javassist.bytecode.AttributeInfo"
+},
+{
+  "name":"javassist.bytecode.CodeIterator$Branch"
+},
+{
+  "name":"javassist.bytecode.ConstInfo"
+},
+{
+  "name":"javassist.bytecode.Opcode"
+},
+{
+  "name":"javassist.bytecode.SignatureAttribute$Type"
+},
+{
+  "name":"javassist.bytecode.StackMap$Walker"
+},
+{
+  "name":"javassist.bytecode.StackMapTable$Walker"
+},
+{
+  "name":"javassist.bytecode.TypeAnnotationsAttribute$SubWalker"
+},
+{
+  "name":"javassist.bytecode.analysis.ControlFlow$Access"
+},
+{
+  "name":"javassist.bytecode.analysis.Type"
+},
+{
+  "name":"javassist.bytecode.annotation.AnnotationsWriter"
+},
+{
+  "name":"javassist.bytecode.annotation.MemberValue"
+},
+{
+  "name":"javassist.bytecode.stackmap.BasicBlock"
+},
+{
+  "name":"javassist.bytecode.stackmap.BasicBlock$Maker"
+},
+{
+  "name":"javassist.bytecode.stackmap.TypeData"
+},
+{
+  "name":"javassist.bytecode.stackmap.TypeTag"
+},
+{
+  "name":"javassist.compiler.CodeGen$ReturnHook"
+},
+{
+  "name":"javassist.compiler.ProceedHandler"
+},
+{
+  "name":"javassist.compiler.TokenId"
+},
+{
+  "name":"javassist.compiler.ast.Visitor"
+},
+{
+  "name":"javassist.expr.ExprEditor"
+},
+{
+  "name":"javassist.scopedpool.ScopedClassPoolFactory"
+},
+{
+  "name":"javassist.scopedpool.ScopedClassPoolRepository"
+},
+{
+  "name":"javassist.tools.web.Webserver"
+},
+{
+  "name":"javassist.util.proxy.DefineClassHelper$Helper"
+},
+{
+  "name":"javassist.util.proxy.DefinePackageHelper$Helper"
+},
+{
+  "name":"javassist.util.proxy.MethodHandler"
+},
+{
+  "name":"javassist.util.proxy.Proxy"
+},
+{
+  "name":"javassist.util.proxy.ProxyFactory$ClassLoaderProvider"
+},
+{
+  "name":"javassist.util.proxy.ProxyFactory$UniqueName"
+},
+{
+  "name":"javax.annotation.meta.TypeQualifierValidator"
+},
+{
+  "name":"javax.inject.Provider"
+},
+{
+  "name":"javax.management.ObjectName"
+},
+{
+  "name":"javax.management.StandardMBean"
+},
+{
+  "name":"javax.measure.Dimension"
+},
+{
+  "name":"javax.measure.Prefix"
+},
+{
+  "name":"javax.measure.Quantity"
+},
+{
+  "name":"javax.measure.Unit"
+},
+{
+  "name":"javax.measure.UnitConverter"
+},
+{
+  "name":"javax.measure.format.QuantityFormat"
+},
+{
+  "name":"javax.measure.format.UnitFormat"
+},
+{
+  "name":"javax.measure.spi.FormatService"
+},
+{
+  "name":"javax.measure.spi.QuantityFactory"
+},
+{
+  "name":"javax.measure.spi.ServiceProvider"
+},
+{
+  "name":"javax.measure.spi.SystemOfUnits"
+},
+{
+  "name":"javax.measure.spi.SystemOfUnitsService"
+},
+{
+  "name":"javax.naming.Referenceable"
+},
+{
+  "name":"javax.naming.spi.ObjectFactory"
+},
+{
+  "name":"javax.net.ServerSocketFactory"
+},
+{
+  "name":"javax.net.SocketFactory"
+},
+{
+  "name":"javax.net.ssl.HostnameVerifier"
+},
+{
+  "name":"javax.security.auth.callback.CallbackHandler"
+},
+{
+  "name":"javax.sql.ConnectionEventListener"
+},
+{
+  "name":"javax.sql.ConnectionPoolDataSource"
+},
+{
+  "name":"javax.sql.DataSource"
+},
+{
+  "name":"javax.sql.XAConnection"
+},
+{
+  "name":"javax.sql.XADataSource"
+},
+{
+  "name":"javax.tools.ForwardingJavaFileManager"
+},
+{
+  "name":"javax.tools.SimpleJavaFileObject"
+},
+{
+  "name":"javax.transaction.xa.XAResource"
+},
+{
+  "name":"javax.transaction.xa.Xid"
+},
+{
+  "name":"kotlin.ExceptionsKt__ExceptionsKt"
+},
+{
+  "name":"kotlin.Function"
+},
+{
+  "name":"kotlin.Lazy"
+},
+{
+  "name":"kotlin.LazyKt__LazyJVMKt"
+},
+{
+  "name":"kotlin.NumbersKt__BigDecimalsKt"
+},
+{
+  "name":"kotlin.PreconditionsKt__AssertionsJVMKt"
+},
+{
+  "name":"kotlin.StandardKt__StandardKt"
+},
+{
+  "name":"kotlin.collections.ArraysKt__ArraysJVMKt"
+},
+{
+  "name":"kotlin.collections.CollectionsKt__CollectionsJVMKt"
+},
+{
+  "name":"kotlin.collections.Grouping"
+},
+{
+  "name":"kotlin.collections.GroupingKt__GroupingJVMKt"
+},
+{
+  "name":"kotlin.collections.MapsKt__MapWithDefaultKt"
+},
+{
+  "name":"kotlin.collections.SetsKt__SetsJVMKt"
+},
+{
+  "name":"kotlin.collections.UCollectionsKt___UCollectionsKt"
+},
+{
+  "name":"kotlin.collections.unsigned.UArraysKt___UArraysJvmKt"
+},
+{
+  "name":"kotlin.comparisons.ComparisonsKt__ComparisonsKt"
+},
+{
+  "name":"kotlin.comparisons.UComparisonsKt___UComparisonsKt"
+},
+{
+  "name":"kotlin.contracts.Effect"
+},
+{
+  "name":"kotlin.coroutines.Continuation"
+},
+{
+  "name":"kotlin.coroutines.CoroutineContext"
+},
+{
+  "name":"kotlin.coroutines.CoroutineContext$Key"
+},
+{
+  "name":"kotlin.coroutines.experimental.Continuation"
+},
+{
+  "name":"kotlin.coroutines.experimental.CoroutineContext"
+},
+{
+  "name":"kotlin.coroutines.experimental.CoroutineContext$Key"
+},
+{
+  "name":"kotlin.coroutines.experimental.SequenceBuilder"
+},
+{
+  "name":"kotlin.coroutines.experimental.SequenceBuilderKt__SequenceBuilderKt"
+},
+{
+  "name":"kotlin.coroutines.experimental.intrinsics.IntrinsicsKt__IntrinsicsJvmKt"
+},
+{
+  "name":"kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt"
+},
+{
+  "name":"kotlin.coroutines.jvm.internal.CoroutineStackFrame"
+},
+{
+  "name":"kotlin.coroutines.jvm.internal.SuspendFunction"
+},
+{
+  "name":"kotlin.io.FileTreeWalk$WalkState"
+},
+{
+  "name":"kotlin.io.FilesKt__FilePathComponentsKt"
+},
+{
+  "name":"kotlin.jvm.internal.PrimitiveSpreadBuilder"
+},
+{
+  "name":"kotlin.jvm.internal.markers.KMappedMarker"
+},
+{
+  "name":"kotlin.math.MathKt__MathHKt"
+},
+{
+  "name":"kotlin.properties.ReadWriteProperty"
+},
+{
+  "name":"kotlin.random.Random"
+},
+{
+  "name":"kotlin.ranges.ClosedRange"
+},
+{
+  "name":"kotlin.ranges.RangesKt__RangesJVMKt"
+},
+{
+  "name":"kotlin.ranges.URangesKt___URangesKt"
+},
+{
+  "name":"kotlin.reflect.KAnnotatedElement"
+},
+{
+  "name":"kotlin.reflect.KClassifier"
+},
+{
+  "name":"kotlin.reflect.KDeclarationContainer"
+},
+{
+  "name":"kotlin.reflect.KProperty$Accessor"
+},
+{
+  "name":"kotlin.sequences.Sequence"
+},
+{
+  "name":"kotlin.sequences.SequenceScope"
+},
+{
+  "name":"kotlin.sequences.SequencesKt__SequenceBuilderKt"
+},
+{
+  "name":"kotlin.sequences.USequencesKt___USequencesKt"
+},
+{
+  "name":"kotlin.text.CharsKt__CharJVMKt"
+},
+{
+  "name":"kotlin.text.FlagEnum"
+},
+{
+  "name":"kotlin.text.MatchResult"
+},
+{
+  "name":"kotlin.text.StringsKt__IndentKt"
+},
+{
+  "name":"kotlin.time.Clock"
+},
+{
+  "name":"kotlin.time.ClockMark"
+},
+{
+  "name":"kotlin.time.DurationUnitKt__DurationUnitJvmKt"
+},
+{
+  "name":"okhttp3.Authenticator"
+},
+{
+  "name":"okhttp3.Call$Factory"
+},
+{
+  "name":"okhttp3.Callback"
+},
+{
+  "name":"okhttp3.Connection"
+},
+{
+  "name":"okhttp3.CookieJar"
+},
+{
+  "name":"okhttp3.Dns"
+},
+{
+  "name":"okhttp3.EventListener"
+},
+{
+  "name":"okhttp3.EventListener$Factory"
+},
+{
+  "name":"okhttp3.Interceptor"
+},
+{
+  "name":"okhttp3.Interceptor$Chain"
+},
+{
+  "name":"okhttp3.RequestBody"
+},
+{
+  "name":"okhttp3.WebSocket"
+},
+{
+  "name":"okhttp3.WebSocket$Factory"
+},
+{
+  "name":"okhttp3.internal.Internal"
+},
+{
+  "name":"okhttp3.internal.cache.CacheRequest"
+},
+{
+  "name":"okhttp3.internal.cache.InternalCache"
+},
+{
+  "name":"okhttp3.internal.http.HttpCodec"
+},
+{
+  "name":"okhttp3.internal.http2.Http2Connection$Listener"
+},
+{
+  "name":"okhttp3.internal.http2.Http2Reader$Handler"
+},
+{
+  "name":"okhttp3.internal.http2.PushObserver"
+},
+{
+  "name":"okhttp3.internal.io.FileSystem"
+},
+{
+  "name":"okhttp3.internal.platform.Platform"
+},
+{
+  "name":"okhttp3.internal.tls.CertificateChainCleaner"
+},
+{
+  "name":"okhttp3.internal.tls.TrustRootIndex"
+},
+{
+  "name":"okhttp3.internal.ws.WebSocketReader$FrameCallback"
+},
+{
+  "name":"okio.Timeout"
+},
+{
+  "name":"org.aopalliance.aop.Advice"
+},
+{
+  "name":"org.aopalliance.intercept.Joinpoint"
+},
+{
+  "name":"org.apache.commons.beanutils.BeanIntrospector"
+},
+{
+  "name":"org.apache.commons.beanutils.BeanUtils"
+},
+{
+  "name":"org.apache.commons.beanutils.BeanUtilsBean"
+},
+{
+  "name":"org.apache.commons.beanutils.ContextClassLoaderLocal"
+},
+{
+  "name":"org.apache.commons.beanutils.ConvertUtilsBean"
+},
+{
+  "name":"org.apache.commons.beanutils.Converter"
+},
+{
+  "name":"org.apache.commons.beanutils.DynaBean"
+},
+{
+  "name":"org.apache.commons.beanutils.DynaClass"
+},
+{
+  "name":"org.apache.commons.beanutils.IntrospectionContext"
+},
+{
+  "name":"org.apache.commons.beanutils.expression.Resolver"
+},
+{
+  "name":"org.apache.commons.codec.Decoder"
+},
+{
+  "name":"org.apache.commons.codec.Encoder"
+},
+{
+  "name":"org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32x86"
+},
+{
+  "name":"org.apache.commons.codec.language.ColognePhonetic$CologneBuffer"
+},
+{
+  "name":"org.apache.commons.codec.language.bm.Languages$LanguageSet"
+},
+{
+  "name":"org.apache.commons.codec.language.bm.Rule"
+},
+{
+  "name":"org.apache.commons.codec.language.bm.Rule$PhonemeExpr"
+},
+{
+  "name":"org.apache.commons.codec.language.bm.Rule$RPattern"
+},
+{
+  "name":"org.apache.commons.codec.net.RFC1522Codec"
+},
+{
+  "name":"org.apache.commons.collections.Closure"
+},
+{
+  "name":"org.apache.commons.collections.Factory"
+},
+{
+  "name":"org.apache.commons.collections.KeyValue"
+},
+{
+  "name":"org.apache.commons.collections.Predicate"
+},
+{
+  "name":"org.apache.commons.collections.PriorityQueue"
+},
+{
+  "name":"org.apache.commons.collections.Transformer"
+},
+{
+  "name":"org.apache.commons.collections.Unmodifiable"
+},
+{
+  "name":"org.apache.commons.collections.collection.CompositeCollection$CollectionMutator"
+},
+{
+  "name":"org.apache.commons.collections.iterators.AbstractEmptyIterator"
+},
+{
+  "name":"org.apache.commons.digester.ObjectCreationFactory"
+},
+{
+  "name":"org.apache.commons.digester.RegexMatcher"
+},
+{
+  "name":"org.apache.commons.digester.Rule"
+},
+{
+  "name":"org.apache.commons.digester.RuleSet"
+},
+{
+  "name":"org.apache.commons.digester.Rules"
+},
+{
+  "name":"org.apache.commons.digester.Substitutor"
+},
+{
+  "name":"org.apache.commons.digester.annotations.AnnotationRuleProvider"
+},
+{
+  "name":"org.apache.commons.digester.annotations.DigesterLoaderHandler"
+},
+{
+  "name":"org.apache.commons.digester.annotations.spi.AnnotationRuleProviderFactory"
+},
+{
+  "name":"org.apache.commons.digester.annotations.spi.DigesterLoaderHandlerFactory"
+},
+{
+  "name":"org.apache.commons.digester.plugins.InitializableRule"
+},
+{
+  "name":"org.apache.commons.digester.plugins.RuleFinder"
+},
+{
+  "name":"org.apache.commons.digester.plugins.RuleLoader"
+},
+{
+  "name":"org.apache.commons.digester.substitution.VariableExpander"
+},
+{
+  "name":"org.apache.commons.digester.xmlrules.FromXmlRuleSet$XMLRulesLoader"
+},
+{
+  "name":"org.apache.commons.lang3.ThreadUtils$ThreadGroupPredicate"
+},
+{
+  "name":"org.apache.commons.lang3.ThreadUtils$ThreadPredicate"
+},
+{
+  "name":"org.apache.commons.lang3.builder.Builder"
+},
+{
+  "name":"org.apache.commons.lang3.concurrent.CircuitBreaker"
+},
+{
+  "name":"org.apache.commons.lang3.concurrent.Computable"
+},
+{
+  "name":"org.apache.commons.lang3.concurrent.ConcurrentInitializer"
+},
+{
+  "name":"org.apache.commons.lang3.concurrent.EventCountCircuitBreaker$StateStrategy"
+},
+{
+  "name":"org.apache.commons.lang3.concurrent.locks.LockingVisitors$LockVisitor"
+},
+{
+  "name":"org.apache.commons.lang3.exception.ExceptionContext"
+},
+{
+  "name":"org.apache.commons.lang3.mutable.Mutable"
+},
+{
+  "name":"org.apache.commons.lang3.reflect.Typed"
+},
+{
+  "name":"org.apache.commons.lang3.text.StrLookup"
+},
+{
+  "name":"org.apache.commons.lang3.text.StrMatcher"
+},
+{
+  "name":"org.apache.commons.lang3.text.translate.CharSequenceTranslator"
+},
+{
+  "name":"org.apache.commons.lang3.time.DateParser"
+},
+{
+  "name":"org.apache.commons.lang3.time.DatePrinter"
+},
+{
+  "name":"org.apache.commons.lang3.time.FastDateParser$Strategy"
+},
+{
+  "name":"org.apache.commons.lang3.time.FastDatePrinter$Rule"
+},
+{
+  "name":"org.apache.commons.lang3.time.FormatCache"
+},
+{
+  "name":"org.apache.commons.logging.Log"
+},
+{
+  "name":"org.apache.commons.logging.LogFactory"
+},
+{
+  "name":"org.apache.commons.text.Builder"
+},
+{
+  "name":"org.apache.commons.text.CharacterPredicate"
+},
+{
+  "name":"org.apache.commons.text.StrMatcher"
+},
+{
+  "name":"org.apache.commons.text.diff.CommandVisitor"
+},
+{
+  "name":"org.apache.commons.text.diff.EditCommand"
+},
+{
+  "name":"org.apache.commons.text.lookup.StringLookup"
+},
+{
+  "name":"org.apache.commons.text.matcher.StringMatcher"
+},
+{
+  "name":"org.apache.commons.text.similarity.SimilarityScore"
+},
+{
+  "name":"org.apache.commons.text.similarity.Tokenizer"
+},
+{
+  "name":"org.apache.commons.text.translate.CharSequenceTranslator"
+},
+{
+  "name":"org.apache.commons.validator.CreditCardValidator$CreditCardType"
+},
+{
+  "name":"org.apache.commons.validator.routines.checkdigit.CheckDigit"
+},
+{
+  "name":"org.controlsfx.control.CheckModel"
+},
+{
+  "name":"org.controlsfx.control.PropertySheet$Item"
+},
+{
+  "name":"org.controlsfx.control.action.AnnotatedActionFactory"
+},
+{
+  "name":"org.controlsfx.control.decoration.Decoration"
+},
+{
+  "name":"org.controlsfx.control.spreadsheet.Filter"
+},
+{
+  "name":"org.controlsfx.control.spreadsheet.Grid"
+},
+{
+  "name":"org.controlsfx.control.spreadsheet.SpreadsheetCell"
+},
+{
+  "name":"org.controlsfx.control.spreadsheet.SpreadsheetCellEditor"
+},
+{
+  "name":"org.controlsfx.control.spreadsheet.SpreadsheetCellType"
+},
+{
+  "name":"org.controlsfx.control.table.model.JavaFXTableModel"
+},
+{
+  "name":"org.controlsfx.control.tableview2.filter.parser.Parser"
+},
+{
+  "name":"org.controlsfx.control.textfield.AutoCompletionBinding$ISuggestionRequest"
+},
+{
+  "name":"org.controlsfx.dialog.Wizard$Flow"
+},
+{
+  "name":"org.controlsfx.glyphfont.GlyphFont"
+},
+{
+  "name":"org.controlsfx.glyphfont.INamedCharacter"
+},
+{
+  "name":"org.controlsfx.property.editor.PropertyEditor"
+},
+{
+  "name":"org.controlsfx.tools.Borders$Border"
+},
+{
+  "name":"org.controlsfx.tools.Duplicatable"
+},
+{
+  "name":"org.controlsfx.validation.decoration.ValidationDecoration"
+},
+{
+  "name":"org.h2.JdbcDriverBackwardsCompat"
+},
+{
+  "name":"org.h2.api.Aggregate"
+},
+{
+  "name":"org.h2.api.Trigger"
+},
+{
+  "name":"org.h2.bnf.Rule"
+},
+{
+  "name":"org.h2.command.Prepared"
+},
+{
+  "name":"org.h2.command.dml.SetClauseList$UpdateAction"
+},
+{
+  "name":"org.h2.command.query.SelectGroups"
+},
+{
+  "name":"org.h2.compress.Compressor"
+},
+{
+  "name":"org.h2.engine.CastDataProvider"
+},
+{
+  "name":"org.h2.engine.SettingsBase"
+},
+{
+  "name":"org.h2.expression.ExpressionWithFlags"
+},
+{
+  "name":"org.h2.expression.ExpressionWithVariableParameters"
+},
+{
+  "name":"org.h2.expression.ParameterInterface"
+},
+{
+  "name":"org.h2.expression.aggregate.AggregateData"
+},
+{
+  "name":"org.h2.expression.function.NamedExpression"
+},
+{
+  "name":"org.h2.fulltext.FullText"
+},
+{
+  "name":"org.h2.index.Cursor"
+},
+{
+  "name":"org.h2.index.SpatialIndex"
+},
+{
+  "name":"org.h2.jdbc.JdbcConnectionBackwardsCompat"
+},
+{
+  "name":"org.h2.jdbc.JdbcDatabaseMetaDataBackwardsCompat"
+},
+{
+  "name":"org.h2.jdbc.JdbcException"
+},
+{
+  "name":"org.h2.jdbc.JdbcStatementBackwardsCompat"
+},
+{
+  "name":"org.h2.jdbc.meta.DatabaseMeta"
+},
+{
+  "name":"org.h2.jdbcx.JdbcConnectionPoolBackwardsCompat"
+},
+{
+  "name":"org.h2.jdbcx.JdbcDataSourceBackwardsCompat"
+},
+{
+  "name":"org.h2.jmx.DatabaseInfoMBean"
+},
+{
+  "name":"org.h2.message.TraceObject"
+},
+{
+  "name":"org.h2.message.TraceWriter"
+},
+{
+  "name":"org.h2.mode.ToDateTokenizer$ToDateParslet"
+},
+{
+  "name":"org.h2.mvstore.FileStore"
+},
+{
+  "name":"org.h2.mvstore.MVMap$DecisionMaker"
+},
+{
+  "name":"org.h2.mvstore.MVMap$MapBuilder"
+},
+{
+  "name":"org.h2.mvstore.rtree.Spatial"
+},
+{
+  "name":"org.h2.mvstore.tx.TransactionStore$RollbackListener"
+},
+{
+  "name":"org.h2.mvstore.type.StatefulDataType"
+},
+{
+  "name":"org.h2.mvstore.type.StatefulDataType$Factory"
+},
+{
+  "name":"org.h2.result.ResultExternal"
+},
+{
+  "name":"org.h2.result.ResultTarget"
+},
+{
+  "name":"org.h2.result.ResultWithGeneratedKeys"
+},
+{
+  "name":"org.h2.result.RowFactory"
+},
+{
+  "name":"org.h2.security.BlockCipher"
+},
+{
+  "name":"org.h2.security.auth.Authenticator"
+},
+{
+  "name":"org.h2.security.auth.Configurable"
+},
+{
+  "name":"org.h2.security.auth.HasConfigProperties"
+},
+{
+  "name":"org.h2.server.Service"
+},
+{
+  "name":"org.h2.server.ShutdownHandler"
+},
+{
+  "name":"org.h2.server.web.WebApp"
+},
+{
+  "name":"org.h2.store.DataHandler"
+},
+{
+  "name":"org.h2.store.FileStore"
+},
+{
+  "name":"org.h2.store.InDoubtTransaction"
+},
+{
+  "name":"org.h2.store.LobStorageInterface"
+},
+{
+  "name":"org.h2.store.fs.FilePath"
+},
+{
+  "name":"org.h2.store.fs.Recorder"
+},
+{
+  "name":"org.h2.table.ColumnResolver"
+},
+{
+  "name":"org.h2.table.ColumnTemplate"
+},
+{
+  "name":"org.h2.table.TableFilter$TableFilterVisitor"
+},
+{
+  "name":"org.h2.tools.SimpleRowSource"
+},
+{
+  "name":"org.h2.util.Cache"
+},
+{
+  "name":"org.h2.util.HasSQL"
+},
+{
+  "name":"org.h2.util.TimeZoneProvider"
+},
+{
+  "name":"org.h2.util.Tool"
+},
+{
+  "name":"org.h2.util.geometry.GeometryUtils$Target"
+},
+{
+  "name":"org.h2.util.json.JSONTarget"
+},
+{
+  "name":"org.h2.util.json.JSONTextSource"
+},
+{
+  "name":"org.h2.util.json.JSONValue"
+},
+{
+  "name":"org.h2.value.Typed"
+},
+{
+  "name":"org.h2.value.VersionedValue"
+},
+{
+  "name":"org.h2.value.lob.LobData"
+},
+{
+  "name":"org.kordamp.ikonli.AbstractIkonResolver"
+},
+{
+  "name":"org.kordamp.ikonli.Ikon"
+},
+{
+  "name":"org.kordamp.ikonli.IkonHandler"
+},
+{
+  "name":"org.kordamp.ikonli.IkonProvider"
+},
+{
+  "name":"org.kordamp.ikonli.javafx.FontIcon",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[
+    {"name":"<init>","parameterTypes":[] }, 
+    {"name":"setIconColor","parameterTypes":["javafx.scene.paint.Paint"] }, 
+    {"name":"setIconLiteral","parameterTypes":["java.lang.String"] }, 
+    {"name":"setIconSize","parameterTypes":["int"] }
+  ]
+},
+{
+  "name":"org.reactfx.Connectable"
+},
+{
+  "name":"org.reactfx.EventSink"
+},
+{
+  "name":"org.reactfx.EventStreams$Pocket"
+},
+{
+  "name":"org.reactfx.Guardian"
+},
+{
+  "name":"org.reactfx.InputHandlerBuilder"
+},
+{
+  "name":"org.reactfx.Observable"
+},
+{
+  "name":"org.reactfx.StateMachine$InitialState"
+},
+{
+  "name":"org.reactfx.StateMachine$ObservableStateBuilder"
+},
+{
+  "name":"org.reactfx.StateMachine$ObservableStateBuilderOn"
+},
+{
+  "name":"org.reactfx.StateMachine$StatefulStreamBuilder"
+},
+{
+  "name":"org.reactfx.StateMachine$StatefulStreamBuilderOn"
+},
+{
+  "name":"org.reactfx.Subscription"
+},
+{
+  "name":"org.reactfx.Suspendable"
+},
+{
+  "name":"org.reactfx.Suspender"
+},
+{
+  "name":"org.reactfx.collection.ListModificationLike"
+},
+{
+  "name":"org.reactfx.collection.LiveList$Observer"
+},
+{
+  "name":"org.reactfx.util.AccuMap"
+},
+{
+  "name":"org.reactfx.util.AccumulationFacility"
+},
+{
+  "name":"org.reactfx.util.Either"
+},
+{
+  "name":"org.reactfx.util.FingerTree"
+},
+{
+  "name":"org.reactfx.util.ListHelper"
+},
+{
+  "name":"org.reactfx.util.MapHelper"
+},
+{
+  "name":"org.reactfx.util.NotificationAccumulator"
+},
+{
+  "name":"org.reactfx.util.Semigroup"
+},
+{
+  "name":"org.reactfx.util.SparseList$Segment"
+},
+{
+  "name":"org.reactfx.util.Timer"
+},
+{
+  "name":"org.reactfx.util.WrapperBase"
+},
+{
+  "name":"org.reflections.Configuration"
+},
+{
+  "name":"org.reflections.scanners.Scanner"
+},
+{
+  "name":"org.reflections.serializers.Serializer"
+},
+{
+  "name":"org.reflections.util.NameHelper"
+},
+{
+  "name":"org.reflections.util.ReflectionUtilsPredicates"
+},
+{
+  "name":"org.reflections.util.UtilQueryBuilder"
+},
+{
+  "name":"org.reflections.vfs.Vfs$Dir"
+},
+{
+  "name":"org.reflections.vfs.Vfs$File"
+},
+{
+  "name":"org.reflections.vfs.Vfs$UrlType"
+},
+{
+  "name":"org.slf4j.ILoggerFactory"
+},
+{
+  "name":"org.slf4j.IMarkerFactory"
+},
+{
+  "name":"org.slf4j.Logger"
+},
+{
+  "name":"org.slf4j.event.LoggingEvent"
+},
+{
+  "name":"org.slf4j.spi.LoggerFactoryBinder"
+},
+{
+  "name":"org.slf4j.spi.MDCAdapter"
+},
+{
+  "name":"org.slf4j.spi.MarkerFactoryBinder"
+},
+{
+  "name":"org.xml.sax.Attributes"
+},
+{
+  "name":"org.xml.sax.helpers.DefaultHandler"
+},
+{
+  "name":"retrofit2.CallAdapter"
+},
+{
+  "name":"retrofit2.CallAdapter$Factory"
+},
+{
+  "name":"retrofit2.Callback"
+},
+{
+  "name":"retrofit2.Converter"
+},
+{
+  "name":"retrofit2.Converter$Factory"
+},
+{
+  "name":"retrofit2.ParameterHandler"
+},
+{
+  "name":"retrofit2.Platform"
+},
+{
+  "name":"retrofit2.ServiceMethod"
+},
+{
+  "name":"sun.misc.Unsafe",
+  "allDeclaredFields":true
+},
+{
+  "name":"sun.security.provider.MD5",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"tech.units.indriya.function.ConverterCompositionHandler"
+},
+{
+  "name":"tech.units.indriya.internal.format.UnitTokenConstants"
+},
+{
+  "name":"tech.units.indriya.internal.function.radix.Radix"
+},
+{
+  "name":"tech.units.indriya.spi.DimensionalModel"
+},
+{
+  "name":"tech.units.indriya.spi.NumberSystem"
+},
+{
+  "name":"tech.uom.lib.common.function.Converter"
+},
+{
+  "name":"tech.uom.lib.common.function.DescriptionSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.FactorSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.IntBaseSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.IntExponentSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.IntPrioritySupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.MaximumSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.MinimumSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.Nameable"
+},
+{
+  "name":"tech.uom.lib.common.function.Parser"
+},
+{
+  "name":"tech.uom.lib.common.function.PrefixOperator"
+},
+{
+  "name":"tech.uom.lib.common.function.QuantityConverter"
+},
+{
+  "name":"tech.uom.lib.common.function.QuantitySupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.SymbolSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.UnitConverterSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.UnitSupplier"
+},
+{
+  "name":"tech.uom.lib.common.function.ValueSupplier"
+}
+]
