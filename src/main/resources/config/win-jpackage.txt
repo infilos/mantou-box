@@ -1,7 +1,7 @@
 --type msi
 --name ${app.name}
 --win-menu
---win-shortcut
+--win-menu-group ${windows.vendor}
 --vendor ${windows.vendor}
 --icon ${project.resources[0].directory}\logo\win\icon.ico
 --dest ${project.build.directory}
@@ -15,18 +15,5 @@
 --description "${project.description}"
 --copyright "(C) ${windows.vendor}"
 --java-options -XX:+UseZGC
---java-options --add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED
---java-options --enable-native-access=ALL-UNNAMED
---java-options --add-exports=java.desktop/sun.awt.image=ALL-UNNAMED
---java-options --add-opens=javafx.controls/javafx.scene.control.skin=ALL-UNNAMED
---java-options --add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED
---java-options --add-exports=javafx.base/com.sun.javafx.event=ALL-UNNAMED
---java-options --add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED
---java-options --add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED
+--java-options --add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED 
 --java-options --add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED
---java-options --add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
---java-options --add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
---java-options --add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED
---java-options --add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED
---java-options --add-opens=java.base/java.net=ALL-UNNAMED
---java-options --add-modules=jdk.incubator.foreign

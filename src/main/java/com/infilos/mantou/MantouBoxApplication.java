@@ -21,6 +21,10 @@ import java.util.List;
 
 public class MantouBoxApplication extends ReactiveApplication implements AwareResource, Loggable {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     private final Workbench workbench = Workbench.builder().build();
 
     @Inject

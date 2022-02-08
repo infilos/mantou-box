@@ -10,6 +10,8 @@ public class MantouBoxBootstrap {
 
     public static void main(String[] args) {
         Thread.setDefaultUncaughtExceptionHandler(ALERT_EXCEPTION_HANDLER);
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("os.arch"));
 
         Application.launch(MantouBoxApplication.class, args);
     }

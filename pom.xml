@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>MantouBox</name>
     <groupId>com.infilos</groupId>
     <artifactId>mantou-box</artifactId>
-    <version>1.1</version>
+    <version>1.0</version>
 
     <properties>
         <java.release>17</java.release>
@@ -15,14 +16,14 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javafx.version>18-ea+9</javafx.version>
+        <javafx.version>18-ea+7</javafx.version>
         <jvm.modules>
-            java.base,jdk.management,java.naming,java.sql,java.transaction.xa,java.xml,jdk.unsupported,java.management,java.datatransfer,java.desktop,java.security.jgss,java.xml.crypto,jdk.javadoc,javafx.media,javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.swing,javafx.web,java.logging,jdk.charsets,java.net.http,java.prefs,jdk.crypto.ec,jdk.crypto.cryptoki,jdk.localedata,java.compiler,jdk.net,java.instrument,java.scripting,java.rmi
+            java.base,jdk.management,java.naming,java.sql,java.transaction.xa,java.xml,jdk.unsupported,java.management,java.datatransfer,java.desktop,java.security.jgss,java.xml.crypto,jdk.javadoc,javafx.media,javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.swing,javafx.web,java.logging,jdk.charsets,jdk.incubator.foreign,java.net.http,java.prefs,jdk.crypto.ec,jdk.crypto.cryptoki,jdk.localedata,java.compiler,jdk.net,java.instrument,java.scripting,java.rmi
         </jvm.modules>
         <app.name>MantouBox</app.name>
         <app.version>${project.version}</app.version>
-        <main.class>com.infilos.mantou.MantouBoxBootstrap</main.class>
-        <maven.build.timestamp.format>yy.ww.WWkkmm</maven.build.timestamp.format>
+        <main.class>com.infilos.mantou.MantouBoxApplication</main.class>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <windows.vendor>infilos.com</windows.vendor>
         <windows.upgrade.uuid>628e757d-586a-4d77-90bb-5c0f806746cc</windows.upgrade.uuid>
         <exec.plugin.version>1.6.0</exec.plugin.version>
@@ -63,6 +64,7 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
             <version>${javafx.version}</version>
+            <classifier>${platform}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -230,6 +232,13 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.7.0</version>
+            </extension>
+        </extensions>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -323,26 +332,12 @@
                             <mainClass>${main.class}</mainClass>
                             <options>
                                 <option>-XX:+UseZGC</option>
-                                <option>--add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED</option>
-                                <option>--add-modules jdk.incubator.foreign --enable-native-access=ALL-UNNAMED</option>
-                                <option>--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED</option>
-                                <option>--add-opens=javafx.controls/javafx.scene.control.skin=ALL-UNNAMED</option>
-                                <option>--add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.base/com.sun.javafx.event=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED</option>
                                 <option>--add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED</option>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED</option>
-                                <option>--add-opens=java.base/java.net=ALL-UNNAMED</option>
                             </options>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
         <pluginManagement>
             <plugins>
@@ -478,7 +473,8 @@
                                 <configuration>
                                     <toolName>jlink</toolName>
                                     <removeDirectories>${project.build.directory}/jvm-image/</removeDirectories>
-                                    <modulePath>${project.basedir}/jmods/${platform}-javafx/javafx-jmods-${javafx.version}/
+                                    <modulePath>
+                                        ${project.basedir}/jmods/${platform}-${os.detected.arch}/javafx-jmods-${javafx.version}/
                                     </modulePath>
                                     <addModules>${jvm.modules}</addModules>
                                     <output>${project.build.directory}/jvm-image</output>
