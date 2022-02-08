@@ -25,13 +25,13 @@ An alternative way is to execute the following cmd on the terminal 'sudo xattr -
 
 Download the deb package. Run 'sudo dpkg -i mantoubox_1.0-1_amd64.deb' and click on the icon or run /opt/mantoubox/bin/MantouBox
 
-## New Module
+## Develop
+
+### New Module
 
 1. Add module package under `com.infilos.mantou.views`.
 2. In module package, implement `NewModel`/`NewModule`/`NewService`/`NewView`/`NewView.fxml`.
 3. In `com.infilos.mantou.MantouBoxApplication::startReactiveApp`, register the new module.
-
-## Develop
 
 ### Build Locally
 
