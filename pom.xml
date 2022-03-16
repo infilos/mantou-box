@@ -164,16 +164,11 @@
             <artifactId>uuid-creator</artifactId>
             <version>4.4.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.fxmisc.richtext</groupId>-->
-<!--            <artifactId>richtextfx</artifactId>-->
-<!--            <version>0.10.7</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.guava</groupId>-->
-<!--            <artifactId>guava</artifactId>-->
-<!--            <version>31.0.1-jre</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.fxmisc.richtext</groupId>
+            <artifactId>richtextfx</artifactId>
+            <version>0.10.7</version>
+        </dependency>
         <dependency>
             <groupId>com.github.sisyphsu</groupId>
             <artifactId>dateparser</artifactId>

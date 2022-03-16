@@ -1,0 +1,40 @@
+.caret {
+    -fx-stroke: white;
+}
+
+.styled-text-area .selection {
+    -fx-fill: #5e6a6d;
+}
+
+TextArea {
+    -fx-background-color: #333333;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    -fx-font-size: 12pt;
+    -fx-font-family: Ubuntu Regular;
+}
+
+TextArea:focused {
+    -fx-background-color: #333333;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+    -fx-font-size: 12pt;
+    -fx-font-family: Ubuntu Regular;
+}
+
+CodeArea {
+    -fx-background-color: #333333;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    -fx-padding: 8;
+    -fx-font-size: 12pt;
+    -fx-font-family: Ubuntu Regular;
+}
+
+CodeArea:focused {
+    -fx-background-color: #333333;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+    -fx-font-size: 12pt;
+    -fx-font-family: Ubuntu Regular;
+}

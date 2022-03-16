@@ -5,6 +5,7 @@ import com.google.inject.Module;
 import com.infilos.mantou.utils.AwareResource;
 import com.infilos.mantou.views.convert.ConvertModule;
 import com.infilos.mantou.views.datetime.DatetimeModule;
+import com.infilos.mantou.views.json.JsonModule;
 import com.infilos.mantou.views.setting.SettingModule;
 import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
@@ -41,6 +42,9 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
     
     @Inject
     private ConvertModule convertModule;
+    
+    @Inject
+    private JsonModule jsonModule;
 
     @Override
     protected Collection<Module> getApplicationModules(Stage mainStage) {
@@ -57,6 +61,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         workbench.getModules().add(datetimeModule);
         workbench.getModules().add(textGenModule);
         workbench.getModules().add(convertModule);
+        workbench.getModules().add(jsonModule);
         // end add modules
 
         Scene mainScene = new Scene(workbench);

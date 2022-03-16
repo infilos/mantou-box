@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<fx:root fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" type="AnchorPane" xmlns="http://javafx.com/javafx/17"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infilos.mantou.views.json.JsonView">
+    <TabPane fx:id="tabPane" prefHeight="${rootPane.height}" prefWidth="${rootPane.width}">
+        <Tab fx:id="formatTab" closable="false" text="Format">
+            <fx:include source="format/FormatView.fxml"/>
+        </Tab>
+    </TabPane>
+</fx:root>

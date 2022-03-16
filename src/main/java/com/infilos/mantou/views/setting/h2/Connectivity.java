@@ -9,7 +9,7 @@ public class Connectivity {
 
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "org.h2.Driver";
-    static final String DB_URL = "jdbc:h2:./data/data;AUTO_SERVER=TRUE";
+    static final String DB_URL = "jdbc:h2:file:~/mantou/settings;AUTO_SERVER=TRUE";
 
     // Database credentials
     private static final String USER = "mantou";
@@ -37,6 +37,7 @@ public class Connectivity {
             stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println("Database successfully connected...");

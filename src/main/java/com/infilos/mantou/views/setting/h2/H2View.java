@@ -1,6 +1,8 @@
 package com.infilos.mantou.views.setting.h2;
 
 import com.dlsc.gemsfx.richtextarea.*;
+import com.dlsc.workbenchfx.Workbench;
+import com.dlsc.workbenchfx.model.WorkbenchDialog;
 import com.infilos.mantou.controls.*;
 import com.infilos.mantou.utils.AwareResource;
 import com.infilos.utils.Loggable;
@@ -25,36 +27,39 @@ public class H2View implements Initializable, AwareResource, ComboBoxSupport, No
     @Inject
     private Stage mainStage;
 
+    @Inject
+    private Workbench workbench;
+
     @FXML
     private Label connStat;
-    
+
     @FXML
     private Button connect;
-    
+
     @FXML
     private Button disconnect;
-    
+
     @FXML
     private Button tableCreate;
-    
+
     @FXML
     private Button tableDelete;
-    
+
     @FXML
     private Button recordInsert;
-    
+
     @FXML
     private Button recordDelete;
-    
+
     @FXML
     private TextField tableNameField;
-    
+
     @FXML
     private TextField recordField;
-    
+
     @FXML
     private ComboBox<String> tableList;
-    
+
     @FXML
     private ComboBox<String> recordList;
 
@@ -95,8 +100,13 @@ public class H2View implements Initializable, AwareResource, ComboBoxSupport, No
             connStat.setText(connectedLabel);
 
             disableButtons(false);
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            workbench.showDialog(WorkbenchDialog
+                .builder("Connect failed!",e.getMessage(),ButtonType.CLOSE)
+                .exception(e)
+                .build()
+            );
         }
     }
 
