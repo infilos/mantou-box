@@ -1,6 +1,7 @@
 package com.infilos.mantou;
 
 import com.dlsc.workbenchfx.Workbench;
+import com.dlsc.workbenchfx.model.WorkbenchModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.infilos.mantou.api.WorkModule;
@@ -30,8 +31,8 @@ public class MantouBoxModule extends AbstractModule {
     @Override
     protected void configure() {
         // allow view inject workbench instance
-        bind(Workbench.class).toInstance(workbench);
-        
+        //bind(Workbench.class).toInstance(workbench);
+
         // scan view and module
         Reflections reflections = new Reflections("com.infilos.mantou.views");
         Set<Class<? extends WorkView>> views = reflections.getSubTypesOf(WorkView.class);
@@ -60,5 +61,11 @@ public class MantouBoxModule extends AbstractModule {
     @Singleton
     Stage provideMainStage() {
         return mainStage;
+    }
+    
+    @Provides
+    @Singleton
+    Workbench provideWorkbench() {
+        return workbench;
     }
 }

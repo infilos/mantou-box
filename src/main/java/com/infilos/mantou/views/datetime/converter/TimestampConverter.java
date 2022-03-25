@@ -11,9 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 public class TimestampConverter {
 
-    static final List<String> AllTimeZones = Arrays.asList(TimeZone.getAvailableIDs());
-    static final String LocalTimeZone = TimeZone.getDefault().getID();
-    static final int LocalTimeZoneIndex = AllTimeZones.indexOf(LocalTimeZone);
+    static final List<String> AllTimeZones = new ArrayList<>(ZoneId.getAvailableZoneIds());
+    static final String LocalTimeZone = ZoneId.systemDefault().getId();
+    
+    static final List<String> AllTimeZoneOffsets = buildTimeZoneOffsets();
+    static final String LocalZoneOffset = buildZoneOffset(TimeZone.getDefault().getID(), LocalDateTime.now());
+    static final int LocalZoneOffsetIndex = AllTimeZoneOffsets.indexOf(LocalZoneOffset);
 
     static final Map<String, DateTimeFormatter> TimePatternMappings = new HashMap<>() {{
         put(Datetimes.Formats.AtSeconds, Datetimes.Patterns.AtSeconds);
@@ -109,4 +112,23 @@ public class TimestampConverter {
         };
     }
 
+    private static List<String> buildTimeZoneOffsets() {
+        List<String> timeZoneWithOffsets= new ArrayList<>();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        
+        for(String zone:AllTimeZones) {
+            timeZoneWithOffsets.add(buildZoneOffset(zone, localDateTime));
+        }
+        
+        return timeZoneWithOffsets;
+    }
+    
+    private static String buildZoneOffset(String zone, LocalDateTime localDateTime) {
+        ZoneId zoneId = ZoneId.of(zone);
+        ZonedDateTime zonedDateTime = localDateTime.atZone(zoneId);
+        ZoneOffset zoneOffset = zonedDateTime.getOffset();
+        String offset = zoneOffset.getId().replaceAll("Z", "+00:00");
+        
+        return zone + "(" + offset + ")";
+    }
 }

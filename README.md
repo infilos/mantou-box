@@ -19,7 +19,7 @@ Execute the installer. If defender is poping up please click on "more info" and 
 Goto in the download folder in Finder and right click on the installer file and click "Open". On OSX 11.x open the app and afterwards goto system settings - general tab in the Security & Privacy pane to instruct macOS to ignore its
   lack of notarization - click on "open anyway". 
 
-An alternative way is to execute the following cmd on the terminal 'sudo xattr -r -d com.apple.quarantine ~/Applications/MantouBox.app'
+An alternative way is to execute the following cmd on the terminal 'sudo xattr -r -d com.apple.quarantine /Applications/MantouBox.app'
 
 ### Linux
 

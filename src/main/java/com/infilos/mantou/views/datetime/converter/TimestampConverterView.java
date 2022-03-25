@@ -7,19 +7,23 @@ import com.infilos.mantou.controls.*;
 import com.infilos.mantou.utils.AwareResource;
 import com.infilos.utils.Loggable;
 import com.tangorabox.reactivedesk.FXMLView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.stage.Stage;
 import org.apache.commons.lang3.StringUtils;
+import org.controlsfx.control.SearchableComboBox;
 
 import javax.inject.Inject;
 import java.net.URL;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
+import java.util.*;
 
 import static com.infilos.mantou.views.datetime.converter.TimestampConverter.*;
 
@@ -27,13 +31,16 @@ import static com.infilos.mantou.views.datetime.converter.TimestampConverter.*;
 public class TimestampConverterView implements Initializable, AwareResource, ComboBoxSupport, NotifySupport, TooltipSupport, Loggable {
 
     @FXML
-    private ComboBox<String> timeZone;
+    private SearchableComboBox<String> timeZone;
 
     @FXML
     private ComboBox<String> timePattern;
 
     @FXML
     private ComboBox<String> timeMode;
+    
+    @FXML
+    private SearchableComboBox<String> searchTimeZone;
 
     @FXML
     private TextField timestamp;
@@ -62,7 +69,7 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
     @Inject
     private Workbench workbench;
     
-    private int timeZoneSelectedIndex = 0;
+    private int timeZoneSelectedIndex = LocalZoneOffsetIndex;
 
     @Override
     public Stage mainStage() {
@@ -72,8 +79,8 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //
-        buildComboItems(timeZone, LocalTimeZoneIndex, AllTimeZones);
-        enableRefreshComboValue(timeZone, String::toString, LocalTimeZone);
+        buildComboItems(timeZone, LocalZoneOffsetIndex, AllTimeZoneOffsets);
+        enableRefreshComboValue(timeZone, String::toString, LocalZoneOffset);
 
         //
         buildComboItems(timePattern, TimePatterns);
@@ -100,7 +107,8 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
     }
 
     private String currentTimeZone() {
-        return comboValueOf(timeZone, String.class, String::toString);
+        //return comboValueOf(timeZone, String.class, String::toString);
+        return AllTimeZones.get(timeZoneSelectedIndex);
     }
 
     private ZoneId currentTimeZoneId() {
@@ -118,29 +126,43 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
         return TimePatternMappings.get(pattern);
     }
 
+    //@FXML
+    //private void handleTimeZoneSearch(final KeyEvent keyEvent) {
+    //    String key = keyEvent.getText();
+    //    if (StringUtils.isBlank(key)) {
+    //        return;
+    //    }
+    //    
+    //    int i = 0;
+    //    for (String item : AllTimeZones) {
+    //        if (item.toLowerCase().startsWith(key) && i > timeZoneSelectedIndex) {
+    //            timeZone.setValue(item);
+    //            timeZoneSelectedIndex = i;
+    //            return;
+    //        }
+    //        i++;
+    //    }
+    //    
+    //    timeZoneSelectedIndex = 0;
+    //}
+
     @FXML
-    private void handleTimeZoneSearch(final KeyEvent keyEvent) {
-        String key = keyEvent.getText();
-        if (StringUtils.isBlank(key)) {
-            return;
-        }
+    private void handleTimeZoneSearch(final ActionEvent event) {
+        String selectedZoneOffset = timeZone.getValue();
         
-        int i = 0;
-        for (String item : AllTimeZones) {
-            if (item.toLowerCase().startsWith(key) && i > timeZoneSelectedIndex) {
-                timeZone.setValue(item);
-                timeZoneSelectedIndex = i;
-                return;
-            }
-            i++;
+        if(StringUtils.isBlank(selectedZoneOffset)) {
+            timeZone.setValue(LocalZoneOffset);
+            timeZoneSelectedIndex = LocalZoneOffsetIndex;
+            log().info("Zone: {}, {}", selectedZoneOffset, timeZoneSelectedIndex);
+        } else {
+            timeZoneSelectedIndex = AllTimeZoneOffsets.indexOf(selectedZoneOffset);
+            log().info("Zone: {}, {}", selectedZoneOffset, timeZoneSelectedIndex);
         }
-        
-        timeZoneSelectedIndex = 0;
     }
-    
+
     @FXML
     private void handleResetTimeZone(final ActionEvent event) {
-        timeZone.setValue(LocalTimeZone);
+        timeZone.setValue(LocalZoneOffset);
     }
 
     @FXML
@@ -223,8 +245,8 @@ public class TimestampConverterView implements Initializable, AwareResource, Com
 
     @FXML
     private void handleRefresh(final ActionEvent event) {
-        String currentTimeZone = comboValueOf(timeZone, String.class, String::toString);
-        String currentTimePattern = comboValueOf(timePattern, String.class, String::toString);
+        String currentTimeZone = currentTimeZone();
+        String currentTimePattern = currentTimePattern();
         String currentTimeMode = comboValueOf(timeMode, String.class,String::toString);
 
         refreshCurrent(currentTimeZone, currentTimePattern, currentTimeMode);

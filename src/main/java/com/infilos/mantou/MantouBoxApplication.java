@@ -9,7 +9,7 @@ import com.infilos.mantou.views.json.JsonModule;
 import com.infilos.mantou.views.setting.SettingModule;
 import com.infilos.mantou.views.textgen.TextGenModule;
 import com.infilos.mantou.views.workbench.HelloWorldModule;
-import com.infilos.utils.Loggable;
+import com.infilos.utils.*;
 import com.tangorabox.reactivedesk.ReactiveApplication;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -19,6 +19,7 @@ import jfxtras.styles.jmetro.Style;
 import javax.inject.Inject;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class MantouBoxApplication extends ReactiveApplication implements AwareResource, Loggable {
 
@@ -29,20 +30,17 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
     private final Workbench workbench = Workbench.builder().build();
 
     @Inject
-    private ApplicationContext context;
-    
-    @Inject
     private SettingModule settingModule;
-    
+
     @Inject
     private TextGenModule textGenModule;
-    
+
     @Inject
     private DatetimeModule datetimeModule;
-    
+
     @Inject
     private ConvertModule convertModule;
-    
+
     @Inject
     private JsonModule jsonModule;
 
@@ -54,7 +52,7 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
     @Override
     protected void startReactiveApp(Stage stage) {
         workbench.getStylesheets().add(loadStyle("Workbench.css"));
-        
+
         // start add modules
         workbench.getModules().add(new HelloWorldModule());
         workbench.getModules().add(settingModule);
@@ -64,6 +62,16 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         workbench.getModules().add(jsonModule);
         // end add modules
 
+        // build navigation       
+        workbench.getNavigationDrawerItems().addAll(
+            settingModule.navMenu(),
+            datetimeModule.navMenu(),
+            convertModule.navMenu(),
+            textGenModule.navMenu(),
+            jsonModule.navMenu()
+        );
+
+        // build scene
         Scene mainScene = new Scene(workbench);
         JMetro jMetro = new JMetro(Style.DARK);
         jMetro.setScene(mainScene);
@@ -74,5 +82,17 @@ public class MantouBoxApplication extends ReactiveApplication implements AwareRe
         stage.setHeight(700);
         stage.show();
         stage.centerOnScreen();
+
+        // detect memory
+        Scheduler scheduler = Scheduler.create().startup();
+        scheduler.schedule("Memory", () -> {
+            DataSize max = DataSize.ofSuccinct(ObjectSize.ofMaxJvmHeap());
+            DataSize free = DataSize.ofSuccinct(ObjectSize.ofFreeJvmHeap());
+            DataSize used = DataSize.ofSuccinct(ObjectSize.ofUsedJvmHeap());
+            log().info(
+                "Mantou memory: max({}), free({}), used({})",
+                max.succinctDataSize(), free.succinctDataSize(), used.succinctDataSize()
+            );
+        }, 1, 1, TimeUnit.MINUTES);
     }
 }

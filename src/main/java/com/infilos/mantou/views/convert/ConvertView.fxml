@@ -9,11 +9,17 @@
         <Tab fx:id="basex" closable="false" text="Base X">
             <fx:include source="basex/BaseXView.fxml"/>
         </Tab>
+        <Tab fx:id="escape" closable="false" text="Escape">
+            <fx:include source="escape/EscapeView.fxml"/>
+        </Tab>
         <Tab fx:id="md5text" closable="false" text="MD5 Text">
             <fx:include source="md5text/MD5TextView.fxml"/>
         </Tab>
         <Tab fx:id="md5file" closable="false" text="MD5 File">
             <fx:include source="md5file/MD5FileView.fxml"/>
+        </Tab>
+        <Tab fx:id="urlencode" closable="false" text="Url Encode">
+            <fx:include source="urlencode/UrlEncodeView.fxml"/>
         </Tab>
     </TabPane>
 </fx:root>

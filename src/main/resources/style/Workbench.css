@@ -24,7 +24,7 @@
 
 .logo {
     /* Reference to the applications logo */
-    -fx-graphic: url("logo/logo.png");
+    -fx-graphic: url("nav-logo.png");
 }
 
 .separator *.line {

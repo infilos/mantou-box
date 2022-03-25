@@ -8,5 +8,8 @@
 --runtime-image ${project.build.directory}/jvm-image
 --temp ${project.build.directory}/installer-work
 --java-options -XX:+UseZGC
+--java-options -XX:-ZProactive
+--java-options -Xms256M
+--java-options -Xmx512M
 --java-options --add-exports=javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
 --java-options --add-exports=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED
