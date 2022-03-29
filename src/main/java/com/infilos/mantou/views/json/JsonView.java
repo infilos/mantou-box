@@ -26,6 +26,9 @@ public class JsonView extends AnchorPane implements WorkView<Void>, TabPaneSuppo
     @FXML
     private Tab formatTab;
     
+    @FXML
+    private Tab compareTab;
+    
     @Override
     public void setModel(Void model) {
     }
@@ -45,8 +48,10 @@ public class JsonView extends AnchorPane implements WorkView<Void>, TabPaneSuppo
 
     public List<MenuItem> tabMenus() {
         MenuItem formatMenu = new MenuItem("Format");
+        MenuItem compareMenu = new MenuItem("Compare");
 
         formatMenu.setOnAction(e -> tabPane.getSelectionModel().select(formatTab));
+        compareMenu.setOnAction(e -> tabPane.getSelectionModel().select(compareTab));
 
         return List.of(formatMenu);
     }

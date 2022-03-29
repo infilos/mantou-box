@@ -49,7 +49,7 @@ public class FindState {
 
     @Override
     public String toString() {
-        return current + " from " + total;
+        return current + "/" + total;
     }
 
     public record SearchSpan(int from, int to) {

@@ -25,10 +25,10 @@
 }
 
 .json_bool {
-    -fx-fill: #5c58d9;
+    -fx-fill: #a9a439;
     -fx-font-weight: bold;
 }
 
 .json_number {
-    -fx-fill: #a9a439;
+    -fx-fill: #5c58d9;
 }

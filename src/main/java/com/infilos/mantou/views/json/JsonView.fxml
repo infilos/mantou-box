@@ -9,5 +9,8 @@
         <Tab fx:id="formatTab" closable="false" text="Format">
             <fx:include source="format/FormatView.fxml"/>
         </Tab>
+        <Tab fx:id="compareTab" closable="false" text="Compare">
+            <fx:include source="compare/CompareView.fxml"/>
+        </Tab>
     </TabPane>
 </fx:root>

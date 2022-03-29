@@ -4,6 +4,8 @@
 
 .styled-text-area .selection {
     -fx-fill: #5e6a6d;
+    -fx-stroke-width: 2;
+    -fx-stroke: #5d6566;
 }
 
 TextArea {

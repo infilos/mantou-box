@@ -89,7 +89,7 @@
                      <FontIcon iconColor="#F3F3F3" iconLiteral="fltfmz-search-24" iconSize="24" />
                  </graphic>
                  <tooltip>
-                     <Tooltip text="Find!" />
+                     <Tooltip text="Find!(CTL+F)" />
                  </tooltip>
              </Button>
              <Separator orientation="VERTICAL" prefHeight="200.0" />

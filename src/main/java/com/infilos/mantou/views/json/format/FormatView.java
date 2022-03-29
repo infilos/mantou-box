@@ -3,6 +3,7 @@ package com.infilos.mantou.views.json.format;
 import com.dlsc.workbenchfx.Workbench;
 import com.infilos.mantou.controls.DialogSupport;
 import com.infilos.mantou.controls.NotifySupport;
+import com.infilos.mantou.views.json.JsonService;
 import com.infilos.utils.Loggable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
